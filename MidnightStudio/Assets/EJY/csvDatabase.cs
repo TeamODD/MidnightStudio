@@ -5,14 +5,14 @@ using UnityEngine;
 public class csvDatabase : MonoBehaviour
 {
     // 읽어 올 파일 이름
-    public string csvFileName = "menu";
+    //public string csvFileName = "menu";
 
     // key:value 형태로 저장
     // key(메뉴명)로 value를 뽑아오기 위해
     // 원하는 형태로 선언해도 무방
     public Dictionary<string, Question> dicQuestion = new Dictionary<string, Question>(); // 질문 dictionary
-    public Dictionary<string, Answer> dicAnswer = new Dictionary<string, Answer>(); // 답변 dictionary
-    public Dictionary<string, Dialogue> dicDialogue = new Dictionary<string, Dialogue>(); // 대화 dictionary
+    /*public Dictionary<string, Answer> dicAnswer = new Dictionary<string, Answer>(); // 답변 dictionary
+    public Dictionary<string, Dialogue> dicDialogue = new Dictionary<string, Dialogue>(); // 대화 dictionary*/
 
     // 읽어 온 데이터를 담을 구조체
     // 저는 클래스로 생성했습니다! struct로 생성해도 동일해요.
@@ -42,9 +42,9 @@ public class csvDatabase : MonoBehaviour
     private void ReadCSV()
     {
         // 파일 이름.확장자
-        string path1 = "csv/Question.csv";
-        string path2 = "csv/Answer.csv";
-        string path3 = "csv/Dialogue.csv";
+        string path1 = "csv/story1_question.csv";
+        /*string path2 = "csv/Answer.csv";
+        string path3 = "csv/Dialogue.csv";*/
 
         // 데이터를 저장하는 리스트
         // 편하게 관리하기 위해 List로 선언
@@ -57,8 +57,8 @@ public class csvDatabase : MonoBehaviour
         // 뒤에 읽으려는 파일이 있는 경로를 작성
         // ex) Assets > Files에 menu.csv를 읽으려면? "/" + "Files/menu.csv"추가
         StreamReader reader1 = new StreamReader(Application.dataPath + "/" + path1);
-        StreamReader reader2 = new StreamReader(Application.dataPath + "/" + path2);
-        StreamReader reader3 = new StreamReader(Application.dataPath + "/" + path3);
+        /*StreamReader reader2 = new StreamReader(Application.dataPath + "/" + path2);
+        StreamReader reader3 = new StreamReader(Application.dataPath + "/" + path3);*/
 
         // 마지막 줄을 판별하기 위한 bool 타입 변수
         bool isFinish = false;
@@ -99,7 +99,7 @@ public class csvDatabase : MonoBehaviour
             Debug.Log(question.index_code);
             Debug.Log(dicQuestion.Count); // 잘 들어갔는지 체크
         }
-        isFinish = false;
+        /*isFinish = false;
         while (isFinish == false)
         {
             string data = reader2.ReadLine(); // 한 줄 읽기
@@ -138,6 +138,6 @@ public class csvDatabase : MonoBehaviour
             dicDialogue.Add(dialogue.index_code, dialogue);
             Debug.Log(dialogue.index_code);
             Debug.Log(dicQuestion.Count); // 잘 들어갔는지 체크
-        }
+        }*/
     }
 }
