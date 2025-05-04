@@ -11,6 +11,16 @@ public class DialogueParser : MonoBehaviour
     public TMP_Text targetText_ink; 
     public TMP_Text targetText_client;
     private float delay = 0.095f; //글자가 움직이는 속도
+    public IEnumerator delayQuestion(TMP_Text target, string text)
+    {
+        target.text = "";
+        foreach (char c in text)
+        {
+            target.text += c;
+            yield return new WaitForSeconds(delay);
+        }
+    }
+
 
     private void HideAllPanels()
     {
@@ -22,7 +32,7 @@ public class DialogueParser : MonoBehaviour
     {
         LoadCSV();
 
-        string dialogIndex = QuestionManager.dialogIndex;
+      
         StartCoroutine(ShowDialogueByPrefix("story1_0_0_0")); // dialogIndex 값을 불러오는 장치(동시에 글씨 생성 장치) // 임시 값 설정
     }
 
