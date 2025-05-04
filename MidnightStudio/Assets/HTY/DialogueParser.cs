@@ -6,11 +6,18 @@ using TMPro;
 public class DialogueParser : MonoBehaviour
 {
     private Dictionary<string, string[]> allAnswers = new Dictionary<string, string[]>();
+    public QuestionManager QuestionManager;
     public GameObject panel_ink;
     public GameObject panel_client;
     public TMP_Text targetText_ink; 
     public TMP_Text targetText_client;
     private float delay = 0.095f; //글자가 움직이는 속도
+
+    public void AnswerToQuestion(string key) {
+        StartCoroutine(ShowDialogueByPrefix(key));
+    }
+
+
     public IEnumerator delayQuestion(TMP_Text target, string text)
     {
         target.text = "";
@@ -49,6 +56,8 @@ public class DialogueParser : MonoBehaviour
 
         new WaitForSeconds(2f);
         Debug.Log("모든 대사 출력 완료."); 
+        StopAllCoroutines(); //QuestionManager에게 끝났음을 알림
+        //QuestionManager.allOn();
         targetText_ink.enabled = false;
     }
 
@@ -105,7 +114,21 @@ public class DialogueParser : MonoBehaviour
 
     private void LoadCSV() //로드 및 저장 
     {
-        TextAsset csvFile = Resources.Load<TextAsset>("dialogue");
+        var csvData = CSVReader.Read("dialogue"); // Resources/dialogue.csv
+
+        foreach (var row in csvData)
+        {
+            if (!row.ContainsKey("ID") || !row.ContainsKey("화자") || !row.ContainsKey("대사"))
+                continue;
+
+            string index = row["ID"].ToString().Trim();
+            string speaker = row["화자"].ToString().Trim();
+            string dialogue = row["대사"].ToString().Trim();
+
+            if (!allAnswers.ContainsKey(index))
+                allAnswers.Add(index, new string[] { speaker, dialogue });
+        }
+        /*TextAsset csvFile = Resources.Load<TextAsset>("dialogue");
         string[] lines = csvFile.text.Split('\n');
 
         foreach (string line in lines)
@@ -120,10 +143,10 @@ public class DialogueParser : MonoBehaviour
 
             if (!allAnswers.ContainsKey(index))
                 allAnswers.Add(index, new string[] { speaker, dialogue });
-        }
+        }*/
     }
 
-    private List<string> ParseCsvLine(string line) //따옴표와 쉼표 검열
+    /*private List<string> ParseCsvLine(string line) //따옴표와 쉼표 검열
     {
         List<string> result = new List<string>();
         bool inQuotes = false;
@@ -142,5 +165,5 @@ public class DialogueParser : MonoBehaviour
 
         result.Add(current.Trim());
         return result;
-    }
+    }*/
 }
