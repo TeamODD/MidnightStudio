@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class QuestionManager : MonoBehaviour
 {
-    public Dialogueparser parser;
+    public DialogueParser parser;
     public GameObject reroll;
     public List<GameObject> arrow = new List<GameObject>();
     private string sceneIndex;
@@ -121,6 +121,12 @@ public class QuestionManager : MonoBehaviour
         arrowOff();
         rerollOff();
         Debug.Log("대화시스템");
+        Debug.Log(dialogIndex);
+        if (parser == null)
+        {
+            Debug.LogError("DialogueParser가 할당되지 않았습니다! Inspector에서 연결해 주세요.");
+            return;
+        }
         parser.AnswerToQuestion(dialogIndex);
     }
     public void nextIndex(int index)

@@ -11,7 +11,7 @@ public class DialogueParser : MonoBehaviour
     public GameObject panel_client;
     public TMP_Text targetText_ink; 
     public TMP_Text targetText_client;
-    private float delay = 0.095f; //±ÛÀÚ°¡ ¿òÁ÷ÀÌ´Â ¼Óµµ
+    private float delay = 0.095f; //ê¸€ìê°€ ì›€ì§ì´ëŠ” ì†ë„
 
     public void AnswerToQuestion(string key) {
         StartCoroutine(ShowDialogueByPrefix(key));
@@ -40,7 +40,7 @@ public class DialogueParser : MonoBehaviour
         LoadCSV();
 
       
-        StartCoroutine(ShowDialogueByPrefix("story1_0_0_0")); // dialogIndex °ªÀ» ºÒ·¯¿À´Â ÀåÄ¡(µ¿½Ã¿¡ ±Û¾¾ »ı¼º ÀåÄ¡) // ÀÓ½Ã °ª ¼³Á¤
+        // StartCoroutine(ShowDialogueByPrefix("story1_0_0_0")); // dialogIndex ê°’ì„ ë¶ˆëŸ¬ì˜¤ëŠ” ì¥ì¹˜(ë™ì‹œì— ê¸€ì”¨ ìƒì„± ì¥ì¹˜) // ì„ì‹œ ê°’ ì„¤ì •
     }
 
     IEnumerator ShowDialogueByPrefix(string prefix)
@@ -49,16 +49,19 @@ public class DialogueParser : MonoBehaviour
         foreach (string key in keys)
         {
             yield return StartCoroutine(ShowDialogueByIndex(key));
-            yield return new WaitForSeconds(0.5f); // ½Ã°£ Áö¿¬
+            yield return new WaitForSeconds(0.5f); // ì‹œê°„ ì§€ì—°
 
-            //³» »ı°¢¿£ ¿©±â´Ù°¡ ±×¸² ¹Ù²Ü ¼ö ÀÖµµ·Ï ÇÏ¸é ÁÁÀ» µí??
+            //ë‚´ ìƒê°ì—” ì—¬ê¸°ë‹¤ê°€ ê·¸ë¦¼ ë°”ê¿€ ìˆ˜ ìˆë„ë¡ í•˜ë©´ ì¢‹ì„ ë“¯??
         }
 
         new WaitForSeconds(2f);
-        Debug.Log("¸ğµç ´ë»ç Ãâ·Â ¿Ï·á."); 
-        StopAllCoroutines(); //QuestionManager¿¡°Ô ³¡³µÀ½À» ¾Ë¸²
-        //QuestionManager.allOn();
-        targetText_ink.enabled = false;
+        Debug.Log("ëª¨ë“  ëŒ€ì‚¬ ì¶œë ¥ ì™„ë£Œ."); 
+        StopAllCoroutines(); //QuestionManagerì—ê²Œ ëë‚¬ìŒì„ ì•Œë¦¼
+        panel_ink.SetActive(false);
+        panel_client.SetActive(false);
+        targetText_ink.text = "";
+        targetText_client.text = "";
+        QuestionManager.allOn();
     }
 
     private List<string> GetDialogueIndexesByPrefix(string prefix)
@@ -72,11 +75,11 @@ public class DialogueParser : MonoBehaviour
             }
         }
 
-        result.Sort(); // _1, _2, _3 ¼ø¼­´ë·Î Ãâ·Â
+        result.Sort(); // _1, _2, _3 ìˆœì„œëŒ€ë¡œ ì¶œë ¥
         return result;
     }
 
-    IEnumerator ShowDialogueByIndex(string index) //ÀÎµ¦½ºÀÇ À§Ä¡¿¡ µû¶ó È­ÀÚ ¼³Á¤
+    IEnumerator ShowDialogueByIndex(string index) //ì¸ë±ìŠ¤ì˜ ìœ„ì¹˜ì— ë”°ë¼ í™”ì ì„¤ì •
     {
         if (!allAnswers.ContainsKey(index))
             yield break;
@@ -84,15 +87,15 @@ public class DialogueParser : MonoBehaviour
         string speaker = allAnswers[index][0];
         string line = allAnswers[index][1];
 
-        // ¸ÕÀú ¸ğµç ´ë»ç ÆĞ³Î ¼û±â±â
+        // ë¨¼ì € ëª¨ë“  ëŒ€ì‚¬ íŒ¨ë„ ìˆ¨ê¸°ê¸°
         HideAllPanels();
         TMP_Text target = null;
 
-        if (speaker.Contains("À×Å© Çìµå"))
+        if (speaker.Contains("ì‰í¬ í—¤ë“œ"))
         {
             target = targetText_ink;
         }
-        else if (speaker.Contains("ÀÇ·ÚÀÎ"))
+        else if (speaker.Contains("ì˜ë¢°ì¸"))
         {
             target = targetText_client;
         }
@@ -100,7 +103,7 @@ public class DialogueParser : MonoBehaviour
         yield return StartCoroutine(TextPrintToTarget(target, line));
     }
 
-    IEnumerator TextPrintToTarget(TMP_Text target, string text) //ÅØ½ºÆ® Å¸ÀÌÇÎ
+    IEnumerator TextPrintToTarget(TMP_Text target, string text) //í…ìŠ¤íŠ¸ íƒ€ì´í•‘
     {
         panel_ink.SetActive(true);
         panel_client.SetActive(true);
@@ -112,18 +115,18 @@ public class DialogueParser : MonoBehaviour
         }
     }
 
-    private void LoadCSV() //·Îµå ¹× ÀúÀå 
+    private void LoadCSV() //ë¡œë“œ ë° ì €ì¥ 
     {
         var csvData = CSVReader.Read("dialogue"); // Resources/dialogue.csv
 
         foreach (var row in csvData)
         {
-            if (!row.ContainsKey("ID") || !row.ContainsKey("È­ÀÚ") || !row.ContainsKey("´ë»ç"))
+            if (!row.ContainsKey("ID") || !row.ContainsKey("í™”ì") || !row.ContainsKey("ëŒ€ì‚¬"))
                 continue;
 
             string index = row["ID"].ToString().Trim();
-            string speaker = row["È­ÀÚ"].ToString().Trim();
-            string dialogue = row["´ë»ç"].ToString().Trim();
+            string speaker = row["í™”ì"].ToString().Trim();
+            string dialogue = row["ëŒ€ì‚¬"].ToString().Trim();
 
             if (!allAnswers.ContainsKey(index))
                 allAnswers.Add(index, new string[] { speaker, dialogue });
@@ -146,7 +149,7 @@ public class DialogueParser : MonoBehaviour
         }*/
     }
 
-    /*private List<string> ParseCsvLine(string line) //µû¿ÈÇ¥¿Í ½°Ç¥ °Ë¿­
+    /*private List<string> ParseCsvLine(string line) //ë”°ì˜´í‘œì™€ ì‰¼í‘œ ê²€ì—´
     {
         List<string> result = new List<string>();
         bool inQuotes = false;
