@@ -1554,11 +1554,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebe2b5d9d862348338794ceaa8b89ca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectionObject:
+  reroll: {fileID: 863535410}
+  arrow:
   - {fileID: 1613103181}
   - {fileID: 809785203}
   - {fileID: 2016567142}
-  - {fileID: 863535410}
   scene:
   - {fileID: 495434187}
   - {fileID: 507066855}
@@ -1569,7 +1569,6 @@ MonoBehaviour:
   - {fileID: 745637105}
   - {fileID: 2089146211}
   - {fileID: 1852373556}
-  dialogIndex: 
 --- !u!1 &1613103181
 GameObject:
   m_ObjectHideFlags: 0
