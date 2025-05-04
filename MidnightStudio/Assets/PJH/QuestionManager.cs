@@ -13,8 +13,12 @@ public class QuestionManager : MonoBehaviour
     private string sceneIndex;
     public List<Image> scene = new List<Image>();
     public List<TMP_Text> questionText = new List<TMP_Text>();
-    public string dialogIndex;
+    public static string dialogIndex;
     private List<Dictionary<string, object>> QuestionDictionary;
+    // 씬마다 선택된 질문들을 저장
+    private Dictionary<string, List<string>> sceneToQuestions = new Dictionary<string, List<string>>();
+    private List<Coroutine> activeCoroutines = new List<Coroutine>();
+
     
     // 현재 세팅된 질문들을 추적하는 리스트
     private List<string> selectedKeys = new List<string>();
@@ -35,44 +39,54 @@ public class QuestionManager : MonoBehaviour
 
     void questionMaker()
     {
-        List<string> validKeys = new List<string>();
-
-        // sceneIndex에 맞는 key들을 찾는다.
-        for (int i = 0; i < QuestionDictionary.Count; i++)
+        // 기존 질문이 저장되어 있으면 그걸 사용
+        if (sceneToQuestions.ContainsKey(sceneIndex))
         {
-            string key = QuestionDictionary[i]["key"].ToString();
-            if (key.StartsWith($"story1_question_{sceneIndex}_"))
-            {
-                validKeys.Add(key);  // 유효한 키를 리스트에 추가
-            }
+            selectedKeys = sceneToQuestions[sceneIndex];
         }
-
-        // 이미 선택된 질문들을 추적하기 위한 리스트 (현재 화면에 표시된 3개만 추적)
-        selectedKeys.Clear();  // 이전 질문들을 초기화
-
-        // 3개의 랜덤 질문을 뽑기
-        for (int i = 0; i < 3; i++)
+        else
         {
-            string randomKey;
-            // 유효한 질문이 나올 때까지 반복
-            do
+            List<string> validKeys = new List<string>();
+
+            // sceneIndex에 맞는 key들을 찾는다.
+            for (int i = 0; i < QuestionDictionary.Count; i++)
+            {
+                string key = QuestionDictionary[i]["key"].ToString();
+                if (key.StartsWith($"story1_question_{sceneIndex}_"))
+                {
+                    validKeys.Add(key);
+                }
+            }
+
+            selectedKeys = new List<string>();
+
+            // 3개의 랜덤 질문을 뽑기
+            while (selectedKeys.Count < 3 && validKeys.Count > 0)
             {
                 int randomIndex = UnityEngine.Random.Range(0, validKeys.Count);
-                randomKey = validKeys[randomIndex];
+                string randomKey = validKeys[randomIndex];
+
+                if (!selectedKeys.Contains(randomKey))
+                {
+                    selectedKeys.Add(randomKey);
+                }
             }
-            while (selectedKeys.Contains(randomKey));  // 이미 선택된 질문이면 다시 뽑음
 
-            // randomKey에 해당하는 질문 찾기
-            Dictionary<string, object> questionData = QuestionDictionary.Find(entry => entry["key"].ToString() == randomKey);
+            // 이 씬에 대해 저장해둠
+            sceneToQuestions[sceneIndex] = new List<string>(selectedKeys);
+        }
 
+        // UI에 표시
+        for (int i = 0; i < selectedKeys.Count; i++)
+        {
+            Dictionary<string, object> questionData = QuestionDictionary.Find(entry => entry["key"].ToString() == selectedKeys[i]);
             if (questionData != null)
             {
-                // 해당 질문을 UI에 적용
                 questionText[i].text = questionData["question"].ToString();
-                selectedKeys.Add(randomKey);  // 선택된 질문을 리스트에 추가
             }
         }
     }
+
 
     void Start()
     {
@@ -82,8 +96,15 @@ public class QuestionManager : MonoBehaviour
 
     public void reload()
     {
+        // 현재 sceneIndex에 해당하는 저장된 질문 삭제
+        if (sceneToQuestions.ContainsKey(sceneIndex))
+        {
+            sceneToQuestions.Remove(sceneIndex);
+        }
+
         questionMaker();
     }
+
 
     public void sceneIndexChange(string sceneIndex)
     {
