@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class QuestionManager : MonoBehaviour
 {
+    public Dialogueparser parser;
     public GameObject reroll;
     public List<GameObject> arrow = new List<GameObject>();
     private string sceneIndex;
@@ -120,6 +121,7 @@ public class QuestionManager : MonoBehaviour
         arrowOff();
         rerollOff();
         Debug.Log("대화시스템");
+        parser.AnswerToQuestion(dialogIndex);
     }
     public void nextIndex(int index)
     {
