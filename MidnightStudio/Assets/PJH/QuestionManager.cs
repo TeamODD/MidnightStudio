@@ -3,48 +3,77 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using TreeEditor;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class QuestionEntry {
-    public string index;
-    public string question;
-    public QuestionEntry(string index, string question)
-    {
-        this.index = index;
-        this.question = question;
-    }
-}
+
 public class QuestionManager : MonoBehaviour
 {
-    private List<QuestionEntry> allQuestions = new List<QuestionEntry>();
-    public List<TMP_Text> dialogueText = new List<TMP_Text>();
-    void Start()
+    public string sceneIndex = "0";
+    public List<TMP_Text> questionText = new List<TMP_Text>();
+    private List<Dictionary<string,object>> QuestionDictionary;
+    void Awake()
     {
-        LoadCSV();
+        QuestionDictionary = CSVReader.Read ("story1_question");
+        for(var i=0; i < QuestionDictionary.Count; i++) {
+            Debug.Log("key:" + QuestionDictionary[i]["key"] + " " +
+                   "question:" + QuestionDictionary[i]["question"] + " ");
+        }
     }
 
-    private void LoadCSV()
+void questionMaker()
+{
+    List<string> validKeys = new List<string>();
+
+    // sceneIndex에 맞는 key들을 찾는다.
+    for (int i = 0; i < QuestionDictionary.Count; i++)
     {
-        TextAsset csvFile = Resources.Load<TextAsset>("story1_question");
-        if (csvFile == null)
+        string key = QuestionDictionary[i]["key"].ToString();
+        if (key.StartsWith($"story1_question_{sceneIndex}_"))
         {
-            Debug.LogError("CSV 파일을 찾을 수 없습니다!");
-            return;
+            validKeys.Add(key);  // 유효한 키를 리스트에 추가
         }
-        string[] lines = csvFile.text.Split('\n');
-        foreach (string line in lines) {
-            if (string.IsNullOrWhiteSpace(line)) continue;
-            string[] parts = line.Split(',');
-            string index = parts[0].Trim();
-            string question = parts[1].Trim();
-            QuestionEntry entry = new QuestionEntry(index, question);
-            allQuestions.Add(entry);
-        }
-        int questionCount = allQuestions.Count;
-        for (int i = 0; i < 3; i++) {
-            int randomIndex = UnityEngine.Random.Range(0, questionCount);
-            dialogueText[i].text = allQuestions[randomIndex].question;
-        }
-
     }
-    
+
+    // 3개의 랜덤 질문을 뽑기
+    for (int i = 0; i < 3; i++)
+    {
+        int randomIndex = UnityEngine.Random.Range(0, validKeys.Count);
+        string randomKey = validKeys[randomIndex];
+
+        // randomKey에 해당하는 질문 찾기
+        Dictionary<string, object> questionData = QuestionDictionary.Find(entry => entry["key"].ToString() == randomKey);
+
+        if (questionData != null)
+        {
+            // 해당 질문을 UI에 적용
+            questionText[i].text = questionData["question"].ToString();
+        }
+    }
+}
+
+    void Start() {
+        questionMaker();
+    }
+    public void sceneIndexChange0() {
+        sceneIndex = "0";
+        questionMaker();
+    }
+    public void sceneIndexChange1() {
+        sceneIndex = "1";
+        questionMaker();
+    }
+    public void sceneIndexChange2() {
+        sceneIndex = "2";
+        questionMaker();
+    }
+    public void sceneIndexChange3() {
+        sceneIndex = "3";
+        questionMaker();
+    }
+    public void sceneIndexChange4() {
+        sceneIndex = "4";
+        questionMaker();
+    }
+
 }
