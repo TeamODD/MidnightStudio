@@ -8,7 +8,10 @@ using UnityEngine.UI;
 
 public class QuestionManager : MonoBehaviour
 {
+    public GameObject reroll;
+    public List<GameObject> arrow = new List<GameObject>();
     private string sceneIndex;
+    public List<Image> scene = new List<Image>();
     public List<TMP_Text> questionText = new List<TMP_Text>();
     public string dialogIndex;
     private List<Dictionary<string, object>> QuestionDictionary;
@@ -88,6 +91,15 @@ public class QuestionManager : MonoBehaviour
         this.sceneIndex = sceneIndex;
         questionMaker();
     }
+    public void OnQuestionClicked(int index)
+    {
+        nextIndex(index);  // dialogTrue 설정
+        textOff();         // 모든 질문 비활성화
+        sceneOff(int.Parse(sceneIndex));
+        arrowOff();
+        rerollOff();
+        Debug.Log("대화시스템");
+    }
     public void nextIndex(int index)
     {
         if (index < 0 || index >= selectedKeys.Count)
@@ -109,6 +121,49 @@ public class QuestionManager : MonoBehaviour
             // 예: DialogManager.Instance.Show(dialogTrue);
         }
     }
+
+    public void sceneOff(int selectedIndex)
+    {
+        for (int i = 0; i < scene.Count; i++)
+        {
+            // selectedIndex에 해당하는 씬만 제외하고 비활성화
+            if (i != selectedIndex && scene[i] != null)
+            {
+                scene[i].gameObject.SetActive(false);
+            }
+        }
+    }
+
+    public void rerollOff() {
+        reroll.SetActive(false);
+    }
+    public void arrowOff()
+    {
+        foreach (GameObject obj in arrow)
+        {
+            obj.SetActive(false);
+        }
+    }
+
+    public void textOff()
+    {
+        foreach (TMP_Text text in questionText)
+        {
+            text.gameObject.SetActive(false);
+        }
+    }
+    public void allOn() {
+        foreach (TMP_Text text in questionText)
+        {
+            text.gameObject.SetActive(true);
+        }
+        reroll.SetActive(true);
+        for (int i = 0; i < scene.Count; i++)
+        {
+            scene[i].gameObject.SetActive(true);
+        }
+    }
+
 }
 
 
