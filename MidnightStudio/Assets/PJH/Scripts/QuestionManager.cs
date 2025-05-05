@@ -178,7 +178,9 @@ public class QuestionManager : MonoBehaviour
     {
         foreach (TMP_Text text in questionText)
         {
+            text.color = Color.black; // 텍스트 색상을 검은색으로 변경
             text.gameObject.SetActive(false);
+            
         }
     }
     public void allOn() {
@@ -194,5 +196,3 @@ public class QuestionManager : MonoBehaviour
     }
 
 }
-
-
