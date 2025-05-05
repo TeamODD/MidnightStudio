@@ -5,10 +5,12 @@ public class TitleButtonControl : MonoBehaviour
 {
     public GameObject mainPanel;
     public GameObject optionPanel;
+    public SceneFader sceneFader;
     
     public void OnStartClicked()
     {
-        SceneManager.LoadScene("Synopsis");
+        //SceneManager.LoadScene("Synopsis");
+        sceneFader.FadeToScene("Synopsis");
     }
 
     public void OnOptionClicked()
