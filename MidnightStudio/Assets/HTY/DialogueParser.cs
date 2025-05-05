@@ -1,22 +1,37 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using System.Linq.Expressions;
 
 public class DialogueParser : MonoBehaviour
 {
     private Dictionary<string, string[]> allAnswers = new Dictionary<string, string[]>();
-    public QuestionManager QuestionManager;
+    public Dictionary<string, Sprite> actToSpriteMap = new Dictionary<string, Sprite>();
+
+    //public QuestionManager QuestionManager;
     public GameObject panel_ink;
     public GameObject panel_client;
+
+    public Image name_box_ink; //이름 상자
+    public Image name_box_client;
     public TMP_Text targetText_ink; 
     public TMP_Text targetText_client;
-    private float delay = 0.095f; //글자가 움직이는 속도
+
+    public SpriteRenderer Client;
+    public SpriteRenderer InkHead;
+
+    public Panel_Ink_Production panel_ink_production;
+    public Panel_Client_Production panel_client_production;
+
+    private float delay = 0.06f; //글자가 움직이는 속도
+    private bool Show_Ink_Panel_check = false;
+    private bool Show_Client_Panel_check = false;
 
     public void AnswerToQuestion(string key) {
         StartCoroutine(ShowDialogueByPrefix(key));
     }
-
 
     public IEnumerator delayQuestion(TMP_Text target, string text)
     {
@@ -28,20 +43,18 @@ public class DialogueParser : MonoBehaviour
         }
     }
 
-
-    private void HideAllPanels()
-    {
-        panel_ink.SetActive(false);
-        panel_client.SetActive(false);
-    }
-
     void Start()
     {
         LoadCSV();
+        panel_ink_production.Destroy_Ink_Panel();
+        panel_client_production.Destroy_Client_Panel();
 
       
-        // StartCoroutine(ShowDialogueByPrefix("story1_0_0_0")); // dialogIndex 값을 불러오는 장치(동시에 글씨 생성 장치) // 임시 값 설정
+
+        StartCoroutine(ShowDialogueByPrefix("story1_0_3_0")); // dialogIndex 값을 불러오는 장치(동시에 글씨 생성 장치) // 임시 값 설정
     }
+
+    
 
     IEnumerator ShowDialogueByPrefix(string prefix)
     {
@@ -49,6 +62,7 @@ public class DialogueParser : MonoBehaviour
         foreach (string key in keys)
         {
             yield return StartCoroutine(ShowDialogueByIndex(key));
+         
             yield return new WaitForSeconds(0.5f); // 시간 지연
 
             //내 생각엔 여기다가 그림 바꿀 수 있도록 하면 좋을 듯??
@@ -57,11 +71,14 @@ public class DialogueParser : MonoBehaviour
         new WaitForSeconds(2f);
         Debug.Log("모든 대사 출력 완료."); 
         StopAllCoroutines(); //QuestionManager에게 끝났음을 알림
-        panel_ink.SetActive(false);
-        panel_client.SetActive(false);
-        targetText_ink.text = "";
-        targetText_client.text = "";
-        QuestionManager.allOn();
+                                                         
+        panel_client_production.Hide_Client_Panel_Instant(); //판넬이 즉시 사라지는 효과(SetActive 대체)
+        //글자가 처음 사라질 때를 체크하는 변수 초기화
+        Show_Client_Panel_check = false;
+
+        //targetText_ink.text = "";
+        //targetText_client.text = "";
+        //QuestionManager.allOn();
     }
 
     private List<string> GetDialogueIndexesByPrefix(string prefix)
@@ -74,8 +91,7 @@ public class DialogueParser : MonoBehaviour
                 result.Add(key);
             }
         }
-
-        result.Sort(); // _1, _2, _3 순서대로 출력
+        
         return result;
     }
 
@@ -86,27 +102,106 @@ public class DialogueParser : MonoBehaviour
 
         string speaker = allAnswers[index][0];
         string line = allAnswers[index][1];
+        string act = allAnswers[index][2];
 
-        // 먼저 모든 대사 패널 숨기기
-        HideAllPanels();
         TMP_Text target = null;
+        Image image = null;
 
-        if (speaker.Contains("잉크 헤드"))
+        if (speaker.Contains("ink"))
         {
-            target = targetText_ink;
+            if (Show_Ink_Panel_check == false) 
+            {
+                panel_ink_production.Move_Ink_Panel(); //move
+                panel_ink_production.Show_Ink_Panel(); //글자가 처음 나타날 때 생기는 효과 
+                name_box_ink.SetNativeSize();
+                target = targetText_ink;
+                image = name_box_ink;
+                ApplyActImage(speaker, act);
+                Show_Ink_Panel_check = true;
+            }
+            else {
+                target = targetText_ink;
+                ApplyActImage(speaker, act);
+            }
+            
         }
-        else if (speaker.Contains("의뢰인"))
+        else if (speaker.Contains("client"))
         {
-            target = targetText_client;
-        }
+            if (Show_Client_Panel_check == false)
+            {
+                panel_client_production.Move_Client_Panel();  //move
+                panel_client_production.Show_Client_Panel(); //글자가 처음 나타날 때 생기는 효과
+                name_box_client.SetNativeSize();
+                target = targetText_client;
+                image = name_box_client;
+                ApplyActImage(speaker, act);
+                Show_Client_Panel_check = true;
 
+            }
+            else
+            {
+                target = targetText_client;
+                ApplyActImage(speaker, act);
+            }
+            
+        }
+        Debug.Log(index);
         yield return StartCoroutine(TextPrintToTarget(target, line));
+    }
+
+    public void ApplyActImage(string speaker, string act)
+    {
+
+        Sprite actSprite = LoadActSprite(speaker, act);
+        if (actSprite == null)
+        {
+            Debug.LogError($"[에러] '{act}'에 해당하는 이미지를 찾을 수 없습니다. 경로를 다시 확인하세요.");
+            return;
+        }
+
+        if (speaker.Contains("ink"))
+        {
+            InkHead.sprite = actSprite;
+
+        }
+        else if (speaker.Contains("client")) 
+        {
+            Client.sprite = actSprite;
+
+        }
+    }
+
+    private Sprite LoadActSprite(string speaker, string act)
+    {
+        string basePath = "";
+        if (speaker.Contains("ink"))
+        {
+            basePath = "Ink_Character/";
+        }
+        else if (speaker.Contains("client"))
+        {
+            basePath = "Client_Character/";
+        }
+        else
+        {
+            Debug.LogWarning("알 수 없는 화자입니다.");
+            return null;
+        }
+
+        string fullPath = basePath + act;
+
+        Sprite sprite = Resources.Load<Sprite>(fullPath);
+
+        if (sprite == null)
+        {
+            Debug.LogError($"[로드 실패] Sprite 경로: Resources/{fullPath}.png 또는 .jpg 가 존재하지 않음.");
+        }
+
+        return sprite;
     }
 
     IEnumerator TextPrintToTarget(TMP_Text target, string text) //텍스트 타이핑
     {
-        panel_ink.SetActive(true);
-        panel_client.SetActive(true);
         target.text = "";
         foreach (char c in text)
         {
@@ -117,19 +212,21 @@ public class DialogueParser : MonoBehaviour
 
     private void LoadCSV() //로드 및 저장 
     {
-        var csvData = CSVReader.Read("dialogue"); // Resources/dialogue.csv
+        var csvData = CSVReader.Read("story1_0_3_0"); // Resources/dialogue.csv // 임시 수정-story1_0_3_0
 
         foreach (var row in csvData)
         {
-            if (!row.ContainsKey("ID") || !row.ContainsKey("화자") || !row.ContainsKey("대사"))
+            if (!row.ContainsKey("keys") || !row.ContainsKey("speaker") || !row.ContainsKey("act") || !row.ContainsKey("dialogue"))
                 continue;
 
-            string index = row["ID"].ToString().Trim();
-            string speaker = row["화자"].ToString().Trim();
-            string dialogue = row["대사"].ToString().Trim();
+            string index = row["keys"].ToString().Trim();
+            string speaker = row["speaker"].ToString().Trim();
+            string animation = row["act"].ToString().Trim();
+            string dialogue = row["dialogue"].ToString().Trim();
+            
 
             if (!allAnswers.ContainsKey(index))
-                allAnswers.Add(index, new string[] { speaker, dialogue });
+                allAnswers.Add(index, new string[] { speaker, dialogue, animation });
         }
         /*TextAsset csvFile = Resources.Load<TextAsset>("dialogue");
         string[] lines = csvFile.text.Split('\n');
