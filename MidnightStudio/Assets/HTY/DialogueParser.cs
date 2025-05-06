@@ -55,7 +55,7 @@ public class DialogueParser : MonoBehaviour
         panel_client_production.Destroy_Client_Panel();
         line_production.Line_align();
 
-        StartCoroutine(ShowDialogueByPrefix("story1_0_3_0")); // dialogIndex 값을 불러오는 장치(동시에 글씨 생성 장치) // 임시 값 설정
+        // StartCoroutine(ShowDialogueByPrefix("story1_0_3_0")); // dialogIndex 값을 불러오는 장치(동시에 글씨 생성 장치) // 임시 값 설정
     }
 
     IEnumerator ShowDialogueByPrefix(string prefix)
