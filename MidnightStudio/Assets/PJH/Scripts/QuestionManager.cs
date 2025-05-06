@@ -8,12 +8,14 @@ using UnityEngine.UI;
 
 public class QuestionManager : MonoBehaviour
 {
+    public TextBackground[] background = new TextBackground[3];
+    private bool canClick = true;
     public DialogueParser parser;
     public GameObject reroll;
-    public List<GameObject> arrow = new List<GameObject>();
+    public List<GameObject> questionBox = new List<GameObject>();
     private string sceneIndex;
     public List<Image> scene = new List<Image>();
-    public List<TMP_Text> questionText = new List<TMP_Text>();
+    public static List<TMP_Text> questionText = new List<TMP_Text>();
     public static string dialogIndex;
     private List<Dictionary<string, object>> QuestionDictionary;
     // 씬마다 선택된 질문들을 저장
@@ -86,6 +88,7 @@ public class QuestionManager : MonoBehaviour
                 questionText[i].text = questionData["question"].ToString();
             }
         }
+        questionShow();
     }
 
 
@@ -115,19 +118,26 @@ public class QuestionManager : MonoBehaviour
     }
     public void OnQuestionClicked(int index)
     {
-        nextIndex(index);  // dialogTrue 설정
-        textOff();         // 모든 질문 비활성화
-        sceneOff(int.Parse(sceneIndex));
-        arrowOff();
-        rerollOff();
-        Debug.Log("대화시스템");
-        Debug.Log(dialogIndex);
-        if (parser == null)
+        if(canClick)
         {
-            Debug.LogError("DialogueParser가 할당되지 않았습니다! Inspector에서 연결해 주세요.");
-            return;
+            nextIndex(index);  // dialogTrue 설정
+            textOff();         // 모든 질문 비활성화
+            sceneOff(int.Parse(sceneIndex));
+            questionBoxOff();
+            rerollOff();
+            Debug.Log("대화시스템");
+            Debug.Log(dialogIndex);
+            if (parser == null)
+            {
+                Debug.LogError("DialogueParser가 할당되지 않았습니다! Inspector에서 연결해 주세요.");
+                return;
+            }
+            canClick = false;
+            questionHide();
+            parser.AnswerToQuestion(dialogIndex);
+
         }
-        parser.AnswerToQuestion(dialogIndex);
+
     }
     public void nextIndex(int index)
     {
@@ -166,14 +176,13 @@ public class QuestionManager : MonoBehaviour
     public void rerollOff() {
         reroll.SetActive(false);
     }
-    public void arrowOff()
-    {
-        foreach (GameObject obj in arrow)
+
+    public void questionBoxOff() {
+        foreach (GameObject obj in questionBox)
         {
             obj.SetActive(false);
         }
     }
-
     public void textOff()
     {
         foreach (TMP_Text text in questionText)
@@ -183,6 +192,7 @@ public class QuestionManager : MonoBehaviour
             
         }
     }
+    
     public void allOn() {
         foreach (TMP_Text text in questionText)
         {
@@ -193,6 +203,24 @@ public class QuestionManager : MonoBehaviour
         {
             scene[i].gameObject.SetActive(true);
         }
+        foreach (GameObject obj in questionBox)
+        {
+            obj.SetActive(true);
+        }
+        canClick = true;
     }
-
+    public void questionHide() 
+    {
+        for(int i = 0; i < 3; i++)
+        {
+            background[i].hide();
+        }
+    }
+    public void questionShow() 
+    {
+        for(int i = 0; i < 3; i++)
+        {
+            background[i].show();
+        }
+    }
 }
