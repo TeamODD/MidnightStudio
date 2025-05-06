@@ -19,4 +19,9 @@ public class Character_client_production : MonoBehaviour
     {
         ui_production.Move("Smooth", 0.2f, "x", clientRect.anchoredPosition.x, 4.3f);
     }
+
+    public void Alpha_Client()
+    {
+        ui_production.Alpha("Instant", 0.1f, 1, 0);
+    }
 }

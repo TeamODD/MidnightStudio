@@ -36,9 +36,10 @@ public class DialogueParser : MonoBehaviour
 
     public void AnswerToQuestion(string key) {
         StartCoroutine(ShowDialogueByPrefix(key));
+
     }
 
-    public IEnumerator delayQuestion(TMP_Text target, string text)
+public IEnumerator delayQuestion(TMP_Text target, string text)
     {
         target.text = "";
         foreach (char c in text)
@@ -54,6 +55,8 @@ public class DialogueParser : MonoBehaviour
         panel_ink_production.Destroy_Ink_Panel();
         panel_client_production.Destroy_Client_Panel();
         line_production.Line_align();
+        character_client_production.Alpha_Client();
+        character_ink_production.Alpha_Ink();
 
         // StartCoroutine(ShowDialogueByPrefix("story1_0_3_0")); // dialogIndex 값을 불러오는 장치(동시에 글씨 생성 장치) // 임시 값 설정
     }

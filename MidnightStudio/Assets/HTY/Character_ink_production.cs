@@ -13,4 +13,9 @@ public class Character_ink_production : MonoBehaviour
     {
         ui_production.Move("Smooth", 0.2f, "x", inkRect.anchoredPosition.x, -7.12f);
     }
+
+    public void Alpha_Ink()
+    {
+        ui_production.Alpha("Instant", 0.1f,1,0);
+    }
 }
