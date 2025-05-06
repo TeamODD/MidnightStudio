@@ -8,7 +8,11 @@ using UnityEngine.UI;
 
 public class QuestionManager : MonoBehaviour
 {
+    public SceneFader sceneFader;
     public List<GameObject> arrowList = new List<GameObject>();
+    public List<GameObject> circleList = new List<GameObject>();
+
+
     public TextBackground[] background = new TextBackground[3];
     private bool canClick = true;
     public DialogueParser parser;
@@ -29,6 +33,17 @@ public class QuestionManager : MonoBehaviour
 
     void Awake()
     {
+        // 자동으로 중복 EventSystem 제거
+        EventSystem[] systems = FindObjectsOfType<EventSystem>();
+        if (systems.Length > 1)
+        {
+            // 자신이 중복일 경우 제거
+            if (systems[0] != this.GetComponent<EventSystem>())
+            {
+                Destroy(this.gameObject);
+            }
+        }
+
         QuestionDictionary = CSVReader.Read("story1_question");
         for (var i = 0; i < QuestionDictionary.Count; i++)
         {
@@ -95,6 +110,12 @@ public class QuestionManager : MonoBehaviour
 
     void Start()
     {
+        // 시작하자마자 페이드 인
+        if (sceneFader != null)
+        {
+            sceneFader.FadeInNow();
+        }
+
         sceneIndex = "0";
         questionMaker();
     }
@@ -125,6 +146,7 @@ public class QuestionManager : MonoBehaviour
             textOff();         // 모든 질문 비활성화
             sceneOff(int.Parse(sceneIndex));
             questionArrowOff();
+            questionCircleOff();
             rerollOff();
             Debug.Log("대화시스템");
             Debug.Log(dialogIndex);
@@ -192,6 +214,21 @@ public class QuestionManager : MonoBehaviour
             obj.SetActive(true);
         }
     }
+
+    public void questionCircleOff()
+    {
+        foreach (GameObject obj in circleList)
+        {
+            obj.SetActive(false);
+        }
+    }
+    public void questionCircleOn()
+    {
+        foreach (GameObject obj in circleList)
+        {
+            obj.SetActive(true);
+        }
+    }
     public void textOff()
     {
         foreach (TMP_Text text in questionText)
@@ -217,6 +254,7 @@ public class QuestionManager : MonoBehaviour
             obj.SetActive(true);
         }
         questionArrowOn();
+        questionCircleOn();
         canClick = true;
     }
     public void questionHide() 

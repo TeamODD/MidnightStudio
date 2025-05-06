@@ -36,7 +36,7 @@ public class SynopsisManager : MonoBehaviour
         if (canProceed && Input.GetKeyDown(KeyCode.Return))
         {
             //SceneManager.LoadScene("MainGame");
-            sceneFader.FadeToSceneAdditive("MainGame");
+            sceneFader.FadeToSceneAdditive("main");
         }
     }
 }
