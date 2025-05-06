@@ -15,7 +15,7 @@ public class QuestionManager : MonoBehaviour
     public List<GameObject> questionBox = new List<GameObject>();
     private string sceneIndex;
     public List<Image> scene = new List<Image>();
-    public static List<TMP_Text> questionText = new List<TMP_Text>();
+    public List<TMP_Text> questionText = new List<TMP_Text>();
     public static string dialogIndex;
     private List<Dictionary<string, object>> QuestionDictionary;
     // 씬마다 선택된 질문들을 저장
