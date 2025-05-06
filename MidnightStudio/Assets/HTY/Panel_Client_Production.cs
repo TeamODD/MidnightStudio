@@ -3,6 +3,7 @@ using UnityEngine;
 public class Panel_Client_Production : MonoBehaviour
 {
     public UI_Production ui_production;
+    public RectTransform PanelClientRect;
 
     public void Hide_Client_Panel()
     {
@@ -21,6 +22,15 @@ public class Panel_Client_Production : MonoBehaviour
     public void Move_Client_Panel()
     {
         ui_production.Move("Smooth", 0.5f, "x", 359f, 259f);
+    }
+    public void Move_Client_Panel_Right()
+    {
+        ui_production.Move("Smooth", 0.2f, "x", PanelClientRect.anchoredPosition.x, 560f);
+    }
+
+    public void Move_Client_Panel_Left()
+    {
+        ui_production.Move("Smooth", 0.2f, "x", PanelClientRect.anchoredPosition.x, -10f);
     }
     public void Destroy_Client_Panel()
     {

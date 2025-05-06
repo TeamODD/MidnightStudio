@@ -8,7 +8,6 @@ using System.Linq.Expressions;
 public class DialogueParser : MonoBehaviour
 {
     private Dictionary<string, string[]> allAnswers = new Dictionary<string, string[]>();
-    public Dictionary<string, Sprite> actToSpriteMap = new Dictionary<string, Sprite>();
 
     //public QuestionManager QuestionManager;
     public GameObject panel_ink;
@@ -24,10 +23,16 @@ public class DialogueParser : MonoBehaviour
 
     public Panel_Ink_Production panel_ink_production;
     public Panel_Client_Production panel_client_production;
+    public Line_Production line_production;
+    public Character_ink_production character_ink_production;
+    public Character_client_production character_client_production;
+
 
     private float delay = 0.06f; //글자가 움직이는 속도
     private bool Show_Ink_Panel_check = false;
     private bool Show_Client_Panel_check = false;
+    private bool Line_Client_check = false;
+    private bool Line_ink_check = false;
 
     public void AnswerToQuestion(string key) {
         StartCoroutine(ShowDialogueByPrefix(key));
@@ -48,13 +53,10 @@ public class DialogueParser : MonoBehaviour
         LoadCSV();
         panel_ink_production.Destroy_Ink_Panel();
         panel_client_production.Destroy_Client_Panel();
-
-      
+        line_production.Line_align();
 
         StartCoroutine(ShowDialogueByPrefix("story1_0_3_0")); // dialogIndex 값을 불러오는 장치(동시에 글씨 생성 장치) // 임시 값 설정
     }
-
-    
 
     IEnumerator ShowDialogueByPrefix(string prefix)
     {
@@ -62,10 +64,7 @@ public class DialogueParser : MonoBehaviour
         foreach (string key in keys)
         {
             yield return StartCoroutine(ShowDialogueByIndex(key));
-         
             yield return new WaitForSeconds(0.5f); // 시간 지연
-
-            //내 생각엔 여기다가 그림 바꿀 수 있도록 하면 좋을 듯??
         }
 
         new WaitForSeconds(2f);
@@ -112,16 +111,49 @@ public class DialogueParser : MonoBehaviour
             if (Show_Ink_Panel_check == false) 
             {
                 panel_ink_production.Move_Ink_Panel(); //move
+
                 panel_ink_production.Show_Ink_Panel(); //글자가 처음 나타날 때 생기는 효과 
+
+                line_production.Line_Ink(); // 가운데 라인 움직임
+
+                character_ink_production.MoveRight_Ink();
+
+                character_client_production.MoveRight_Client();
+
+                panel_ink_production.Move_Ink_Panel_Right();
+
+                panel_client_production.Move_Client_Panel_Right();
+
+                panel_ink_production.Move_Ink_Panel_Right();
+
+                Line_ink_check = true;
                 name_box_ink.SetNativeSize();
                 target = targetText_ink;
                 image = name_box_ink;
                 ApplyActImage(speaker, act);
                 Show_Ink_Panel_check = true;
             }
-            else {
-                target = targetText_ink;
+            else { 
+                target = targetText_ink; 
                 ApplyActImage(speaker, act);
+                if (!Line_Client_check && Line_ink_check) //라인 체크 및 움직이기
+                {
+                    line_production.Line_Ink();
+
+                    character_ink_production.MoveRight_Ink();
+
+                    character_client_production.MoveRight_Client();
+
+                    panel_ink_production.Move_Ink_Panel_Right();
+
+                    panel_client_production.Move_Client_Panel_Right();
+
+                    panel_ink_production.Move_Ink_Panel_Right();
+
+                    Line_ink_check = false;
+                    Line_Client_check = true;
+                }
+
             }
             
         }
@@ -129,8 +161,21 @@ public class DialogueParser : MonoBehaviour
         {
             if (Show_Client_Panel_check == false)
             {
+                
                 panel_client_production.Move_Client_Panel();  //move
+
                 panel_client_production.Show_Client_Panel(); //글자가 처음 나타날 때 생기는 효과
+
+                line_production.Line_Client();
+
+                character_ink_production.MoveLeft_Ink();
+
+                character_client_production.MoveLeft_Client();
+
+                panel_client_production.Move_Client_Panel_Left();
+
+                panel_ink_production.Move_Ink_Panel_Left();
+
                 name_box_client.SetNativeSize();
                 target = targetText_client;
                 image = name_box_client;
@@ -142,6 +187,22 @@ public class DialogueParser : MonoBehaviour
             {
                 target = targetText_client;
                 ApplyActImage(speaker, act);
+                if (Line_Client_check && !Line_ink_check) { //라인 체크 및 움직이기
+                    line_production.Line_Client();
+
+                    character_ink_production.MoveLeft_Ink();
+
+                    character_client_production.MoveLeft_Client();
+
+                    panel_client_production.Move_Client_Panel_Left();
+
+                    panel_ink_production.Move_Ink_Panel_Left();
+
+                    Line_Client_check = false;
+                    Line_ink_check = true;
+                }
+                    
+                
             }
             
         }
