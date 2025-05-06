@@ -3,6 +3,7 @@ using UnityEngine;
 public class Panel_Ink_Production : MonoBehaviour
 {
     public UI_Production ui_production;
+    public RectTransform PanelInkRect;
 
     public void Hide_Ink_Panel()
     {
@@ -17,6 +18,16 @@ public class Panel_Ink_Production : MonoBehaviour
     public void Move_Ink_Panel()
     {
         ui_production.Move("Smooth", 0.5f, "x", -180f, -80f);
+    }
+
+    public void Move_Ink_Panel_Right()
+    {
+        ui_production.Move("Smooth", 0.2f, "x", PanelInkRect.anchoredPosition.x, 80f);
+    }
+
+    public void Move_Ink_Panel_Left()
+    {
+        ui_production.Move("Smooth", 0.2f, "x", PanelInkRect.anchoredPosition.x, -465f);
     }
 
     public void Destroy_Ink_Panel() {
