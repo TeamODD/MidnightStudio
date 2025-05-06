@@ -9,7 +9,7 @@ public class DialogueParser : MonoBehaviour
 {
     private Dictionary<string, string[]> allAnswers = new Dictionary<string, string[]>();
 
-    //public QuestionManager QuestionManager;
+    public QuestionManager QuestionManager;
     public GameObject panel_ink;
     public GameObject panel_client;
 
@@ -28,11 +28,11 @@ public class DialogueParser : MonoBehaviour
     public Character_client_production character_client_production;
 
 
-    private float delay = 0.06f; //글자가 움직이는 속도
-    private bool Show_Ink_Panel_check = false;
-    private bool Show_Client_Panel_check = false;
-    private bool Line_Client_check = false;
-    private bool Line_ink_check = false;
+    public float delay = 0.06f; //글자가 움직이는 속도
+    public bool Show_Ink_Panel_check = false;
+    public bool Show_Client_Panel_check = false;
+    public bool Line_Client_check = false;
+    public bool Line_ink_check = false;
 
     public void AnswerToQuestion(string key) {
         StartCoroutine(ShowDialogueByPrefix(key));
@@ -52,13 +52,22 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
     void Start()
     {
         LoadCSV();
+        init();
+
+        Show_Ink_Panel_check = false;
+        Show_Client_Panel_check = false;
+        Line_Client_check = false;
+        Line_ink_check = false;
+    // StartCoroutine(ShowDialogueByPrefix("story1_0_3_0")); // dialogIndex 값을 불러오는 장치(동시에 글씨 생성 장치) // 임시 값 설정
+    }
+
+    private void init()
+    {
         panel_ink_production.Destroy_Ink_Panel();
         panel_client_production.Destroy_Client_Panel();
         line_production.Line_align();
         character_client_production.Alpha_Client();
         character_ink_production.Alpha_Ink();
-
-        // StartCoroutine(ShowDialogueByPrefix("story1_0_3_0")); // dialogIndex 값을 불러오는 장치(동시에 글씨 생성 장치) // 임시 값 설정
     }
 
     IEnumerator ShowDialogueByPrefix(string prefix)
@@ -78,9 +87,9 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
         //글자가 처음 사라질 때를 체크하는 변수 초기화
         Show_Client_Panel_check = false;
 
-        //targetText_ink.text = "";
-        //targetText_client.text = "";
-        //QuestionManager.allOn();
+        targetText_ink.text = "";
+        targetText_client.text = "";
+        QuestionManager.allOn();
     }
 
     private List<string> GetDialogueIndexesByPrefix(string prefix)
@@ -108,7 +117,7 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
 
         TMP_Text target = null;
         Image image = null;
-
+        Debug.Log("실행");
         if (speaker.Contains("ink"))
         {
             if (Show_Ink_Panel_check == false) 
@@ -132,6 +141,7 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
                 Line_ink_check = true;
                 name_box_ink.SetNativeSize();
                 target = targetText_ink;
+                
                 image = name_box_ink;
                 ApplyActImage(speaker, act);
                 Show_Ink_Panel_check = true;
@@ -181,6 +191,7 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
 
                 name_box_client.SetNativeSize();
                 target = targetText_client;
+               
                 image = name_box_client;
                 ApplyActImage(speaker, act);
                 Show_Client_Panel_check = true;
@@ -209,6 +220,11 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
             }
             
         }
+        /*if (target == null)
+        {
+            Debug.LogError("targetText is null! 대사를 출력할 TMP_Text가 연결되어 있지 않습니다.");
+            yield break;
+        }*/
         Debug.Log(index);
         yield return StartCoroutine(TextPrintToTarget(target, line));
     }
@@ -276,7 +292,7 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
 
     private void LoadCSV() //로드 및 저장 
     {
-        var csvData = CSVReader.Read("story1_0_3_0"); // Resources/dialogue.csv // 임시 수정-story1_0_3_0
+        var csvData = CSVReader.Read("dialogue"); // Resources/dialogue.csv // 임시 수정-story1_0_3_0
 
         foreach (var row in csvData)
         {

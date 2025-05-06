@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class QuestionManager : MonoBehaviour
 {
+    public List<GameObject> arrowList = new List<GameObject>();
     public TextBackground[] background = new TextBackground[3];
     private bool canClick = true;
     public DialogueParser parser;
@@ -123,7 +124,7 @@ public class QuestionManager : MonoBehaviour
             nextIndex(index);  // dialogTrue 설정
             textOff();         // 모든 질문 비활성화
             sceneOff(int.Parse(sceneIndex));
-            questionBoxOff();
+            questionArrowOff();
             rerollOff();
             Debug.Log("대화시스템");
             Debug.Log(dialogIndex);
@@ -177,10 +178,17 @@ public class QuestionManager : MonoBehaviour
         reroll.SetActive(false);
     }
 
-    public void questionBoxOff() {
-        foreach (GameObject obj in questionBox)
+    public void questionArrowOff() {
+        foreach (GameObject obj in arrowList)
         {
             obj.SetActive(false);
+        }
+    }
+    public void questionArrowOn()
+    {
+        foreach (GameObject obj in arrowList)
+        {
+            obj.SetActive(true);
         }
     }
     public void textOff()
@@ -207,6 +215,7 @@ public class QuestionManager : MonoBehaviour
         {
             obj.SetActive(true);
         }
+        questionArrowOn();
         canClick = true;
     }
     public void questionHide() 
