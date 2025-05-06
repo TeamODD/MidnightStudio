@@ -149,6 +149,7 @@ public class QuestionManager : MonoBehaviour
         }
 
         string clickedKey = selectedKeys[index];
+        Debug.Log(index);
         Dictionary<string, object> questionData = QuestionDictionary.Find(entry => entry["key"].ToString() == clickedKey);
 
         if (questionData != null)
