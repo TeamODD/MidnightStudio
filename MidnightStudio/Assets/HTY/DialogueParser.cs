@@ -35,6 +35,7 @@ public class DialogueParser : MonoBehaviour
     public bool Line_ink_check = false;
 
     public void AnswerToQuestion(string key) {
+        LoadCSV(key);
         StartCoroutine(ShowDialogueByPrefix(key));
 
     }
@@ -51,7 +52,7 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
 
     void Start()
     {
-        LoadCSV();
+        //LoadCSV();
         init();
 
         Show_Ink_Panel_check = false;
@@ -73,10 +74,22 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
     IEnumerator ShowDialogueByPrefix(string prefix)
     {
         List<string> keys = GetDialogueIndexesByPrefix(prefix);
+        List<string> infoList = new List<string>(); // 정보 누적용
+
         foreach (string key in keys)
         {
             yield return StartCoroutine(ShowDialogueByIndex(key));
             yield return new WaitForSeconds(0.5f); // 시간 지연
+
+            // info가 있다면 리스트에 추가
+            if (allAnswers.ContainsKey(key) && allAnswers[key].Length > 3)
+            {
+                string info = allAnswers[key][3];
+                if (!string.IsNullOrWhiteSpace(info))
+                {
+                    infoList.Add(info);
+                }
+            }
         }
 
         new WaitForSeconds(2f);
@@ -89,7 +102,16 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
 
         targetText_ink.text = "";
         targetText_client.text = "";
-        QuestionManager.allOn();
+
+        //  정보 유무에 따라 알맞은 allOn() 호출
+        if (infoList.Count > 0)
+        {
+            QuestionManager.allOn(infoList);
+        }
+        else
+        {
+            QuestionManager.allOn();
+        }
     }
 
     private List<string> GetDialogueIndexesByPrefix(string prefix)
@@ -290,23 +312,29 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
         }
     }
 
-    private void LoadCSV() //로드 및 저장 
+    private void LoadCSV(string story) //로드 및 저장 
     {
-        var csvData = CSVReader.Read("dialogue"); // Resources/dialogue.csv // 임시 수정-story1_0_3_0
-
+        var csvData = CSVReader.Read(story); // Resources/dialogue.csv // 임시 수정-story1_0_3_0
+        //story1_0_0_0
         foreach (var row in csvData)
         {
-            if (!row.ContainsKey("keys") || !row.ContainsKey("speaker") || !row.ContainsKey("act") || !row.ContainsKey("dialogue"))
+            if (!row.ContainsKey("keys") || !row.ContainsKey("speaker") || !row.ContainsKey("act") || !row.ContainsKey("dialogue") || !row.ContainsKey("information"))
                 continue;
 
             string index = row["keys"].ToString().Trim();
             string speaker = row["speaker"].ToString().Trim();
             string animation = row["act"].ToString().Trim();
             string dialogue = row["dialogue"].ToString().Trim();
-            
+            string information = "";
+            if (row.ContainsKey("information") && row["information"] != null && !string.IsNullOrWhiteSpace(row["information"].ToString()))
+            {
+                information = row["information"].ToString().Trim();
+            }
+
+
 
             if (!allAnswers.ContainsKey(index))
-                allAnswers.Add(index, new string[] { speaker, dialogue, animation });
+                allAnswers.Add(index, new string[] { speaker, dialogue, animation, information });
         }
         /*TextAsset csvFile = Resources.Load<TextAsset>("dialogue");
         string[] lines = csvFile.text.Split('\n');

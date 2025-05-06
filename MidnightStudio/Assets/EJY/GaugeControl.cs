@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class GaugeControl : MonoBehaviour
 {
     public Image gaugebar;
-    private float GAME_OVER_TIME = 80.0f;
+    private float GAME_OVER_TIME = 240.0f;
     public float step_timer = 0.0f;
 
     private bool isEndingTriggered = false; // 중복 호출 방지

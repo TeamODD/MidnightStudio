@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class QuestionManager : MonoBehaviour
 {
     public SceneFader sceneFader;
+    public ScrollViewController scrollViewController;
     public List<GameObject> arrowList = new List<GameObject>();
     public List<GameObject> circleList = new List<GameObject>();
 
@@ -26,7 +27,8 @@ public class QuestionManager : MonoBehaviour
     // 씬마다 선택된 질문들을 저장
     private Dictionary<string, List<string>> sceneToQuestions = new Dictionary<string, List<string>>();
     private List<Coroutine> activeCoroutines = new List<Coroutine>();
-
+    //단서들 저장 리스트
+    private List<string> clueList = new List<string>();
     
     // 현재 세팅된 질문들을 추적하는 리스트
     private List<string> selectedKeys = new List<string>();
@@ -239,7 +241,7 @@ public class QuestionManager : MonoBehaviour
         }
     }
     
-    public void allOn() {
+    public void allOn() { //정보가 없음
         foreach (TMP_Text text in questionText)
         {
             text.gameObject.SetActive(true);
@@ -257,6 +259,18 @@ public class QuestionManager : MonoBehaviour
         questionCircleOn();
         canClick = true;
     }
+    public void allOn(List<string> infoList) //정보가 있음
+    {
+        foreach (string info in infoList)
+        {
+            if (!clueList.Contains(info))
+            {
+                clueList.Add(info); // 중복 제거하고 추가
+            }
+        }
+        scrollViewController.UpdateClueList(clueList);
+        allOn();
+    }
     public void questionHide() 
     {
         for(int i = 0; i < 3; i++)
@@ -270,5 +284,9 @@ public class QuestionManager : MonoBehaviour
         {
             background[i].show();
         }
+    }
+    public List<string> GetClueList()
+    {
+        return new List<string>(clueList); // 복사본 반환
     }
 }
