@@ -22,7 +22,7 @@ public class Panel_Ink_Production : MonoBehaviour
 
     public void Move_Ink_Panel_Right()
     {
-        ui_production.Move("Smooth", 0.2f, "x", PanelInkRect.anchoredPosition.x, 80f);
+        ui_production.Move("Smooth", 0.2f, "x", PanelInkRect.anchoredPosition.x, 220f);
     }
 
     public void Move_Ink_Panel_Left()

@@ -7,7 +7,7 @@ public class Character_ink_production : MonoBehaviour
 
     public void MoveRight_Ink()
     {
-        ui_production.Move("Smooth", 0.2f, "x", inkRect.anchoredPosition.x, -2.76f);
+        ui_production.Move("Smooth", 0.2f, "x", inkRect.anchoredPosition.x, -3.36f);
     }
     public void MoveLeft_Ink()
     {
