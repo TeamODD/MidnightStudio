@@ -100,7 +100,6 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
         //글자가 처음 사라질 때를 체크하는 변수 초기화
         Show_Client_Panel_check = false;
 
-        targetText_ink.text = "";
         targetText_client.text = "";
 
         //  정보 유무에 따라 알맞은 allOn() 호출
