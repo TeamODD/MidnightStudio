@@ -1012,6 +1012,7 @@ GameObject:
   - component: {fileID: 254371744}
   - component: {fileID: 254371743}
   - component: {fileID: 254371742}
+  - component: {fileID: 254371745}
   m_Layer: 5
   m_Name: gauge_bg
   m_TagString: Untagged
@@ -1052,7 +1053,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f29cbd2f62c1ef4cb86c9ca6d7b616f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Gauge: {fileID: 254371743}
   gaugebar: {fileID: 1185600662}
+  ui_Production: {fileID: 254371745}
   step_timer: 0
 --- !u!114 &254371743
 MonoBehaviour:
@@ -1092,6 +1095,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254371740}
   m_CullTransparentMesh: 1
+--- !u!114 &254371745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254371740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8205fd0dc581492428dc2a9c81b166fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &283941381
 GameObject:
   m_ObjectHideFlags: 0
