@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using TreeEditor;
@@ -11,11 +12,10 @@ public class QuestionManager : MonoBehaviour
     public SceneFader sceneFader;
     public ScrollViewController scrollViewController;
     public List<GameObject> arrowList = new List<GameObject>();
-    public List<GameObject> circleList = new List<GameObject>();
-
-
+    public QuestionProduction questionProduction;
+    private string lastScene = "0";
     public TextBackground[] background = new TextBackground[3];
-    private bool canClick = true;
+    public bool canClick = true;
     public DialogueParser parser;
     public GameObject reroll;
     public List<GameObject> questionBox = new List<GameObject>();
@@ -32,6 +32,9 @@ public class QuestionManager : MonoBehaviour
     
     // 현재 세팅된 질문들을 추적하는 리스트
     private List<string> selectedKeys = new List<string>();
+
+    private IEnumerator rerollQuestionSign;
+
 
     void Awake()
     {
@@ -106,7 +109,7 @@ public class QuestionManager : MonoBehaviour
                 questionText[i].text = questionData["question"].ToString();
             }
         }
-        questionShow();
+        questionShow(); 
     }
 
 
@@ -122,6 +125,33 @@ public class QuestionManager : MonoBehaviour
         questionMaker();
     }
 
+    public void rerollQuestion()
+    {
+        if(canClick){
+            canClick = false;
+            if(rerollQuestionSign!= null) 
+            {
+                StopCoroutine(rerollQuestionSign);
+            }
+            rerollQuestionSign = rerollQuestionCoroutine();
+            StartCoroutine(rerollQuestionSign);
+        }
+    }
+    
+
+    private IEnumerator rerollQuestionCoroutine()
+    {
+        questionProduction.objectDisappear();
+        questionArrowOff();
+        questionHide();
+        yield return new WaitForSeconds(0.2f);
+        reload();
+        questionProduction.objectAppear();
+        questionShow();
+        yield return new WaitForSeconds(0.2f);
+        canClick = true;
+    }
+
     public void reload()
     {
         // 현재 sceneIndex에 해당하는 저장된 질문 삭제
@@ -133,6 +163,32 @@ public class QuestionManager : MonoBehaviour
         questionMaker();
     }
 
+    public void changeSceneQuestion(string sceneIndex)
+    {
+        if(canClick && sceneIndex != lastScene){
+            canClick = false;
+            lastScene = sceneIndex;
+            if(rerollQuestionSign!= null) 
+            {
+                StopCoroutine(rerollQuestionSign);
+            }
+            rerollQuestionSign = changeSceneQuestionCoroutine(sceneIndex);
+            StartCoroutine(rerollQuestionSign);
+        }
+    }
+
+    private IEnumerator changeSceneQuestionCoroutine(string sceneIndex)
+    {
+        questionProduction.objectDisappear();
+        questionArrowOff();
+        questionHide();
+        yield return new WaitForSeconds(0.2f);
+        sceneIndexChange(sceneIndex);
+        questionProduction.objectAppear();
+        questionShow();
+        yield return new WaitForSeconds(0.2f);
+        canClick = true;
+    }
 
     public void sceneIndexChange(string sceneIndex)
     {
@@ -145,10 +201,11 @@ public class QuestionManager : MonoBehaviour
         if(canClick)
         {
             nextIndex(index);  // dialogTrue 설정
-            textOff();         // 모든 질문 비활성화
+            questionProduction.objectDisappear();
+            // 모든 질문 비활성화
             sceneOff(int.Parse(sceneIndex));
             questionArrowOff();
-            questionCircleOff();
+        
             rerollOff();
             Debug.Log("대화시스템");
             Debug.Log(dialogIndex);
@@ -160,9 +217,7 @@ public class QuestionManager : MonoBehaviour
             canClick = false;
             questionHide();
             parser.AnswerToQuestion(dialogIndex);
-
         }
-
     }
     public void nextIndex(int index)
     {
@@ -204,48 +259,14 @@ public class QuestionManager : MonoBehaviour
     }
 
     public void questionArrowOff() {
-        foreach (GameObject obj in arrowList)
+        foreach (TMP_Text obj in questionText)
         {
-            obj.SetActive(false);
-        }
-    }
-    public void questionArrowOn()
-    {
-        foreach (GameObject obj in arrowList)
-        {
-            obj.SetActive(true);
+            obj.GetComponent<ArrowAppear>().alphaOnOff(); 
         }
     }
 
-    public void questionCircleOff()
-    {
-        foreach (GameObject obj in circleList)
-        {
-            obj.SetActive(false);
-        }
-    }
-    public void questionCircleOn()
-    {
-        foreach (GameObject obj in circleList)
-        {
-            obj.SetActive(true);
-        }
-    }
-    public void textOff()
-    {
-        foreach (TMP_Text text in questionText)
-        {
-            text.color = Color.black; // 텍스트 색상을 검은색으로 변경
-            text.gameObject.SetActive(false);
-            
-        }
-    }
     
     public void allOn() { //정보가 없음
-        foreach (TMP_Text text in questionText)
-        {
-            text.gameObject.SetActive(true);
-        }
         reroll.SetActive(true);
         for (int i = 0; i < scene.Count; i++)
         {
@@ -255,8 +276,9 @@ public class QuestionManager : MonoBehaviour
         {
             obj.SetActive(true);
         }
-        questionArrowOn();
-        questionCircleOn();
+        reload();
+        questionShow();
+        questionProduction.objectAppear();
         canClick = true;
     }
     public void allOn(List<string> infoList) //정보가 있음

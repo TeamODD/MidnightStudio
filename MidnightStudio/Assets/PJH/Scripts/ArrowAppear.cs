@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 public class ArrowAppear : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public UI_Production Arrow;
+    public CanvasGroup ownAlpha;
+    public QuestionManager questionManager;
 
     public void Start()
     {
@@ -14,14 +16,25 @@ public class ArrowAppear : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        // Arrow.SetActive(true);
-        Arrow.Alpha("Lerp", 0.1f, 0f, 1f);
+        if(questionManager.canClick){
+            Arrow.Alpha("Lerp", 0.1f, 0f, 1f);
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        // Arrow.SetActive(false);
-        Arrow.Alpha("Lerp", 0.1f, 1f, 0f);
+        if(questionManager.canClick){
+            Arrow.Alpha("Lerp", 0.1f, 1f, 0f);
+        }
     }
+    public void alphaOnOff()
+    {
+        if(ownAlpha.alpha != 0)
+        {
+            Arrow.Alpha("Lerp", 0.1f, ownAlpha.alpha, 0f);
+        }
+        
+    } 
+    
 }
 
