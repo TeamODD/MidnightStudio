@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using TMPro;
 using System.Linq.Expressions;
 using UnityEngine.UIElements;
+using Unity.VisualScripting.Antlr3.Runtime;
+using UnityEngine.SceneManagement;
 
 public class DialogueParser : MonoBehaviour
 {
@@ -13,6 +15,7 @@ public class DialogueParser : MonoBehaviour
     public QuestionManager QuestionManager;
     public GameObject panel_ink;
     public GameObject panel_client;
+    public ScrollViewController scroll_controller;
 
     public UnityEngine.UI.Image name_box_ink; //이름 상자
     public UnityEngine.UI.Image name_box_client;
@@ -54,15 +57,26 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
         }
     }
 
+    public void CutProduction()
+    {
+        StartCoroutine(PlayCutsceneThenLoadEnding());
+    }
+
+    private IEnumerator PlayCutsceneThenLoadEnding()
+    {
+        yield return StartCoroutine(GameCutCoroutine());  // 코루틴 종료까지 대기
+        SceneManager.LoadScene("Ending");                     // 이후 씬 전환
+    }
+
     void Start()
     {
         //LoadCSV();
         init();
-        //StartCoroutine(GameStartCoroutine()); //처음 잉크맨이 앉는 장면
+        StartCoroutine(GameStartCoroutine()); //처음 잉크맨이 앉는 장면
         //StartCoroutine(GameEndCoroutine());
-        cut_production.Cut_AlpahSetZero();
         //StartCoroutine(GameCutCoroutine());
-        
+        cut_production.Cut_AlpahSetZero();
+
         Show_Ink_Panel_check = false;
         Show_Client_Panel_check = false;
         Line_Client_check = false;
@@ -134,7 +148,7 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
 
         line_production.Line_align();
   
-        character_client_production.Alpha_Client();
+        //character_client_production.Alpha_Client();
     }
 
     IEnumerator ShowDialogueByPrefix(string prefix)
@@ -153,7 +167,10 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
                 string info = allAnswers[key][3];
                 if (!string.IsNullOrWhiteSpace(info))
                 {
-                    infoList.Add(info);
+                    //infoList.Add(info);
+                    scroll_controller.AddClueToScroll(info);
+                    string currentSceneIndex = QuestionManager.GetCurrentSceneIndex();
+                    QuestionManager.AddClueToImage(currentSceneIndex, info);
                 }
             }
         }

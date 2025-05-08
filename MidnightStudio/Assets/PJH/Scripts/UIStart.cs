@@ -20,6 +20,7 @@ public class UIStart : MonoBehaviour
     public CanvasGroup textCanvasGroup;
     public RectTransform textTransform;
     public List<GameObject> remain = new List<GameObject>();
+    public GaugeControl gauge;
 
     public CountdownText[] countdownTexts = new CountdownText[3];
 
@@ -52,6 +53,7 @@ public class UIStart : MonoBehaviour
 
         // UI 다시 활성화
         EnableUI();
+        gauge.StartGauge();
     }
 
     IEnumerator PlayCountdownSequence()

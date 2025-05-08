@@ -209,7 +209,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f29cbd2f62c1ef4cb86c9ca6d7b616f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Gauge: {fileID: 0}
   gaugebar: {fileID: 1307888391}
+  ui_Production: {fileID: 0}
+  parser: {fileID: 0}
   step_timer: 0
 --- !u!1001 &222108120
 PrefabInstance:
@@ -1023,6 +1026,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Arrow: {fileID: 1613103181}
+  ownAlpha: {fileID: 0}
+  questionManager: {fileID: 0}
 --- !u!114 &745637102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1059,6 +1064,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed2b2af0d811f4926bb77f54293a023a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  tmpText: {fileID: 0}
+  image: {fileID: 0}
 --- !u!1 &809785203
 GameObject:
   m_ObjectHideFlags: 0
@@ -2399,6 +2407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeImage: {fileID: 1177973752}
   fadeDuration: 1
+  OptionfadeDuration: 0.7
 --- !u!114 &1177973752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2742,12 +2751,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebe2b5d9d862348338794ceaa8b89ca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneFader: {fileID: 0}
+  slotManager: {fileID: 0}
+  scrollViewController: {fileID: 0}
+  arrowList: []
+  questionProduction: {fileID: 0}
+  background:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  canClick: 1
   parser: {fileID: 1473637505}
   reroll: {fileID: 863535410}
-  arrow:
-  - {fileID: 1613103181}
-  - {fileID: 809785203}
-  - {fileID: 2016567142}
+  questionBox: []
   scene:
   - {fileID: 495434187}
   - {fileID: 507066855}
@@ -2770,8 +2786,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd78d28d052880f468df27e91fe60461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  QuestionManager: {fileID: 0}
   panel_ink: {fileID: 1627480400}
   panel_client: {fileID: 1090025744}
+  scroll_controller: {fileID: 0}
   name_box_ink: {fileID: 0}
   name_box_client: {fileID: 0}
   targetText_ink: {fileID: 577325005}
@@ -2780,6 +2798,16 @@ MonoBehaviour:
   InkHead: {fileID: 0}
   panel_ink_production: {fileID: 0}
   panel_client_production: {fileID: 0}
+  line_production: {fileID: 0}
+  character_ink_production: {fileID: 0}
+  character_client_production: {fileID: 0}
+  character_ink_panel_production: {fileID: 0}
+  cut_production: {fileID: 0}
+  delay: 0.06
+  Show_Ink_Panel_check: 0
+  Show_Client_Panel_check: 0
+  Line_Client_check: 0
+  Line_ink_check: 0
 --- !u!1 &1613103181
 GameObject:
   m_ObjectHideFlags: 0
@@ -3090,6 +3118,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Arrow: {fileID: 2016567142}
+  ownAlpha: {fileID: 0}
+  questionManager: {fileID: 0}
 --- !u!114 &1852373556 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 727999240970308951, guid: 9bc362a9b52d74af589f24dbb7bb4829, type: 3}
@@ -3113,6 +3143,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed2b2af0d811f4926bb77f54293a023a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  tmpText: {fileID: 0}
+  image: {fileID: 0}
 --- !u!1 &1877098789
 GameObject:
   m_ObjectHideFlags: 0
@@ -3698,6 +3731,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Arrow: {fileID: 0}
+  ownAlpha: {fileID: 0}
+  questionManager: {fileID: 0}
 --- !u!114 &2016567145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3787,6 +3822,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Arrow: {fileID: 809785203}
+  ownAlpha: {fileID: 0}
+  questionManager: {fileID: 0}
 --- !u!114 &2089146211 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 727999240970308951, guid: 9bc362a9b52d74af589f24dbb7bb4829, type: 3}
@@ -3810,6 +3847,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed2b2af0d811f4926bb77f54293a023a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  tmpText: {fileID: 0}
+  image: {fileID: 0}
 --- !u!1 &2112889777 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 917791463058032516, guid: c53f32e2e66594aeaa7df6e10bba60d8, type: 3}

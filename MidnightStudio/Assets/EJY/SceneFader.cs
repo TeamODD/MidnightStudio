@@ -14,7 +14,7 @@ public class SceneFader : MonoBehaviour
 
     /// <summary>
     /// 일반적인 씬 전환 (즉시 LoadScene, 간단한 경우에 사용)
-    /// </summary>
+    /// </summary> 
     public void FadeToScene(string sceneName)
     {
         StartCoroutine(FadeAndLoad(sceneName));
@@ -111,11 +111,16 @@ public class SceneFader : MonoBehaviour
 
     public void FadeOutGray()
     {
+        /*StopAllCoroutines();
+        StartCoroutine(FadeToColor(new Color(0.5f, 0.5f, 0.5f, 0f))); // 투명한 회색*/
         StopAllCoroutines();
-        StartCoroutine(FadeToColor(new Color(0.5f, 0.5f, 0.5f, 0f))); // 투명한 회색
+        StartCoroutine(FadeToColor(
+            new Color(0.5f, 0.5f, 0.5f, 0f),
+            () => fadeImage.color = new Color(0f, 0f, 0f, 0f) // 검정색으로 초기화
+        ));
     }
 
-    private IEnumerator FadeToColor(Color targetColor)
+    private IEnumerator FadeToColor(Color targetColor, System.Action onComplete = null)
     {
         Color startColor = fadeImage.color;
         float t = 0f;
@@ -128,5 +133,7 @@ public class SceneFader : MonoBehaviour
         }
 
         fadeImage.color = targetColor;
+
+        onComplete?.Invoke();
     }
 }

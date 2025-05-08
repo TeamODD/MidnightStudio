@@ -7,7 +7,8 @@ public class GaugeControl : MonoBehaviour
     public Image Gauge;
     public Image gaugebar;
     public UI_Production ui_Production;
-    private float GAME_OVER_TIME = 24.0f;
+    public DialogueParser parser;
+    private float GAME_OVER_TIME = 240.0f;
     public float step_timer = 0.0f;
 
     private bool isEndingTriggered = false; // 중복 호출 방지
@@ -15,9 +16,13 @@ public class GaugeControl : MonoBehaviour
     private bool triggered50 = false;
     private bool triggered75 = false;
 
+    private bool isTimerActive = false; // 타이머 활성 여부
+
     // Update is called once per frame
     void Update()
     {
+        if (!isTimerActive) return;
+
         this.step_timer += Time.deltaTime;
         gaugebar.fillAmount = 1 - (GAME_OVER_TIME - this.step_timer) / GAME_OVER_TIME;
 
@@ -44,7 +49,18 @@ public class GaugeControl : MonoBehaviour
         if (!isEndingTriggered && gaugebar.fillAmount >= 1f)
         {
             isEndingTriggered = true;
-            SceneManager.LoadScene("Ending"); // ← Ending 씬으로 전환
+            parser.CutProduction();
         }
+    }
+
+    public void StartGauge()
+    {
+        isTimerActive = true;
+    }
+
+    // 필요하다면 일시정지도 가능
+    public void PauseGauge()
+    {
+        isTimerActive = false;
     }
 }

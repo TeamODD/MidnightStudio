@@ -29,6 +29,7 @@ public class QuestionManager : MonoBehaviour
     private Dictionary<string, List<string>> sceneToQuestions = new Dictionary<string, List<string>>();
     private List<Coroutine> activeCoroutines = new List<Coroutine>();
     //단서들 저장 리스트
+    private Dictionary<string, List<string>> imageInfoMap = new Dictionary<string, List<string>>();
     private Dictionary<int, Slot> cachedSlots = new Dictionary<int, Slot>();
     private List<string> clueList = new List<string>();
     
@@ -204,6 +205,16 @@ public class QuestionManager : MonoBehaviour
             }
             rerollQuestionSign = changeSceneQuestionCoroutine(sceneIndex);
             StartCoroutine(rerollQuestionSign);
+
+            if (imageInfoMap.ContainsKey(sceneIndex))
+            {
+                scrollViewController.ClearClueList();
+                scrollViewController.UpdateClueList(imageInfoMap[sceneIndex]);
+            }
+            else
+            {
+                scrollViewController.ClearClueList(); // 단서가 없으면 초기화만
+            }
         }
     }
 
@@ -235,8 +246,8 @@ public class QuestionManager : MonoBehaviour
             // 모든 질문 비활성화
             sceneOff(sceneIndex); // 현재 sceneIndex (string)를 전달
             questionArrowOff();
-        
             rerollOff();
+
             Debug.Log("대화시스템");
             Debug.Log(dialogIndex);
             if (parser == null)
@@ -331,6 +342,10 @@ public class QuestionManager : MonoBehaviour
             }
         }
     }
+    public string GetCurrentSceneIndex()
+    {
+        return sceneIndex;
+    }
 
     public void rerollOff() {
         reroll.SetActive(false);
@@ -392,6 +407,20 @@ public class QuestionManager : MonoBehaviour
         scrollViewController.UpdateClueList(clueList);
         allOn();
     }
+    public void AddClueToImage(string sceneIndex, string clue)
+    {
+        if (!imageInfoMap.ContainsKey(sceneIndex))
+        {
+            imageInfoMap[sceneIndex] = new List<string>();
+        }
+
+        if (!imageInfoMap[sceneIndex].Contains(clue))
+        {
+            imageInfoMap[sceneIndex].Add(clue);
+        }
+    }
+    
+
     public void questionHide() 
     {
         for(int i = 0; i < 3; i++)
