@@ -22,6 +22,15 @@ public class Character_client_production : MonoBehaviour
 
     public void Alpha_Client()
     {
-        ui_production.Alpha("Instant", 0.1f, 1, 0);
+        //ui_production.Alpha("Instant", 0.1f, 1f, 0f);
+        SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+        Color color = renderer.color;
+        Color newColor = new Color(color.r, color.g, color.b, 0);
+        renderer.color = newColor;
+    }
+
+    public void Alpha_Client_on()
+    {
+        ui_production.Alpha("Smooth", 0.3f, 0f, 1f);
     }
 }

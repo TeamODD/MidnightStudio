@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 239802fce0aec194a8de281f5bb8bea7
+guid: 34c2dc0d5ed07c0459a3249f3e7951d3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7585712720184607882
-    second: 268_9_0
+      213: 6259075188862405432
+    second: 268_19_0
   - first:
-      213: 4016265430317436600
-    second: 268_9_1
+      213: 2138019821220844335
+    second: 268_19_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -116,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 268_9_0
+      name: 268_19_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a8404c6378dd54960800000000000000
-      internalID: 7585712720184607882
+      spriteID: 83bca96e8b3bcd650800000000000000
+      internalID: 6259075188862405432
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 268_9_1
+      name: 268_19_1
       rect:
         serializedVersion: 2
         x: 606
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8be80c93124acb730800000000000000
-      internalID: 4016265430317436600
+      spriteID: f23dc9e13b5cbad10800000000000000
+      internalID: 2138019821220844335
       vertices: []
       indices: 
       edges: []
@@ -163,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -173,8 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      268_9_0: 7585712720184607882
-      268_9_1: 4016265430317436600
+      268_19_0: 6259075188862405432
+      268_19_1: 2138019821220844335
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using System.Linq.Expressions;
+using UnityEngine.UIElements;
 
 public class DialogueParser : MonoBehaviour
 {
@@ -13,8 +14,8 @@ public class DialogueParser : MonoBehaviour
     public GameObject panel_ink;
     public GameObject panel_client;
 
-    public Image name_box_ink; //이름 상자
-    public Image name_box_client;
+    public UnityEngine.UI.Image name_box_ink; //이름 상자
+    public UnityEngine.UI.Image name_box_client;
     public TMP_Text targetText_ink; 
     public TMP_Text targetText_client;
 
@@ -26,7 +27,10 @@ public class DialogueParser : MonoBehaviour
     public Line_Production line_production;
     public Character_ink_production character_ink_production;
     public Character_client_production character_client_production;
-
+    public Character_ink_panel_production character_ink_panel_production;
+    //public Clapper_production clapper_production;
+    //public Clap_production clap_production;
+    public Cut_production cut_production;
 
     public float delay = 0.06f; //글자가 움직이는 속도
     public bool Show_Ink_Panel_check = false;
@@ -54,7 +58,11 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
     {
         //LoadCSV();
         init();
-
+        //StartCoroutine(GameStartCoroutine()); //처음 잉크맨이 앉는 장면
+        //StartCoroutine(GameEndCoroutine());
+        cut_production.Cut_AlpahSetZero();
+        //StartCoroutine(GameCutCoroutine());
+        
         Show_Ink_Panel_check = false;
         Show_Client_Panel_check = false;
         Line_Client_check = false;
@@ -62,13 +70,71 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
     // StartCoroutine(ShowDialogueByPrefix("story1_0_3_0")); // dialogIndex 값을 불러오는 장치(동시에 글씨 생성 장치) // 임시 값 설정
     }
 
+    IEnumerator GameStartCoroutine() { 
+        character_ink_production.GameStartInkMove(); //다가오는 거 
+        character_ink_panel_production.GameStartInkMove_panel();
+
+        yield return new WaitForSeconds(0.5f);
+        //character_ink_panel_production.GameStartInkRotate_panel();
+
+        //Sprite sprite_stretch = Resources.Load<Sprite>("Ink_Character/ink_stretch"); //사진 불러오기
+        //InkHead.sprite = sprite_stretch;
+        yield return new WaitForSeconds(0.3f);
+        Sprite sprite_walk = Resources.Load<Sprite>("Ink_Character/ink_walk");
+        InkHead.sprite = sprite_walk;
+        character_ink_panel_production.GameStartInkMoveBack();
+
+        
+        
+        yield return new WaitForSeconds(0.1f);
+        character_ink_production.GameStartInkMoveBack();
+        //character_ink_panel_production.GameStartInkRotate_panelBack();
+
+        yield return new WaitForSeconds(0.3f);
+        Sprite sprite_idle = Resources.Load<Sprite>("Ink_Character/ink_idle");
+        InkHead.sprite = sprite_idle;
+
+        yield return new WaitForSeconds(0.3f);
+        character_client_production.Alpha_Client_on();
+
+    }
+
+    //IEnumerator GameEndCoroutine()
+    //{
+    //    clapper_production.ClapperMoveX();
+    //    yield return new WaitForSeconds(0.85f);
+    //    clapper_production.ClapperMoveY();
+    //    yield return new WaitForSeconds(0.57f);
+    //    clapper_production.ClapperRotate();
+    //    yield return new WaitForSeconds(0.15f);
+    //    //clap_production.RotateClap_up();
+    //    yield return new WaitForSeconds(0.3f);
+    //    yield return new WaitForSeconds(0.1f);
+    //    //clap_production.RotateClap_down();
+
+
+    //}
+
+    IEnumerator GameCutCoroutine() {
+        Debug.Log("샌즈");
+
+        
+        yield return new WaitForSeconds(0.01f);
+        cut_production.Cut_AlpahUpdate();
+        yield return new WaitForSeconds(0.1f);
+        cut_production.Cut_AlpahFianl();
+        yield return new WaitForSeconds(2.25f);
+    }
+
     private void init()
     {
         panel_ink_production.Destroy_Ink_Panel();
+
         panel_client_production.Destroy_Client_Panel();
+
         line_production.Line_align();
+  
         character_client_production.Alpha_Client();
-        character_ink_production.Alpha_Ink();
     }
 
     IEnumerator ShowDialogueByPrefix(string prefix)
@@ -137,7 +203,7 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
         string act = allAnswers[index][2];
 
         TMP_Text target = null;
-        Image image = null;
+        UnityEngine.UI.Image image = null;
         Debug.Log("실행");
         if (speaker.Contains("ink"))
         {
@@ -149,7 +215,7 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
 
                 line_production.Line_Ink(); // 가운데 라인 움직임
 
-                character_ink_production.MoveRight_Ink();
+                character_ink_panel_production.MoveRight_Ink();
 
                 character_client_production.MoveRight_Client();
 
@@ -174,7 +240,7 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
                 {
                     line_production.Line_Ink();
 
-                    character_ink_production.MoveRight_Ink();
+                    character_ink_panel_production.MoveRight_Ink();
 
                     character_client_production.MoveRight_Client();
 
@@ -202,7 +268,7 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
 
                 line_production.Line_Client();
 
-                character_ink_production.MoveLeft_Ink();
+                character_ink_panel_production.MoveLeft_Ink();
 
                 character_client_production.MoveLeft_Client();
 
@@ -225,7 +291,7 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
                 if (Line_Client_check && !Line_ink_check) { //라인 체크 및 움직이기
                     line_production.Line_Client();
 
-                    character_ink_production.MoveLeft_Ink();
+                    character_ink_panel_production.MoveLeft_Ink();
 
                     character_client_production.MoveLeft_Client();
 
