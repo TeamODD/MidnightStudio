@@ -10,6 +10,7 @@ using UnityEngine.UI;
 public class QuestionManager : MonoBehaviour
 {
     public SceneFader sceneFader;
+    public SlotManager slotManager; // SlotManager 참조 (Inspector에서 할당)
     public ScrollViewController scrollViewController;
     public List<GameObject> arrowList = new List<GameObject>();
     public QuestionProduction questionProduction;
@@ -28,6 +29,7 @@ public class QuestionManager : MonoBehaviour
     private Dictionary<string, List<string>> sceneToQuestions = new Dictionary<string, List<string>>();
     private List<Coroutine> activeCoroutines = new List<Coroutine>();
     //단서들 저장 리스트
+    private Dictionary<int, Slot> cachedSlots = new Dictionary<int, Slot>();
     private List<string> clueList = new List<string>();
     
     // 현재 세팅된 질문들을 추적하는 리스트
@@ -49,6 +51,13 @@ public class QuestionManager : MonoBehaviour
             }
         }
 
+        // SlotManager 인스턴스 확인 (Inspector에서 할당하는 것을 권장)
+        if (slotManager == null)
+        {
+            slotManager = FindObjectOfType<SlotManager>(); // 최후의 수단으로 찾기
+            if (slotManager == null) Debug.LogError("SlotManager를 찾을 수 없습니다! Inspector에서 QuestionManager에 할당해주세요.");
+        }
+
         QuestionDictionary = CSVReader.Read("story1_question");
         for (var i = 0; i < QuestionDictionary.Count; i++)
         {
@@ -59,6 +68,26 @@ public class QuestionManager : MonoBehaviour
                    );
 
         }
+    }
+    
+    void CacheSlots()
+    {
+        if (cachedSlots.Count > 0 && FindObjectsOfType<Slot>().Length == cachedSlots.Count) return; // 이미 캐시되었고 슬롯 수가 같다면 스킵
+
+        cachedSlots.Clear();
+        Slot[] allSlotsInScene = FindObjectsOfType<Slot>();
+        foreach (Slot slot in allSlotsInScene)
+        {
+            if (!cachedSlots.ContainsKey(slot.slotIndex))
+            {
+                cachedSlots.Add(slot.slotIndex, slot);
+            }
+            else
+            {
+                Debug.LogWarning($"Duplicate slotIndex {slot.slotIndex} found. Slot caching might be incorrect for {slot.gameObject.name} and {cachedSlots[slot.slotIndex].gameObject.name}.", slot.gameObject);
+            }
+        }
+        // Debug.Log($"Slots cached: {cachedSlots.Count}");
     }
 
     void questionMaker()
@@ -122,6 +151,7 @@ public class QuestionManager : MonoBehaviour
         }
 
         sceneIndex = "0";
+        CacheSlots(); // 게임 시작 시 슬롯 정보 캐시
         questionMaker();
     }
 
@@ -203,7 +233,7 @@ public class QuestionManager : MonoBehaviour
             nextIndex(index);  // dialogTrue 설정
             questionProduction.objectDisappear();
             // 모든 질문 비활성화
-            sceneOff(int.Parse(sceneIndex));
+            sceneOff(sceneIndex); // 현재 sceneIndex (string)를 전달
             questionArrowOff();
         
             rerollOff();
@@ -242,14 +272,62 @@ public class QuestionManager : MonoBehaviour
         }
     }
 
-    public void sceneOff(int selectedIndex)
+    public void sceneOff(string currentSceneId)
     {
-        for (int i = 0; i < scene.Count; i++)
+        if (slotManager == null) { Debug.LogError("SlotManager가 QuestionManager에 할당되지 않았습니다."); return; }
+        if (cachedSlots.Count == 0) CacheSlots(); // 슬롯 캐시가 비어있으면 다시 시도
+
+        SceneDrag currentSceneDragObject = null;
+        int currentSceneSlotIndex = -1;
+
+        // 현재 sceneId에 해당하는 SceneDrag 객체와 그것이 담긴 슬롯 인덱스를 찾습니다.
+        for (int i = 0; i < slotManager.totalSlots; i++)
         {
-            // selectedIndex에 해당하는 씬만 제외하고 비활성화
-            if (i != selectedIndex && scene[i] != null)
+            SceneDrag sd = slotManager.GetSceneInSlot(i);
+            if (sd != null && sd.sceneIdentifier == currentSceneId)
             {
-                scene[i].gameObject.SetActive(false);
+                currentSceneDragObject = sd;
+                currentSceneSlotIndex = i;
+                break;
+            }
+        }
+
+        // 현재 씬으로 식별된 SceneDrag 객체가 있다면 활성화 상태를 보장합니다.
+        if (currentSceneDragObject != null)
+        {
+            currentSceneDragObject.gameObject.SetActive(true);
+        }
+
+        // 모든 슬롯을 순회하며 상태를 설정합니다.
+        for (int i = 0; i < slotManager.totalSlots; i++)
+        {
+            Slot slotComponent = cachedSlots.ContainsKey(i) ? cachedSlots[i] : null;
+            if (slotComponent == null) continue; // 캐시된 슬롯이 없으면 건너뜁니다.
+
+            GameObject slotGO = slotComponent.gameObject;
+            CanvasGroup cg = slotGO.GetComponent<CanvasGroup>();
+            if (cg == null) cg = slotGO.AddComponent<CanvasGroup>();
+
+            SceneDrag sceneDragInThisSlot = slotManager.GetSceneInSlot(i);
+
+            if (i == currentSceneSlotIndex) // 현재 씬이 담긴 슬롯인 경우
+            {
+                cg.alpha = 1f; // 불투명
+                cg.interactable = true;
+                cg.blocksRaycasts = true;
+                // currentSceneDragObject가 이미 위에서 활성화되었으므로, sceneDragInThisSlot도 활성 상태일 것입니다.
+                if (sceneDragInThisSlot != null) sceneDragInThisSlot.gameObject.SetActive(true);
+            }
+            else // 다른 슬롯인 경우
+            {
+                cg.alpha = 0f; // 투명 (완전히 안 보이게)
+                cg.interactable = false;
+                cg.blocksRaycasts = false;
+                // 이 슬롯에 다른 씬이 있다면 비활성화합니다.
+                if (sceneDragInThisSlot != null)
+                {
+                    sceneDragInThisSlot.gameObject.SetActive(false);
+                }
             }
         }
     }
@@ -268,10 +346,31 @@ public class QuestionManager : MonoBehaviour
     
     public void allOn() { //정보가 없음
         reroll.SetActive(true);
-        for (int i = 0; i < scene.Count; i++)
+
+        if (slotManager == null) { Debug.LogError("SlotManager가 QuestionManager에 할당되지 않아 allOn을 실행할 수 없습니다."); return; }
+        if (cachedSlots.Count == 0) CacheSlots();
+
+        // 모든 슬롯과 그 안의 SceneDrag 아이템을 활성화하고 불투명하게 만듭니다.
+        for (int i = 0; i < slotManager.totalSlots; i++)
         {
-            scene[i].gameObject.SetActive(true);
+            SceneDrag sceneDragInThisSlot = slotManager.GetSceneInSlot(i);
+            if (sceneDragInThisSlot != null)
+            {
+                sceneDragInThisSlot.gameObject.SetActive(true);
+            }
+
+            Slot slotComponent = cachedSlots.ContainsKey(i) ? cachedSlots[i] : null;
+            if (slotComponent != null)
+            {
+                GameObject slotGO = slotComponent.gameObject;
+                CanvasGroup cg = slotGO.GetComponent<CanvasGroup>();
+                if (cg == null) cg = slotGO.AddComponent<CanvasGroup>();
+                cg.alpha = 1f;
+                cg.interactable = true;
+                cg.blocksRaycasts = true;
+            }
         }
+
         foreach (GameObject obj in questionBox)
         {
             obj.SetActive(true);

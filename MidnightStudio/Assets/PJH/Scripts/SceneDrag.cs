@@ -14,6 +14,9 @@ public class SceneDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     [HideInInspector] public int startSlotIndex = -1; // 드래그 시작 슬롯 인덱스 (-1은 슬롯 외부 또는 초기 상태)
     private RectTransform rectTransform; // RectTransform 캐싱
 
+    // 각 씬을 식별하기 위한 ID (QuestionManager의 sceneIndex와 일치하도록 설정)
+    public string sceneIdentifier;
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         beingDraggedIcon = gameObject;
