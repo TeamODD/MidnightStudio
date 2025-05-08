@@ -10,6 +10,7 @@ public class SceneFader : MonoBehaviour
     [Header("Fade Settings")]
     public Image fadeImage;
     public float fadeDuration = 1f;
+    public float OptionfadeDuration = 0.7f;
 
     /// <summary>
     /// 일반적인 씬 전환 (즉시 LoadScene, 간단한 경우에 사용)
@@ -100,5 +101,32 @@ public class SceneFader : MonoBehaviour
     public void FadeInNow()
     {
         StartCoroutine(FadeIn());
+    }
+
+    public void FadeToGray(float alpha = 0.5f)
+    {
+        StopAllCoroutines(); // 중복 방지
+        StartCoroutine(FadeToColor(new Color(0.5f, 0.5f, 0.5f, alpha))); // 회색
+    }
+
+    public void FadeOutGray()
+    {
+        StopAllCoroutines();
+        StartCoroutine(FadeToColor(new Color(0.5f, 0.5f, 0.5f, 0f))); // 투명한 회색
+    }
+
+    private IEnumerator FadeToColor(Color targetColor)
+    {
+        Color startColor = fadeImage.color;
+        float t = 0f;
+
+        while (t < fadeDuration)
+        {
+            t += Time.deltaTime;
+            fadeImage.color = Color.Lerp(startColor, targetColor, t / fadeDuration);
+            yield return null;
+        }
+
+        fadeImage.color = targetColor;
     }
 }

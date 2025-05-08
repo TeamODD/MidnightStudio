@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -23,15 +24,30 @@ public class ScrollViewController : MonoBehaviour
 
     private void AddClueToScroll(string clueText)
     {
+        if (displayedClues.Contains(clueText)) return;
+
         GameObject newItem = Instantiate(clueItemPrefab, contentParent);
         TMP_Text clueLabel = newItem.GetComponent<TMP_Text>();
         if (clueLabel != null)
         {
-            clueLabel.text = clueText;
+            StartCoroutine(TypeText(clueLabel, clueText));
+            displayedClues.Add(clueText); // 중복 방지 등록
         }
         else
         {
             Debug.LogWarning("Clue item prefab에 TMP_Text 컴포넌트가 없습니다.");
+        }
+    }
+
+    private IEnumerator TypeText(TMP_Text label, string fullText)
+    {
+        label.text = fullText;
+        label.maxVisibleCharacters = 0;
+
+        for (int i = 0; i <= fullText.Length; i++)
+        {
+            label.maxVisibleCharacters = i;
+            yield return new WaitForSeconds(0.03f); // 속도 조절 (0.03초마다 한 글자)
         }
     }
 }
