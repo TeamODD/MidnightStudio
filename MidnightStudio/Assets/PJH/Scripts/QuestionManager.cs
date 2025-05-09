@@ -13,6 +13,7 @@ public class QuestionManager : MonoBehaviour
     public SlotManager slotManager; // SlotManager 참조 (Inspector에서 할당)
     public ScrollViewController scrollViewController;
     public List<GameObject> arrowList = new List<GameObject>();
+    public List<GameObject> scenearrowList = new List<GameObject>();
     public QuestionProduction questionProduction;
     private string lastScene = "0";
     public TextBackground[] background = new TextBackground[3];
@@ -199,12 +200,17 @@ public class QuestionManager : MonoBehaviour
         if(canClick && sceneIndex != lastScene){
             canClick = false;
             lastScene = sceneIndex;
+
             if(rerollQuestionSign!= null) 
             {
                 StopCoroutine(rerollQuestionSign);
             }
+
             rerollQuestionSign = changeSceneQuestionCoroutine(sceneIndex);
             StartCoroutine(rerollQuestionSign);
+
+            // sceneIndex 기반으로 arrow 활성화
+            ActivateArrowForScene(sceneIndex);
 
             if (imageInfoMap.ContainsKey(sceneIndex))
             {
@@ -215,6 +221,39 @@ public class QuestionManager : MonoBehaviour
             {
                 scrollViewController.ClearClueList(); // 단서가 없으면 초기화만
             }
+        }
+    }
+    void ActivateArrowForScene(string sceneIdentifier)
+    {
+        // 슬롯 총 수만큼 반복
+        for (int i = 0; i < scenearrowList.Count; i++)
+        {
+            var scene = slotManager.GetSceneInSlot(i);
+
+            // 해당 슬롯에 scene이 있고, sceneIdentifier가 일치하면 그 위치에 화살표 표시
+            if (scene != null && scene.sceneIdentifier == sceneIdentifier)
+            {
+                scenearrowList[i].SetActive(true);
+            }
+            else
+            {
+                scenearrowList[i].SetActive(false);
+            }
+        }
+        /*for (int i = 0; i < scenearrowList.Count; i++)
+        {
+            if (i == int.Parse(index))
+                scenearrowList[i].SetActive(true);
+            else
+                scenearrowList[i].SetActive(false);
+        }*/
+    }
+
+    public void ActivateArrowBySlotIndex(int slotIndex)
+    {
+        for (int i = 0; i < scenearrowList.Count; i++)
+        {
+            scenearrowList[i].SetActive(i == slotIndex);
         }
     }
 

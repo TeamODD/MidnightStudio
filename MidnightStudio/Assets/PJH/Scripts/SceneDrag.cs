@@ -62,13 +62,30 @@ public class SceneDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     {
         beingDraggedIcon = null;
         GetComponent<CanvasGroup>().blocksRaycasts = true;
-        if(transform.parent == onDragParent)
+
+        // 새로운 슬롯 감지 시도
+        Slot newSlot = GetComponentInParent<Slot>();
+
+        if (transform.parent == onDragParent)
         {
             transform.position = startPosition;
             transform.SetParent(startParent);
             rectTransform.sizeDelta = startSizeDelta; // 원래 크기로 복원하는 코드 추가
             // SlotManager 업데이트: 원래 슬롯으로 복원
             if (startSlotIndex != -1) SlotManager.Instance.UpdateSlot(startSlotIndex, this);
+        }
+        else if (newSlot != null)
+        {
+            // 새로운 슬롯에 배치된 경우: SlotManager 업데이트
+            SlotManager.Instance.UpdateSlot(newSlot.slotIndex, this);
+
+            // 화살표 업데이트 (QuestionManager 호출)
+            QuestionManager qm = FindObjectOfType<QuestionManager>();
+            if (qm != null)
+            {
+                qm.changeSceneQuestion(sceneIdentifier);
+                qm.ActivateArrowBySlotIndex(newSlot.slotIndex);
+            }
         }
         if (SlotManager.Instance != null) SlotManager.Instance.PrintSlotStatus();
     }
