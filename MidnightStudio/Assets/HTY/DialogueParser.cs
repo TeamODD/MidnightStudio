@@ -46,6 +46,7 @@ public class DialogueParser : MonoBehaviour
         StartCoroutine(ShowDialogueByPrefix(key));
 
     }
+    
 
 public IEnumerator delayQuestion(TMP_Text target, string text)
     {
