@@ -7,6 +7,7 @@ public class MoviePart_Manager : MonoBehaviour
     public FirstScene_Manager FirstScene;
     public SecondScene_Manager SecondScene;
     public ThirdScene_Manager ThirdScene;
+    public FourthScene_Manager FourthScene;
     public bool IsTest = false;
     private IEnumerator Total_Production_Start_Sign;
 
@@ -15,6 +16,7 @@ public class MoviePart_Manager : MonoBehaviour
         FirstScene.gameObject.SetActive(false);
         SecondScene.gameObject.SetActive(false);
         ThirdScene.gameObject.SetActive(false);
+        FourthScene.gameObject.SetActive(false);
 
         if (IsTest == true) { Production_Start(); }
     }
@@ -43,7 +45,7 @@ public class MoviePart_Manager : MonoBehaviour
                     FirstScene.gameObject.SetActive(false);
                     break;
                 case 1:
-                    Debug.Log("2nd Scene - 2nd Cut Start.");
+                    Debug.Log("2nd Scene - 1st Cut Start.");
                     SecondScene.gameObject.SetActive(true);
                     SecondScene.Production_Start();
                     yield return new WaitForSeconds(SecondScene.Cut_1st.Time);
@@ -51,12 +53,20 @@ public class MoviePart_Manager : MonoBehaviour
                     SecondScene.gameObject.SetActive(false);
                     break;
                 case 2:
-                    Debug.Log("3rd Scene - 3rd Cut Start.");
+                    Debug.Log("3rd Scene - 1st Cut Start.");
                     ThirdScene.gameObject.SetActive(true);
                     ThirdScene.Production_Start();
                     yield return new WaitForSeconds(ThirdScene.Cut_1st.Time);
 
-                    //ThirdScene.gameObject.SetActive(false);
+                    ThirdScene.gameObject.SetActive(false);
+                    break;
+                case 3:
+                    Debug.Log("4th Scene - 1st Cut Start.");
+                    FourthScene.gameObject.SetActive(true);
+                    FourthScene.Production_Start();
+                    yield return new WaitForSeconds(FourthScene.Cut_1st.Time);
+
+                    FourthScene.gameObject.SetActive(false);
                     break;
             }
         }
