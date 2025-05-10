@@ -31,7 +31,7 @@ public class SecondScene_1stCut : MonoBehaviour
     {
         // * 액션.
         Enemy_SR.sprite = Enemy[0];
-        Obj[0].Position("Smooth", 2f, new Vector3(-1.6f, -0.25f, 0f), new Vector3(-1.4f, 0f, 0f));
+        Obj[0].Position("Smooth", 2f, new Vector3(-1.6f, -0.25f, -1f), new Vector3(-1.4f, 0f, -1f));
         Obj[0].Rotation("Smooth", 2f, new Vector3(0f, 0f, 4f), new Vector3(0f, 0f, 0f));
         Obj[0].Alpha("Instant", 0f, 0f, 1f);
         yield return new WaitForSeconds(0.25f);
