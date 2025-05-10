@@ -22,10 +22,10 @@ public class SynopsisManager : MonoBehaviour
         NextImg.SetActive(false);
 
         // 일정 시간 후 NextImg를 켜고 입력 허용
-        Invoke(nameof(EnableProceed), waitTime);
+        //Invoke(nameof(EnableProceed), waitTime);
     }
 
-    private void EnableProceed()
+    public void EnableProceed()
     {
         NextImg.SetActive(true);
         canProceed = true;
