@@ -13,6 +13,9 @@ public class FirstScene_Manager : MonoBehaviour
 
     private void Start()
     {
+        Cut_1st.gameObject.SetActive(false);
+        Cut_2nd.gameObject.SetActive(false);
+
         if (IsTest == true) { Production_Start(); }
     }
 
@@ -29,6 +32,8 @@ public class FirstScene_Manager : MonoBehaviour
     {
         // # 1stCut 시작.
         Debug.Log("1st Cut Start.");
+        yield return null;
+
         Cut_1st.gameObject.SetActive(true);
         Cut_1st.Production_Start();
         yield return new WaitForSeconds(Cut_1st.Time);
@@ -37,6 +42,8 @@ public class FirstScene_Manager : MonoBehaviour
 
         // # 2ndCut 시작.
         Debug.Log("2nd Cut Start.");
+        yield return null;
+        
         Cut_2nd.gameObject.SetActive(true);
         Cut_2nd.Production_Start();
         yield return new WaitForSeconds(Cut_2nd.Time);

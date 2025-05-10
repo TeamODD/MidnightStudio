@@ -1,12 +1,13 @@
 using System.Collections;
 using UnityEngine;
 
-public class SecondScene_Manager : MonoBehaviour
+public class ThirdScene_Manager : MonoBehaviour
 {
-    public SecondScene_1stCut Cut_1st;
+    public UI_Production Fade_Panel;
+    public ThirdScene_1stCut Cut_1st;
     public bool IsTest = false;
+    public MoviePart_Shake Shake;
     private IEnumerator Total_Production_Start_Sign;
-
     private void Start()
     {
         Cut_1st.gameObject.SetActive(false);
@@ -28,7 +29,7 @@ public class SecondScene_Manager : MonoBehaviour
         // # 1stCut 시작.
         Debug.Log("1st Cut Start.");
         yield return null;
-
+        
         Cut_1st.gameObject.SetActive(true);
         Cut_1st.Production_Start();
         yield return new WaitForSeconds(Cut_1st.Time);

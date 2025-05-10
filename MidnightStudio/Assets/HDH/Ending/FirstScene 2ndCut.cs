@@ -39,7 +39,7 @@ public class FirstScene_2ndCut : MonoBehaviour
 
         if (Production_Protagonist_Sign != null) { StopCoroutine(Production_Protagonist_Sign); }
         Obj[0].Scale("Smooth", 1.5f, Obj[0].GetComponent<RectTransform>().localScale, new Vector3(1.13f, 1.13f, 0f));
-        Obj[1].Position("Smooth", 0.45f, Obj[1].GetComponent<RectTransform>().anchoredPosition, new Vector3(2.4f, -1f, 0f));
+        Obj[1].Position("Smooth", 0.45f, Obj[1].GetComponent<RectTransform>().anchoredPosition, new Vector3(2.4f, -1f, -1f));
         
         Obj[2].Position("Lerp", 0.2f, new Vector3(0f, 0f, 0f), new Vector3(-0.05f, 0.05f, 0f));
         Obj[2].Rotation("Lerp", 0.2f, new Vector3(0f, 0f, 0f), new Vector3(0f, 0f, 5f));
@@ -67,18 +67,18 @@ public class FirstScene_2ndCut : MonoBehaviour
         while (true)
         {   
             // * 오른발!
-            Obj[1].Position("Lerp", 0.2f, new Vector3(2.4f, -1f, 0f), new Vector3(2.1f, -1.1f, 0f));
+            Obj[1].Position("Lerp", 0.2f, new Vector3(2.4f, -1f, -1f), new Vector3(2.1f, -1.1f, -1f));
             Obj[1].Rotation("Lerp", 0.2f, new Vector3(0f, 0f, 0f), new Vector3(0f, 0f, 0.5f));
             yield return new WaitForSeconds(0.2f);
-            Obj[1].Position("Smooth", 0.6f, new Vector3(2.1f, -1.1f, 0f), new Vector3(2.4f, -1f, 0f));
+            Obj[1].Position("Smooth", 0.6f, new Vector3(2.1f, -1.1f, -1f), new Vector3(2.4f, -1f, -1f));
             Obj[1].Rotation("Smooth", 0.6f, new Vector3(0f, 0f, 0.5f), new Vector3(0f, 0f, 0f));
             yield return new WaitForSeconds(0.6f);
 
             // * 왼발!
-            Obj[1].Position("Lerp", 0.2f, new Vector3(2.4f, -1f, 0f), new Vector3(2.65f, -1.1f, 0f));
+            Obj[1].Position("Lerp", 0.2f, new Vector3(2.4f, -1f, -1f), new Vector3(2.65f, -1.1f, -1f));
             Obj[1].Rotation("Lerp", 0.2f, new Vector3(0f, 0f, 0f), new Vector3(0f, 0f, -0.5f));
             yield return new WaitForSeconds(0.2f);
-            Obj[1].Position("Smooth", 0.6f, new Vector3(2.65f, -1.1f, 0f), new Vector3(2.4f, -1f, 0f));
+            Obj[1].Position("Smooth", 0.6f, new Vector3(2.65f, -1.1f, -1f), new Vector3(2.4f, -1f, -1f));
             Obj[1].Rotation("Smooth", 0.6f, new Vector3(0f, 0f, -0.5f), new Vector3(0f, 0f, 0f));
             yield return new WaitForSeconds(0.6f);
         }

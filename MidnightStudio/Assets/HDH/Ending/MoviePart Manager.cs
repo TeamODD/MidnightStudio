@@ -5,7 +5,8 @@ public class MoviePart_Manager : MonoBehaviour
 {
     public int[] Sequence = new int[] {0, 1, 2, 3, 4};
     public FirstScene_Manager FirstScene;
-    public SecondSceneManager SecondScene;
+    public SecondScene_Manager SecondScene;
+    public ThirdScene_Manager ThirdScene;
     public bool IsTest = false;
     private IEnumerator Total_Production_Start_Sign;
 
@@ -13,6 +14,7 @@ public class MoviePart_Manager : MonoBehaviour
     {
         FirstScene.gameObject.SetActive(false);
         SecondScene.gameObject.SetActive(false);
+        ThirdScene.gameObject.SetActive(false);
 
         if (IsTest == true) { Production_Start(); }
     }
@@ -28,7 +30,6 @@ public class MoviePart_Manager : MonoBehaviour
     // # 애니메이션 로직.
     private IEnumerator Production_Start_Coroutine()
     {
-        // # 1stCut 시작.
         foreach(int Value in Sequence)
         {
             switch(Value)
@@ -51,6 +52,11 @@ public class MoviePart_Manager : MonoBehaviour
                     break;
                 case 2:
                     Debug.Log("3rd Scene - 3rd Cut Start.");
+                    ThirdScene.gameObject.SetActive(true);
+                    ThirdScene.Production_Start();
+                    yield return new WaitForSeconds(ThirdScene.Cut_1st.Time);
+
+                    //ThirdScene.gameObject.SetActive(false);
                     break;
             }
         }

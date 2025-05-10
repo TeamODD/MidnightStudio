@@ -1,0 +1,923 @@
+fileFormatVersion: 2
+guid: 9eef5aa04476212499a470b84dc4b2cd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5820776329083342330
+    second: bllod_0
+  - first:
+      213: 2291350559663950912
+    second: bllod_1
+  - first:
+      213: 7313777495859509856
+    second: bllod_2
+  - first:
+      213: 4258009196546494173
+    second: bllod_3
+  - first:
+      213: -2955463161451013249
+    second: bllod_4
+  - first:
+      213: -8172470184090137457
+    second: bllod_5
+  - first:
+      213: -2930577995763244604
+    second: bllod_6
+  - first:
+      213: 8145224607951372728
+    second: bllod_7
+  - first:
+      213: -8664609146118293266
+    second: bllod_8
+  - first:
+      213: -8581117199990127370
+    second: bllod_9
+  - first:
+      213: -3432459297234263732
+    second: bllod_10
+  - first:
+      213: -5367186277556030961
+    second: bllod_11
+  - first:
+      213: 46093894706890268
+    second: bllod_12
+  - first:
+      213: 6840581778486942342
+    second: bllod_13
+  - first:
+      213: 712838423056827379
+    second: bllod_14
+  - first:
+      213: -7479062772977752185
+    second: bllod_15
+  - first:
+      213: -8102958265009996590
+    second: bllod_16
+  - first:
+      213: -1148322159901076683
+    second: bllod_17
+  - first:
+      213: -2185858986980455754
+    second: bllod_18
+  - first:
+      213: -8564182661340461907
+    second: bllod_19
+  - first:
+      213: -3236509022405101530
+    second: bllod_20
+  - first:
+      213: -6717489056747315165
+    second: bllod_21
+  - first:
+      213: 2936259571067110589
+    second: bllod_22
+  - first:
+      213: -957758215053069860
+    second: bllod_23
+  - first:
+      213: 6488047136349962685
+    second: bllod_24
+  - first:
+      213: 2503765594700410203
+    second: bllod_25
+  - first:
+      213: -351857532782656988
+    second: bllod_26
+  - first:
+      213: 3898620595843093090
+    second: bllod_27
+  - first:
+      213: -8365327613159402697
+    second: bllod_28
+  - first:
+      213: -8479201546328975678
+    second: bllod_29
+  - first:
+      213: 5904280777541167284
+    second: bllod_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bllod_0
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 297
+        width: 23
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6023cfbb4c2783fa0800000000000000
+      internalID: -5820776329083342330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_1
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 322
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04c89a4a1338ccf10800000000000000
+      internalID: 2291350559663950912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_2
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 301
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06ab3f6e1e1cf7560800000000000000
+      internalID: 7313777495859509856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_3
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 283
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dde008aedcc771b30800000000000000
+      internalID: 4258009196546494173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_4
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 302
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7b95f2d9e51cf6d0800000000000000
+      internalID: -2955463161451013249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_5
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 291
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8c06dbcaad859e80800000000000000
+      internalID: -8172470184090137457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_6
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 282
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c1a4f7f6de7457d0800000000000000
+      internalID: -2930577995763244604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_7
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 275
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b146bc20a6a90170800000000000000
+      internalID: 8145224607951372728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_8
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 246
+        width: 10
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee8b40083ef11c780800000000000000
+      internalID: -8664609146118293266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_9
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 281
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f4089e0f5fb9e880800000000000000
+      internalID: -8581117199990127370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_10
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 276
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c416d5284747d50d0800000000000000
+      internalID: -3432459297234263732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_11
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 274
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f02fbe2648ce385b0800000000000000
+      internalID: -5367186277556030961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_12
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 281
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c16815c2722c3a000800000000000000
+      internalID: 46093894706890268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_13
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 0
+        width: 333
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68a59b372e0aeee50800000000000000
+      internalID: 6840581778486942342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_14
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 267
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f34d8cd4c284e900800000000000000
+      internalID: 712838423056827379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_15
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 263
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78720d3a808053890800000000000000
+      internalID: -7479062772977752185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_16
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 251
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dc7348a3628c8f80800000000000000
+      internalID: -8102958265009996590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_17
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 218
+        width: 25
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 533136364175010f0800000000000000
+      internalID: -1148322159901076683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_18
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 246
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ba4fef15d44aa1e0800000000000000
+      internalID: -2185858986980455754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_19
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 243
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da40e379e39e52980800000000000000
+      internalID: -8564182661340461907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_20
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 228
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 628723f113c9513d0800000000000000
+      internalID: -3236509022405101530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_21
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 201
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 320a00e2b4fa6c2a0800000000000000
+      internalID: -6717489056747315165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_22
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 177
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db4cbcdd580bfb820800000000000000
+      internalID: 2936259571067110589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_23
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 195
+        width: 23
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd1bc035afb55b2f0800000000000000
+      internalID: -957758215053069860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_24
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 187
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db14120de7c2a0a50800000000000000
+      internalID: 6488047136349962685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 164
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5d66f8fa892fb220800000000000000
+      internalID: 2503765594700410203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_26
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 133
+        width: 22
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 422c1fa2073fd1bf0800000000000000
+      internalID: -351857532782656988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_27
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 123
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 262df31b6ceaa1630800000000000000
+      internalID: 3898620595843093090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 109
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7331ed37bd268eb80800000000000000
+      internalID: -8365327613159402697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_29
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 96
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c65e1c4e13d35a80800000000000000
+      internalID: -8479201546328975678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bllod_30
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 97
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b8228fb51830f150800000000000000
+      internalID: 5904280777541167284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      bllod_0: -5820776329083342330
+      bllod_1: 2291350559663950912
+      bllod_10: -3432459297234263732
+      bllod_11: -5367186277556030961
+      bllod_12: 46093894706890268
+      bllod_13: 6840581778486942342
+      bllod_14: 712838423056827379
+      bllod_15: -7479062772977752185
+      bllod_16: -8102958265009996590
+      bllod_17: -1148322159901076683
+      bllod_18: -2185858986980455754
+      bllod_19: -8564182661340461907
+      bllod_2: 7313777495859509856
+      bllod_20: -3236509022405101530
+      bllod_21: -6717489056747315165
+      bllod_22: 2936259571067110589
+      bllod_23: -957758215053069860
+      bllod_24: 6488047136349962685
+      bllod_25: 2503765594700410203
+      bllod_26: -351857532782656988
+      bllod_27: 3898620595843093090
+      bllod_28: -8365327613159402697
+      bllod_29: -8479201546328975678
+      bllod_3: 4258009196546494173
+      bllod_30: 5904280777541167284
+      bllod_4: -2955463161451013249
+      bllod_5: -8172470184090137457
+      bllod_6: -2930577995763244604
+      bllod_7: 8145224607951372728
+      bllod_8: -8664609146118293266
+      bllod_9: -8581117199990127370
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

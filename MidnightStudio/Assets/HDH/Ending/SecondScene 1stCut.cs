@@ -9,7 +9,7 @@ public class SecondScene_1stCut : MonoBehaviour
     public SpriteRenderer Enemy_SR;
     public Sprite[] Enemy = new Sprite[3];
     public bool IsTest = false;
-    public SecondSceneManager Scene_Manager;
+    public SecondScene_Manager Scene_Manager;
     public MoviePart_Subtitle Subtitle;
     private IEnumerator Production_Start_Sign;
 
