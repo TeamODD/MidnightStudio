@@ -15,13 +15,13 @@ public class Start_text : MonoBehaviour
     public TMP_Text startText;
     public SpriteRenderer Client;
     public SpriteRenderer InkHead;
-    public SynopsisColorChange synopsisColorManager;
+    public SynopsisCharacterColoring synopsisColorManager;
 
 
     private Dictionary<string, string[]> dialogues = new Dictionary<string, string[]>();
     private Coroutine typingCoroutine;
 
-    // 1 ´ë»ç ºÒ·¯¿À±â -> ÅØ½ºÆ® Å¸ÀÌÇÎ ¶ç¿ì°í -> ´ë±â »óÅÂ, ¿£ÅÍ·Î¸¸ ³Ñ¾î°¡°Ô -> ¿£ÅÍ ´©¸£¸é ´ÙÀ½ ´ë»ç <¹Ýº¹ ³¡³¯ ¶§±îÁö> -> ¸¶Áö¸· µð¹ö±× ·Î±×(manager.EnableProceed())
+    // 1 ï¿½ï¿½ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½ -> ï¿½Ø½ï¿½Æ® Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ -> ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½Í·Î¸ï¿½ ï¿½Ñ¾î°¡ï¿½ï¿½ -> ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ <ï¿½Ýºï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½> -> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î±ï¿½(manager.EnableProceed())
 
     public void Start()
     {
@@ -39,11 +39,11 @@ public class Start_text : MonoBehaviour
         {
             if (!isFirst)
             {
-                // Ã¹ ¹øÂ° ÀÌÈÄ´Â ¿£ÅÍ ÀÔ·Â ´ë±â
+                // Ã¹ ï¿½ï¿½Â° ï¿½ï¿½ï¿½Ä´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½ï¿½ï¿½
                 yield return StartCoroutine(WaitForEnterKey());
             }
 
-            // ÅØ½ºÆ® Ãâ·Â
+            // ï¿½Ø½ï¿½Æ® ï¿½ï¿½ï¿½
             yield return StartCoroutine(StartTextTyping(key));
 
             isFirst = false;
@@ -69,7 +69,7 @@ public class Start_text : MonoBehaviour
         return dialogList;
     }
 
-    IEnumerator StartTextTyping(string index) //ÀÎµ¦½ºÀÇ À§Ä¡¿¡ µû¶ó È­ÀÚ ¼³Á¤
+    IEnumerator StartTextTyping(string index) //ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     {
         if (!dialogues.ContainsKey(index))
             yield break;
@@ -79,12 +79,11 @@ public class Start_text : MonoBehaviour
         string act = dialogues[index][2];
 
         TMP_Text target = null;
-        Debug.Log("½ÇÇà");
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½");
         if (speaker.Contains("ink"))
         {
             target = startText;
             ApplyActImage(speaker, act);
-            synopsisColorManager.SetCharacterColorWhite();
         }
 
         else if (speaker.Contains("client"))
@@ -95,7 +94,7 @@ public class Start_text : MonoBehaviour
         Debug.Log(index);
         typingCoroutine = StartCoroutine(TextTyping(target, line));
 
-        // Å¸ÀÌÇÎ µµÁß¿¡ ¿£ÅÍÅ°°¡ ´­¸®¸é °­Á¦·Î ÄÚ·çÆ¾ Á¾·áÇÏ°í ´ÙÀ½À¸·Î ³Ñ¾î°¨
+        // Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ß¿ï¿½ ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ú·ï¿½Æ¾ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¾î°¨
         while (typingCoroutine != null)
         {
             if (Input.GetKeyDown(KeyCode.Return))
@@ -114,7 +113,7 @@ public class Start_text : MonoBehaviour
         Sprite actSprite = LoadActSprite(speaker, act);
         if (actSprite == null)
         {
-            Debug.LogError($"[¿¡·¯] '{act}'¿¡ ÇØ´çÇÏ´Â ÀÌ¹ÌÁö¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù. °æ·Î¸¦ ´Ù½Ã È®ÀÎÇÏ¼¼¿ä.");
+            Debug.LogError($"[ï¿½ï¿½ï¿½ï¿½] '{act}'ï¿½ï¿½ ï¿½Ø´ï¿½ï¿½Ï´ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½. ï¿½ï¿½Î¸ï¿½ ï¿½Ù½ï¿½ È®ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½.");
             return;
         }
 
@@ -143,7 +142,7 @@ public class Start_text : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("¾Ë ¼ö ¾ø´Â È­ÀÚÀÔ´Ï´Ù.");
+            Debug.LogWarning("ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
             return null;
         }
 
@@ -153,7 +152,7 @@ public class Start_text : MonoBehaviour
 
         if (sprite == null)
         {
-            Debug.LogError($"[·Îµå ½ÇÆÐ] Sprite °æ·Î: Resources/{fullPath}.png ¶Ç´Â .jpg °¡ Á¸ÀçÇÏÁö ¾ÊÀ½.");
+            Debug.LogError($"[ï¿½Îµï¿½ ï¿½ï¿½ï¿½ï¿½] Sprite ï¿½ï¿½ï¿½: Resources/{fullPath}.png ï¿½Ç´ï¿½ .jpg ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.");
         }
 
         return sprite;
@@ -170,9 +169,9 @@ public class Start_text : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
     }
 
-    private void SynopsisLoadCSV(string story) //·Îµå ¹× ÀúÀå 
+    private void SynopsisLoadCSV(string story) //ï¿½Îµï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
     {
-        var csvData = CSVReader.Read(story); // Resources/dialogue.csv // ÀÓ½Ã ¼öÁ¤-story1_0_3_0
+        var csvData = CSVReader.Read(story); // Resources/dialogue.csv // ï¿½Ó½ï¿½ ï¿½ï¿½ï¿½ï¿½-story1_0_3_0
         //story1_0_0_0
         foreach (var row in csvData)
         {
