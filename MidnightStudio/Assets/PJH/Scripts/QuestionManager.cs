@@ -33,7 +33,7 @@ public class QuestionManager : MonoBehaviour
     private Dictionary<string, List<string>> imageInfoMap = new Dictionary<string, List<string>>();
     private Dictionary<int, Slot> cachedSlots = new Dictionary<int, Slot>();
     private List<string> clueList = new List<string>();
-    
+
     // 현재 세팅된 질문들을 추적하는 리스트
     private List<string> selectedKeys = new List<string>();
 
@@ -71,7 +71,7 @@ public class QuestionManager : MonoBehaviour
 
         }
     }
-    
+
     void CacheSlots()
     {
         if (cachedSlots.Count > 0 && FindObjectsOfType<Slot>().Length == cachedSlots.Count) return; // 이미 캐시되었고 슬롯 수가 같다면 스킵
@@ -92,7 +92,7 @@ public class QuestionManager : MonoBehaviour
         // Debug.Log($"Slots cached: {cachedSlots.Count}");
     }
 
-    void questionMaker()
+    public void questionMaker()
     {
         // 기존 질문이 저장되어 있으면 그걸 사용
         if (sceneToQuestions.ContainsKey(sceneIndex))
@@ -140,7 +140,7 @@ public class QuestionManager : MonoBehaviour
                 questionText[i].text = questionData["question"].ToString();
             }
         }
-        questionShow(); 
+        questionShow();
     }
 
 
@@ -154,14 +154,15 @@ public class QuestionManager : MonoBehaviour
 
         sceneIndex = "0";
         CacheSlots(); // 게임 시작 시 슬롯 정보 캐시
-        questionMaker();
+        // questionMaker();
     }
 
     public void rerollQuestion()
     {
-        if(canClick){
+        if (canClick)
+        {
             canClick = false;
-            if(rerollQuestionSign!= null) 
+            if (rerollQuestionSign != null)
             {
                 StopCoroutine(rerollQuestionSign);
             }
@@ -169,7 +170,7 @@ public class QuestionManager : MonoBehaviour
             StartCoroutine(rerollQuestionSign);
         }
     }
-    
+
 
     private IEnumerator rerollQuestionCoroutine()
     {
@@ -197,11 +198,12 @@ public class QuestionManager : MonoBehaviour
 
     public void changeSceneQuestion(string sceneIndex)
     {
-        if(canClick && sceneIndex != lastScene){
+        if (canClick && sceneIndex != lastScene)
+        {
             canClick = false;
             lastScene = sceneIndex;
 
-            if(rerollQuestionSign!= null) 
+            if (rerollQuestionSign != null)
             {
                 StopCoroutine(rerollQuestionSign);
             }
@@ -276,9 +278,10 @@ public class QuestionManager : MonoBehaviour
         this.sceneIndex = sceneIndex;
         questionMaker();
     }
+
     public void OnQuestionClicked(int index)
     {
-        if(canClick)
+        if (canClick)
         {
             nextIndex(index);  // dialogTrue 설정
             questionProduction.objectDisappear();
@@ -299,6 +302,21 @@ public class QuestionManager : MonoBehaviour
             parser.AnswerToQuestion(dialogIndex);
         }
     }
+
+    public void IntroReset()
+    {
+        questionArrowOff();
+        rerollOff();
+        questionHide();
+        questionProduction.objectInstantDisappear();
+        canClick = false;
+    }
+
+    public void IntroProduction()
+    {
+        parser.AnswerToQuestion("story1_intro");
+    }
+
     public void nextIndex(int index)
     {
         if (index < 0 || index >= selectedKeys.Count)
@@ -386,19 +404,21 @@ public class QuestionManager : MonoBehaviour
         return sceneIndex;
     }
 
-    public void rerollOff() {
+    public void rerollOff()
+    {
         reroll.SetActive(false);
     }
 
-    public void questionArrowOff() {
+    public void questionArrowOff()
+    {
         foreach (TMP_Text obj in questionText)
         {
-            obj.GetComponent<ArrowAppear>().alphaOnOff(); 
+            obj.GetComponent<ArrowAppear>().alphaOnOff();
         }
     }
 
-    
-    public void allOn() { //정보가 없음
+    public void allOn()
+    { //정보가 없음
         reroll.SetActive(true);
 
         if (slotManager == null) { Debug.LogError("SlotManager가 QuestionManager에 할당되지 않아 allOn을 실행할 수 없습니다."); return; }
@@ -434,6 +454,7 @@ public class QuestionManager : MonoBehaviour
         questionProduction.objectAppear();
         canClick = true;
     }
+
     public void allOn(List<string> infoList) //정보가 있음
     {
         foreach (string info in infoList)
@@ -446,6 +467,7 @@ public class QuestionManager : MonoBehaviour
         scrollViewController.UpdateClueList(clueList);
         allOn();
     }
+
     public void AddClueToImage(string sceneIndex, string clue)
     {
         if (!imageInfoMap.ContainsKey(sceneIndex))
@@ -458,18 +480,18 @@ public class QuestionManager : MonoBehaviour
             imageInfoMap[sceneIndex].Add(clue);
         }
     }
-    
 
-    public void questionHide() 
+
+    public void questionHide()
     {
-        for(int i = 0; i < 3; i++)
+        for (int i = 0; i < 3; i++)
         {
             background[i].hide();
         }
     }
-    public void questionShow() 
+    public void questionShow()
     {
-        for(int i = 0; i < 3; i++)
+        for (int i = 0; i < 3; i++)
         {
             background[i].show();
         }

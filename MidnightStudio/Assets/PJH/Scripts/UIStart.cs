@@ -17,10 +17,15 @@ public class UIStart : MonoBehaviour
     public SpriteRenderer inkHead; // 잉크 헤드
     public SpriteRenderer client;  // 의뢰인
     public TMP_Text tmpText;
+    public UI_Production CountDown_Production;
     public CanvasGroup textCanvasGroup;
     public RectTransform textTransform;
     public List<GameObject> remain = new List<GameObject>();
     public GaugeControl gauge;
+
+    public QuestionManager QuestionManager;
+    public DialogueParser DialogueParser;
+    public Main_hdh_Production Main_Production;
 
     public CountdownText[] countdownTexts = new CountdownText[3];
 
@@ -30,9 +35,9 @@ public class UIStart : MonoBehaviour
     void Start()
     {
         // 카운트다운 텍스트 기본 설정
-        countdownTexts[0] = new CountdownText { content = "lights", color = Color.black };
-        countdownTexts[1] = new CountdownText { content = "Camera!", color = Color.black };
-        countdownTexts[2] = new CountdownText { content = "ACTION!!!", color = Color.black };
+        countdownTexts[0] = new CountdownText { content = "lights", color = Color.white };
+        countdownTexts[1] = new CountdownText { content = "Camera!", color = Color.white };
+        countdownTexts[2] = new CountdownText { content = "ACTION!!!", color = Color.white };
 
         // 원래 색상 저장
         originalInkColor = inkHead.color;
@@ -45,15 +50,19 @@ public class UIStart : MonoBehaviour
 
     IEnumerator FullIntroSequence()
     {
+
         yield return StartCoroutine(FadeSilhouetteAndWhiteBackground());
         yield return StartCoroutine(PlayCountdownSequence());
 
         // ACTION 이후 화면 잠깐 암전 -> 밝아지면서 캐릭터 복원
+        QuestionManager.IntroReset();
         yield return StartCoroutine(FlashBlackTransitionAndRestore());
 
         // UI 다시 활성화
         EnableUI();
         gauge.StartGauge();
+
+        QuestionManager.IntroProduction();
     }
 
     IEnumerator PlayCountdownSequence()
@@ -63,30 +72,58 @@ public class UIStart : MonoBehaviour
             tmpText.text = countdownTexts[i].content;
             tmpText.color = countdownTexts[i].color;
 
-            yield return StartCoroutine(PlayTextEffect());
+            yield return StartCoroutine(PlayTextEffect(countdownTexts[i].content));
         }
 
         tmpText.text = "";
     }
 
-    IEnumerator PlayTextEffect()
+    IEnumerator PlayTextEffect(string Contents)
     {
-        textCanvasGroup.alpha = 1f;
-        textTransform.localScale = Vector3.one;
-        float duration = 0.35f;
-        float elapsed = 0f;
-
-        while (elapsed < duration)
+        Vector3 TotalScale = new Vector3(4f, 4f, 1f);
+        switch (Contents)
         {
-            float t = elapsed / duration;
-            textTransform.localScale = Vector3.one * (1f + t);
-            textCanvasGroup.alpha = 1f - t;
-            elapsed += Time.deltaTime;
-            yield return null;
+            case "lights":
+                TotalScale = new Vector3(4f, 4f, 1f);
+                break;
+            case "Camera!":
+                TotalScale = new Vector3(5f, 5f, 1f);
+                break;
+            case "ACTION!!!":
+                Main_Production.Clapper_Production_Start();
+                TotalScale = new Vector3(6f, 6f, 1f);
+                break;
+        }
+        CountDown_Production.Scale("Lerp", 0.1f, TotalScale, TotalScale - new Vector3(3.1f, 3.1f, 1f));
+        CountDown_Production.Alpha("Lerp", 0.1f, 0f, 1f);
+        yield return new WaitForSeconds(0.1f);
+
+        CountDown_Production.Scale("Lerp", 0.05f, TotalScale - new Vector3(3.1f, 3.1f, 1f), TotalScale - new Vector3(3f, 3f, 1f));
+        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.4f);
+
+        if (Contents == "ACTION!!!")
+        {
+            CountDown_Production.Alpha("Lerp", 0.1f, 1f, 0f);
+            yield return new WaitForSeconds(0.1f);
+            
+            tmpText.gameObject.SetActive(false);
         }
 
-        textCanvasGroup.alpha = 0f;
-        yield return new WaitForSeconds(0.2f);
+        // float duration = 0.35f;
+        // float elapsed = 0f;
+
+        // while (elapsed < duration)
+        // {
+        //     float t = elapsed / duration;
+        //     textTransform.localScale = Vector3.one * (1f + t);
+        //     textCanvasGroup.alpha = 1f - t;
+        //     elapsed += Time.deltaTime;
+        //     yield return null;
+        // }
+
+        // textCanvasGroup.alpha = 0f;
+        // yield return new WaitForSeconds(0.2f);
     }
 
     IEnumerator FadeSilhouetteAndWhiteBackground()
@@ -156,13 +193,13 @@ public class UIStart : MonoBehaviour
         client.color = originalClientColor;
     }
 
-
+    public CanvasGroup[] allGroups1;
 
     void MakeTransparentExcept()
     {
         CanvasGroup[] allGroups = FindObjectsOfType<CanvasGroup>();
 
-        foreach (CanvasGroup group in allGroups)
+        foreach (CanvasGroup group in allGroups1)
         {
             bool isExcluded = false;
 
@@ -178,7 +215,7 @@ public class UIStart : MonoBehaviour
             if (!isExcluded)
             {
                 group.alpha = 0f;
-                group.interactable = false;
+                group.interactable = true;
                 group.blocksRaycasts = false;
             }
         }
@@ -194,7 +231,7 @@ public class UIStart : MonoBehaviour
         bgColor.a = 0f;
         bgRenderer.color = bgColor;
 
-        foreach (CanvasGroup group in allGroups)
+        foreach (CanvasGroup group in allGroups1)
         {
             bool isExcluded = false;
 

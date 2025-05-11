@@ -1,18 +1,4 @@
-keys,speaker,act,dialogue
-story1_intro_0,ink,ink_serious,자네가 생각하기엔 총을 겨누기까지 어떤 감정의 흐름이 있었을 것 같은가?
-story1_intro_1,client,clt_think,흐음... 다른 장면들을 보면...
-story1_intro_2,client,clt_idle_1,"편안함, 긴장, 경계."
-story1_intro_3,client,clt_think,이렇게 총 세 개가 나올 수 있겠네요.
-story1_intro_4,ink,ink_panic,그 중 어떤 것 같나?
-story1_intro_5,client,clt_think,음... 그 장면들을 떠올려 보면...
-story1_intro_6,ink,ink_haught,주인공이 긴장한 상태는 아니었지.
-story1_intro_7,client,clt_idle_1,담배를 피우고 있는 장면도 아닌 것 같구요.
-story1_intro_8,client,clt_idle_1,편안함이라 하기엔 총에 맞았기도 하고...
-story1_intro_9,client,clt_innocent,그 직후인 걸 보면... 경계 같네요.
-story1_intro_10,ink,ink_idle,경계라... 미리 뭔가를 예감하고 있는 것 같긴 했지.
-story1_intro_11,client,clt_laugh,"예감이라기보단, 뭔가 눈치채고 몸을 바로 세우고 있던 거죠."
-story1_intro_12,ink,ink_serious,"그러니까 결국 그 총구는 준비된 대응이라기보단, 반사라는 거군."
-story1_intro_13,client,clt_innocent,그쵸. 예상까진 아니었더라도...
-story1_intro_14,client,clt_idle_1,최소한 몸은 준비하고 있었던 것 같아요.
-story1_intro_15,ink,ink_haught,"됐어, 이건 여기까지."
-story1_intro_16,ink,ink_idle,그렇다면...
+keys,speaker,act,dialogue,information
+story1_intro_0,client,client_idle,부탁드립니다.,
+story1_intro_1,ink,ink_serious,"좋아, 이제 질문을 시작하지.",
+story1_intro_2,ink,ink_idle,그렇다면...,

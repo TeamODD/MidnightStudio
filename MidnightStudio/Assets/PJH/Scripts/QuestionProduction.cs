@@ -7,6 +7,7 @@ public class QuestionProduction : MonoBehaviour
 
     public void objectAppear()
     {
+        Debug.Log("뒤질래오?");
         foreach (UI_Production obj in text)
         {
             obj.Alpha("Lerp", 0.1f, 0f, 1f);
@@ -26,6 +27,17 @@ public class QuestionProduction : MonoBehaviour
         foreach (UI_Production obj in circle)
         {
             obj.Alpha("Lerp", 0.1f, 1f, 0f);
+        }
+    }
+    public void objectInstantDisappear()
+    {
+        foreach (UI_Production obj in text)
+        {
+            obj.Alpha("Instant", 0f, 1f, 0f);
+        }
+        foreach (UI_Production obj in circle)
+        {
+            obj.Alpha("Instant", 0f, 1f, 0f);
         }
     }
 }
