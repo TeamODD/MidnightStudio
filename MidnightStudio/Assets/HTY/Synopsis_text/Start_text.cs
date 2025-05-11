@@ -15,8 +15,9 @@ public class Start_text : MonoBehaviour
     public TMP_Text startText;
     public SpriteRenderer Client;
     public SpriteRenderer InkHead;
+    public SynopsisColorChange synopsisColorManager;
 
-    
+
     private Dictionary<string, string[]> dialogues = new Dictionary<string, string[]>();
     private Coroutine typingCoroutine;
 
@@ -83,6 +84,7 @@ public class Start_text : MonoBehaviour
         {
             target = startText;
             ApplyActImage(speaker, act);
+            synopsisColorManager.SetCharacterColorWhite();
         }
 
         else if (speaker.Contains("client"))

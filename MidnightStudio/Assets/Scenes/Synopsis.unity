@@ -524,6 +524,7 @@ GameObject:
   - component: {fileID: 809955955}
   - component: {fileID: 809955954}
   - component: {fileID: 809955953}
+  - component: {fileID: 809955956}
   m_Layer: 0
   m_Name: Character_ink_panel
   m_TagString: Untagged
@@ -577,6 +578,19 @@ RectTransform:
   m_AnchoredPosition: {x: -4.76, y: -0.09}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &809955956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809955952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eb78a57f70240549a9ff92a1230881a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj_production: {fileID: 0}
 --- !u!1 &1013771926
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,6 +741,8 @@ GameObject:
   - component: {fileID: 1240857339}
   - component: {fileID: 1240857338}
   - component: {fileID: 1240857337}
+  - component: {fileID: 1240857343}
+  - component: {fileID: 1240857342}
   m_Layer: 0
   m_Name: Character_Client
   m_TagString: Untagged
@@ -846,6 +862,31 @@ RectTransform:
   m_AnchoredPosition: {x: 5.181101, y: 0.0015074015}
   m_SizeDelta: {x: 9, y: 10.8}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1240857342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240857336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c64a9dc9e445dae47b14794123f407f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1240857343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240857336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eb78a57f70240549a9ff92a1230881a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj_production: {fileID: 1240857342}
 --- !u!1 &1365454709
 GameObject:
   m_ObjectHideFlags: 0
@@ -859,6 +900,8 @@ GameObject:
   - component: {fileID: 1365454713}
   - component: {fileID: 1365454712}
   - component: {fileID: 1365454711}
+  - component: {fileID: 1365454716}
+  - component: {fileID: 1365454715}
   m_Layer: 0
   m_Name: Character_ink
   m_TagString: Untagged
@@ -978,6 +1021,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1365454715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365454709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eb78a57f70240549a9ff92a1230881a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj_production: {fileID: 1365454716}
+--- !u!114 &1365454716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365454709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c64a9dc9e445dae47b14794123f407f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1631464918
 GameObject:
   m_ObjectHideFlags: 0
