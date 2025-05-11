@@ -6,6 +6,7 @@ public class GaugeControl : MonoBehaviour
 {
     public Image Gauge;
     public Image gaugebar;
+    public Image camlight;
     public UI_Production ui_Production;
     public DialogueParser parser;
     private float GAME_OVER_TIME = 240.0f;
@@ -14,7 +15,9 @@ public class GaugeControl : MonoBehaviour
     private bool isEndingTriggered = false; // 중복 호출 방지
     private bool triggered25 = false;
     private bool triggered50 = false;
+    private bool triggered60 = false;
     private bool triggered75 = false;
+    private bool triggered80 = false;
 
     private bool isTimerActive = false; // 타이머 활성 여부
 
@@ -40,10 +43,22 @@ public class GaugeControl : MonoBehaviour
             ui_Production.Scale("Smooth", 1f, new Vector3(1.1f, 1.1f, 1.1f), new Vector3(1f, 1f, 1f));
         }
 
+        if (percent >= 0.6f && !triggered60)
+        {
+            triggered60 = true;
+            camlight.GetComponent<UI_Production>().Coloring("Lerp", 2.0f, Color.white, Color.yellow);
+        }
+
         if (percent >= 0.75f && !triggered75)
         {
             triggered75 = true;
             ui_Production.Scale("Smooth", 1f, new Vector3(1.1f, 1.1f, 1.1f), new Vector3(1f, 1f, 1f));
+        }
+
+        if (percent >= 0.8f && !triggered80)
+        {
+            triggered80 = true;
+            camlight.GetComponent<UI_Production>().Coloring("Lerp", 2.0f, Color.yellow, Color.red);
         }
 
         if (!isEndingTriggered && gaugebar.fillAmount >= 1f)

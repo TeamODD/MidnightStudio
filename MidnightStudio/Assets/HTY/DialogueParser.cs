@@ -60,6 +60,7 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
 
     public void CutProduction()
     {
+        SlotManager.Instance.SaveSlotResultsForNextScene();
         StartCoroutine(PlayCutsceneThenLoadEnding());
     }
 

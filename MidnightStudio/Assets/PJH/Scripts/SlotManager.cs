@@ -72,4 +72,12 @@ public class SlotManager : MonoBehaviour
         }
         Debug.Log("-------------------");
     }
+
+    public void SaveSlotResultsForNextScene()
+    {
+        if (ResultData.Instance != null)
+        {
+            ResultData.Instance.SaveSlotData(sceneInSlot, totalSlots);
+        }
+    }
 }
