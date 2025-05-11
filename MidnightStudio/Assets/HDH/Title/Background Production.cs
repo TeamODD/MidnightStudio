@@ -4,6 +4,7 @@ using UnityEngine;
 public class Background_Production : MonoBehaviour
 {
     public UI_Production[] Obj = new UI_Production[3];
+    
     public bool IsTest = false;
     private IEnumerator Client_Production_Sign;
     private IEnumerator Ink_Production_Sign;
@@ -13,12 +14,21 @@ public class Background_Production : MonoBehaviour
     {
         if (IsTest == true) { Production_Start(); }
     }
+
     public void Production_Start()
     {
         Client_Production();
         Ink_Production();
         Film_Production();
     }
+
+    public void Production_End()
+    {
+        if (Client_Production_Sign != null) { StopCoroutine(Client_Production_Sign); }
+        if (Ink_Production_Sign != null) { StopCoroutine(Ink_Production_Sign); }
+        if (Film_Production_Sign != null) { StopCoroutine(Film_Production_Sign); }
+    }
+
     private void Client_Production()
     {
         if (Client_Production_Sign != null) { StopCoroutine(Client_Production_Sign); }

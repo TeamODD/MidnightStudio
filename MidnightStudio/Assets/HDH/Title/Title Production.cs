@@ -1,36 +1,61 @@
-using System.Collections;
 using UnityEngine;
+using System.Collections;
 
 public class Title_Production : MonoBehaviour
-{
-    public float BPM;
-    public bool IsTest = false;
-    public UI_Production Title_Logo;
-    private IEnumerator Title_Production_Sign;
+{   
+    public GameObject[] Background_Objects;
 
-    private void Start()
+    public Background_Production Background_Production;
+    public SceneFader ScenFader;
+    public Option_Production Option_Production;
+
+    private IEnumerator Option_Production_Sign;
+
+    public void Option_Production_Start()
     {
-        if (IsTest == true) { Production_Start(); }
+        Option_Production.gameObject.SetActive(true);
+
+        if (Option_Production_Sign != null) { StopCoroutine(Option_Production_Sign); }
+        Option_Production_Sign = Option_Production_Start_Coroutine();
+        StartCoroutine(Option_Production_Sign);
     }
 
-    public void Production_Start()
+    private IEnumerator Option_Production_Start_Coroutine()
     {
-        if (Title_Production_Sign != null) { StopCoroutine(Title_Production_Sign); }
-        Title_Production_Sign = Title_Production_Coroutine();
-        StartCoroutine(Title_Production_Sign);
+        Option_Production.Production_Start();
+        yield return new WaitForSeconds(0.5f);
+        
+        Background_Production.Production_End();
+
+        Background_Objects[0].SetActive(false);
+        Background_Objects[1].SetActive(false);
+        Background_Objects[2].SetActive(false);
+
+        ScenFader.SetBlack(0.5f);
+        yield return new WaitForSeconds(0.45f);
     }
 
-    private IEnumerator Title_Production_Coroutine()
+    public void Option_Production_End()
     {
-        while (true)
-        {
-            float WaitingTime = 60 / BPM;
+        Option_Production.gameObject.SetActive(true);
 
-            Title_Logo.Scale("Smooth", WaitingTime / 8 * 7, new Vector3(1.1f, 1.1f, 1f), new Vector3(1f, 1f, 1f));
-            yield return new WaitForSeconds(WaitingTime / 8 * 7);
+        if (Option_Production_Sign != null) { StopCoroutine(Option_Production_Sign); }
+        Option_Production_Sign = Option_Production_End_Coroutine();
+        StartCoroutine(Option_Production_Sign);
+    }
 
-            Title_Logo.Scale("Smooth", WaitingTime / 8, new Vector3(1f, 1f, 1f), new Vector3(1.1f, 1.1f, 1f));
-            yield return new WaitForSeconds(WaitingTime / 8);
-        }
+    private IEnumerator Option_Production_End_Coroutine()
+    {
+        Option_Production.Production_Start();
+        yield return new WaitForSeconds(0.5f);
+
+        Background_Objects[0].SetActive(true);
+        Background_Objects[1].SetActive(true);
+        Background_Objects[2].SetActive(true);
+        
+        Background_Production.Production_Start();
+
+        ScenFader.SetBlack(0f);
+        yield return new WaitForSeconds(0.45f);
     }
 }

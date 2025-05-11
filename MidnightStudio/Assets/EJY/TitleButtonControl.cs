@@ -11,32 +11,35 @@ public class TitleButtonControl : MonoBehaviour
     public GameObject optionPanel;
     public RectTransform optionImg;
     public SceneFader sceneFader;
+    public Title_Production TitleProduction;
+
+    public bool CanControl;
 
     public GraphicRaycaster raycaster;
     public EventSystem eventSystem;
 
     public float slideDuration = 1f;
     private RectTransform optionRect;
-    public Vector2 offScreenPosition = new Vector2(0f, -Screen.height); // ¾Æ·¡ÂÊ È­¸é ¹Û
-    public Vector2 onScreenPosition = Vector2.zero; // ¿ø·¡ À§Ä¡ (Áß¾Ó ±âÁØ)
+    public Vector2 offScreenPosition = new Vector2(0f, -Screen.height); // ï¿½Æ·ï¿½ï¿½ï¿½ È­ï¿½ï¿½ ï¿½ï¿½
+    public Vector2 onScreenPosition = Vector2.zero; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ (ï¿½ß¾ï¿½ ï¿½ï¿½ï¿½ï¿½)
 
 
     private void Awake()
     {
-        optionRect = optionPanel.GetComponent<RectTransform>();
-        offScreenPosition = new Vector2(0f, -Screen.height); // ¾Æ·¡ÂÊ¿¡¼­ ½ÃÀÛ
+        //optionRect = optionPanel.GetComponent<RectTransform>();
+        //offScreenPosition = new Vector2(0f, -Screen.height); // ï¿½Æ·ï¿½ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
-    private void Update()
-    {
-        // Option Ã¢ÀÌ ¿­·ÁÀÖ°í ¸¶¿ì½º ¿ÞÂÊ Å¬¸¯ ½Ã °Ë»ç
-        if (optionPanel.activeSelf && Input.GetMouseButtonDown(0))
-        {
-            if (!IsPointerOverUI(optionImg))
-            {
-                OnExitClosed();
-            }
-        }
-    }
+    // private void Update()
+    // {
+    //     // Option Ã¢ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö°ï¿½ ï¿½ï¿½ï¿½ì½º ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ ï¿½ï¿½ ï¿½Ë»ï¿½
+    //     if (optionPanel.activeSelf && Input.GetMouseButtonDown(0))
+    //     {
+    //         if (!IsPointerOverUI(optionImg))
+    //         {
+    //             OnExitClosed();
+    //         }
+    //     }
+    // }
     private bool IsPointerOverUI(RectTransform targetRect)
     {
         PointerEventData pointerData = new PointerEventData(eventSystem)
@@ -49,65 +52,103 @@ public class TitleButtonControl : MonoBehaviour
 
         foreach (var result in results)
         {
-            // OptionImg ¶Ç´Â ±× ÀÚ½ÄÀÌ¸é ³»ºÎ Å¬¸¯À¸·Î °£ÁÖ
+            // OptionImg ï¿½Ç´ï¿½ ï¿½ï¿½ ï¿½Ú½ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             if (result.gameObject.transform.IsChildOf(targetRect))
                 return true;
         }
 
-        return false; // ¿ÜºÎ Å¬¸¯
+        return false; // ï¿½Üºï¿½ Å¬ï¿½ï¿½
     }
 
     public void OnStartClicked()
     {
-        sceneFader.FadeToScene("Synopsis");
+        if (CanControl)
+        {
+            CanControl = false;
+            sceneFader.FadeToScene("Synopsis");
+        }
     }
 
     public void OnOptionClicked()
     {
-        sceneFader.FadeToGray(0.4f); // 40% ºÒÅõ¸íÇÑ È¸»ö
+        if (CanControl)
+        {
+            //sceneFader.FadeToGray(0.4f); // 40% ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½
+            //optionRect.anchoredPosition = offScreenPosition; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡
+
+            TitleProduction.Option_Production_Start();
+            StartCoroutine(OnOptionClicked_ObjActive());
+            Debug.Log("ìž‘ë™ë¨");
+            // StartCoroutine(Slide(optionRect, onScreenPosition));
+        }
+    }
+    private IEnumerator OnOptionClicked_ObjActive()
+    {
+        CanControl = false;
+        yield return new WaitForSeconds(0.5f);
+
         mainPanel.SetActive(false);
         optionPanel.SetActive(true);
-        optionRect.anchoredPosition = offScreenPosition; // ½ÃÀÛ À§Ä¡
-        StartCoroutine(Slide(optionRect, onScreenPosition));
+        yield return null;
+
+        CanControl = true;
     }
 
     public void OnExitClosed()
     {
-        //optionPanel.SetActive(false);
-        //mainPanel.SetActive(true);
-        sceneFader.FadeOutGray();
-        StartCoroutine(SlideAndDeactivate(optionRect, offScreenPosition, () => {
-            optionPanel.SetActive(false);
-            mainPanel.SetActive(true);
-        }));
-    }
-
-    private IEnumerator Slide(RectTransform rect, Vector2 target)
-    {
-        Vector2 start = rect.anchoredPosition;
-        float elapsed = 0f;
-
-        while (elapsed < slideDuration)
+        if (CanControl)
         {
-            rect.anchoredPosition = Vector2.Lerp(start, target, elapsed / slideDuration);
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
+            //optionPanel.SetActive(false);
+            //mainPanel.SetActive(true);
+            //sceneFader.FadeOutGray();
 
-        rect.anchoredPosition = target;
+            TitleProduction.Option_Production_End();
+            StartCoroutine(OnExitClosed_ObjActive());
+        }
     }
-    private IEnumerator SlideAndDeactivate(RectTransform rect, Vector2 target, System.Action onComplete)
+
+    private IEnumerator OnExitClosed_ObjActive()
     {
-        yield return Slide(rect, target);
-        onComplete?.Invoke();
+        CanControl = false;
+        yield return new WaitForSeconds(0.5f);
+
+        optionPanel.SetActive(false);
+        mainPanel.SetActive(true);
+        yield return null;
+
+        CanControl = true;
     }
+
+    // private IEnumerator Slide(RectTransform rect, Vector2 target)
+    // {
+    //     Vector2 start = rect.anchoredPosition;
+    //     float elapsed = 0f;
+
+    //     while (elapsed < slideDuration)
+    //     {
+    //         rect.anchoredPosition = Vector2.Lerp(start, target, elapsed / slideDuration);
+    //         elapsed += Time.deltaTime;
+    //         yield return null;
+    //     }
+
+    //     rect.anchoredPosition = target;
+    // }
+    // private IEnumerator SlideAndDeactivate(RectTransform rect, Vector2 target, System.Action onComplete)
+    // {
+    //     yield return Slide(rect, target);
+    //     onComplete?.Invoke();
+    // }
 
     public void OnQuitClicked()
     {
-        Application.Quit();
+        if (CanControl)
+        {
+            CanControl = false;
+            Application.Quit();
 
 #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
+            UnityEditor.EditorApplication.isPlaying = false;
 #endif
+        }
     }
 }

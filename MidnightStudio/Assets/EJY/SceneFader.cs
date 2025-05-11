@@ -13,7 +13,7 @@ public class SceneFader : MonoBehaviour
     public float OptionfadeDuration = 0.7f;
 
     /// <summary>
-    /// ÀÏ¹ÝÀûÀÎ ¾À ÀüÈ¯ (Áï½Ã LoadScene, °£´ÜÇÑ °æ¿ì¿¡ »ç¿ë)
+    /// ï¿½Ï¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½È¯ (ï¿½ï¿½ï¿½ LoadScene, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ì¿¡ ï¿½ï¿½ï¿½)
     /// </summary> 
     public void FadeToScene(string sceneName)
     {
@@ -30,7 +30,7 @@ public class SceneFader : MonoBehaviour
     }
 
     /// <summary>
-    /// ºÎµå·¯¿î ¾À ÀüÈ¯ (Additive·Î ´ÙÀ½ ¾À ·Îµå ÈÄ ÀÌÀü ¾À ¾ð·Îµå)
+    /// ï¿½Îµå·¯ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½È¯ (Additiveï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Îµï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Îµï¿½)
     /// </summary>
     public void FadeToSceneAdditive(string sceneName)
     {
@@ -42,16 +42,16 @@ public class SceneFader : MonoBehaviour
         // 1. Fade Out
         yield return StartCoroutine(FadeOut());
 
-        // 2. Additive·Î »õ ¾À ·Îµå
+        // 2. Additiveï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Îµï¿½
         AsyncOperation async = SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Additive);
         while (!async.isDone)
             yield return null;
 
-        // 3. »õ ¾ÀÀ» È°¼ºÈ­ ¾ÀÀ¸·Î ¼³Á¤
+        // 3. ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         Scene newScene = SceneManager.GetSceneByName(nextScene);
         SceneManager.SetActiveScene(newScene);
 
-        // 4. ÀÌÀü ¾Àµé ¾ð·Îµå
+        // 4. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Îµï¿½
         foreach (Scene scene in SceneManager.GetAllScenes())
         {
             if (scene != newScene && scene.isLoaded)
@@ -105,19 +105,25 @@ public class SceneFader : MonoBehaviour
 
     public void FadeToGray(float alpha = 0.5f)
     {
-        StopAllCoroutines(); // Áßº¹ ¹æÁö
-        StartCoroutine(FadeToColor(new Color(0.5f, 0.5f, 0.5f, alpha))); // È¸»ö
+        StopAllCoroutines(); // ï¿½ßºï¿½ ï¿½ï¿½ï¿½ï¿½
+        StartCoroutine(FadeToColor(new Color(0f, 0f, 0f, alpha))); // È¸ï¿½ï¿½
     }
 
     public void FadeOutGray()
     {
         /*StopAllCoroutines();
-        StartCoroutine(FadeToColor(new Color(0.5f, 0.5f, 0.5f, 0f))); // Åõ¸íÇÑ È¸»ö*/
+        StartCoroutine(FadeToColor(new Color(0.5f, 0.5f, 0.5f, 0f))); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½*/
         StopAllCoroutines();
         StartCoroutine(FadeToColor(
             new Color(0.5f, 0.5f, 0.5f, 0f),
-            () => fadeImage.color = new Color(0f, 0f, 0f, 0f) // °ËÁ¤»öÀ¸·Î ÃÊ±âÈ­
+            () => fadeImage.color = new Color(0f, 0f, 0f, 0f) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
         ));
+    }
+
+    public void SetBlack(float alpha = 0.5f)
+    {
+        StopAllCoroutines(); // ï¿½ßºï¿½ ï¿½ï¿½ï¿½ï¿½
+        fadeImage.color = new Color(0f, 0f, 0f, alpha);
     }
 
     private IEnumerator FadeToColor(Color targetColor, System.Action onComplete = null)
