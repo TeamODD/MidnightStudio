@@ -9,7 +9,9 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Start_text : MonoBehaviour
 {
+    public TextBox_Production TextBox;
 
+    public string LastSpeaker;
     public SynopsisManager manager;
     public float StartTextDelay = 0.05f;
 
@@ -39,7 +41,7 @@ public class Start_text : MonoBehaviour
     {
         List<string> keys = StartTextList(prefix);
         bool isFirst = true;
-        
+
 
         foreach (string key in keys)
         {
@@ -54,7 +56,7 @@ public class Start_text : MonoBehaviour
 
             isFirst = false;
         }
-        manager.EnableProceed();
+        manager.sceneFader.FadeToSceneAdditive("RealMainGame");
     }
 
     IEnumerator WaitForEnterKey()
@@ -65,7 +67,7 @@ public class Start_text : MonoBehaviour
         }
     }
 
-    private List<string> StartTextList(string prefix) 
+    private List<string> StartTextList(string prefix)
     {
         List<string> dialogList = new List<string>();
         foreach (var key in dialogues.Keys)
@@ -88,6 +90,11 @@ public class Start_text : MonoBehaviour
         Debug.Log("����");
         if (speaker.Contains("ink"))
         {
+            if (LastSpeaker != "ink")
+            {
+                TextBox.SpeakerBox_Production_Start("ink");
+                LastSpeaker = "ink";
+            }
             speaker_panel.text = "잉크 헤드";
             target = startText;
             ApplyActImage(speaker, act);
@@ -97,6 +104,11 @@ public class Start_text : MonoBehaviour
 
         else if (speaker.Contains("client"))
         {
+            if (LastSpeaker != "client")
+            {
+                TextBox.SpeakerBox_Production_Start("client");
+                LastSpeaker = "client";
+            }
             speaker_panel.text = "의뢰인";
             target = startText;
             ApplyActImage(speaker, act);
@@ -104,8 +116,9 @@ public class Start_text : MonoBehaviour
         }
         Debug.Log(index);
         
+        TextBox.TextBox_Production_Start();
         typingCoroutine = StartCoroutine(TextTyping(target, line));
-        
+
 
         // Ÿ���� ���߿� ����Ű�� ������ ������ �ڷ�ƾ �����ϰ� �������� �Ѿ
         while (typingCoroutine != null)
@@ -171,7 +184,8 @@ public class Start_text : MonoBehaviour
         return sprite;
     }
 
-    IEnumerator TextTyping(TMP_Text target, string text) {
+    IEnumerator TextTyping(TMP_Text target, string text)
+    {
         target.text = "";
         foreach (char c in text)
         {
@@ -179,7 +193,7 @@ public class Start_text : MonoBehaviour
             yield return new WaitForSeconds(StartTextDelay);
         }
 
-        yield return new WaitForSeconds(1f);
+        yield return null;
         speaker_nextFlash.StartFlashButtonCoroutine();
     }
 
@@ -196,9 +210,9 @@ public class Start_text : MonoBehaviour
             string speaker = row["speaker"].ToString().Trim();
             string animation = row["act"].ToString().Trim();
             string dialogue = row["dialogue"].ToString().Trim();
-           
+
             if (!dialogues.ContainsKey(index))
-                dialogues.Add(index, new string[] { speaker, dialogue, animation});
+                dialogues.Add(index, new string[] { speaker, dialogue, animation });
         }
     }
 }

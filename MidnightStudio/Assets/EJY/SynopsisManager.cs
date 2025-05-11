@@ -6,37 +6,37 @@ public class SynopsisManager : MonoBehaviour
 {
     public GameObject NextImg;
     public SceneFader sceneFader;
-    public float waitTime = 3f; // NextImg È°¼ºÈ­ ´ë±â ½Ã°£
+    public float waitTime = 3f; // NextImg È°ï¿½ï¿½È­ ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½
 
     private bool canProceed = false;
 
     private void Start()
     {
-        // ½ÃÀÛÇÏÀÚ¸¶ÀÚ ÆäÀÌµå ÀÎ
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½
         if (sceneFader != null)
         {
             sceneFader.FadeInNow();
         }
 
-        // Ã³À½¿£ NextImg¸¦ ºñÈ°¼ºÈ­
+        // Ã³ï¿½ï¿½ï¿½ï¿½ NextImgï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­
         NextImg.SetActive(false);
 
-        // ÀÏÁ¤ ½Ã°£ ÈÄ NextImg¸¦ ÄÑ°í ÀÔ·Â Çã¿ë
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ ï¿½ï¿½ NextImgï¿½ï¿½ ï¿½Ñ°ï¿½ ï¿½Ô·ï¿½ ï¿½ï¿½ï¿½
         //Invoke(nameof(EnableProceed), waitTime);
     }
 
-    public void EnableProceed()
-    {
-        NextImg.SetActive(true);
-        canProceed = true;
-    }
+    // public void EnableProceed()
+    // {
+    //     NextImg.SetActive(true);
+    //     canProceed = true;
+    // }
 
-    private void Update()
-    {
-        if (canProceed && Input.GetKeyDown(KeyCode.Return))
-        {
-            //SceneManager.LoadScene("MainGame");
-            sceneFader.FadeToSceneAdditive("RealMainGame");
-        }
-    }
+    // private void Update()
+    // {
+    //     if (canProceed && Input.GetKeyDown(KeyCode.Return))
+    //     {
+    //         //SceneManager.LoadScene("MainGame");
+    //         sceneFader.FadeToSceneAdditive("RealMainGame");
+    //     }
+    // }
 }

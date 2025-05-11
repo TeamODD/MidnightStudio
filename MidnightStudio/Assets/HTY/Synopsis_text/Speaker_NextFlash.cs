@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 public class Speaker_NextFlash : MonoBehaviour
 {
-    public GameObject speaker_next;
+    public UI_Production speaker_next;
     private bool isFlash = true;
     public float Flash = 20f;
 
-    //´ë»ç°¡ ÀüºÎ Ãâ·Â -> flashbutton ±ôºý -> ¿£ÅÍ ´©¸£¸é ´ë»ç Ãâ·Â (¹Ýº¹)
+    //ï¿½ï¿½ç°¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ -> flashbutton ï¿½ï¿½ï¿½ï¿½ -> ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ (ï¿½Ýºï¿½)
 
     public void Start()
     { 
-        speaker_next.SetActive(false);
+        speaker_next.gameObject.SetActive(false);
     }
 
     public void StartFlashButtonCoroutine() {
@@ -22,21 +22,22 @@ public class Speaker_NextFlash : MonoBehaviour
     IEnumerator FlashNextButton()
     {
         isFlash = true;
+        speaker_next.gameObject.SetActive(true);
         while (isFlash)
         {
-            // Åä±Û On
-            speaker_next.SetActive(true);
+            // ï¿½ï¿½ï¿½ On
+            speaker_next.Alpha("Lerp", Flash, 1f, 0f);
             yield return StartCoroutine(WaitWhileCheckingInput(Flash));
 
             if (!isFlash) yield break;
 
-            // Åä±Û Off
-            speaker_next.SetActive(false);
+            // ï¿½ï¿½ï¿½ Off
+            speaker_next.Alpha("Lerp", Flash, 0f, 1f);
             yield return StartCoroutine(WaitWhileCheckingInput(Flash));
         }
         
     }
-    // Flash ÃÊ¸¸Å­ ¸Å ÇÁ·¹ÀÓ ´ë±âÇÏ¸ç, ±× »çÀÌ Enter Å°¸¦ ´©¸£¸é isFlash = false Ã³¸®
+    // Flash ï¿½Ê¸ï¿½Å­ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½, ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Enter Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ isFlash = false Ã³ï¿½ï¿½
     IEnumerator WaitWhileCheckingInput(float duration)
     {
         float timer = 0f;
@@ -45,7 +46,8 @@ public class Speaker_NextFlash : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Return))
             {
                 isFlash = false;
-                speaker_next.SetActive(false);
+                speaker_next.Alpha("Instant", 0f, 0f, 0f);
+                speaker_next.gameObject.SetActive(false);
                 yield break;
             }
             timer += Time.deltaTime;

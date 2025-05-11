@@ -12,7 +12,7 @@ public class Option_Production : MonoBehaviour
 
     private void Start()
     {
-        // if (IsTest == true) { Production_Start(); }
+        if (IsTest == true) { Production_Start(); }
     }
 
     private void Update()

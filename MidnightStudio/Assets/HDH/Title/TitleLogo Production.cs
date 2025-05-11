@@ -13,6 +13,14 @@ public class TitleLogo_Production : MonoBehaviour
         if (IsTest == true) { Production_Start(); }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            if (IsTest == true) { Production_Start(); }
+        }
+    }
+
     public void Production_Start()
     {
         if (Title_Production_Sign != null) { StopCoroutine(Title_Production_Sign); }

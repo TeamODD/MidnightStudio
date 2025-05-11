@@ -11,22 +11,22 @@ public class SynopsisCharacterColoring : MonoBehaviour
     public void SetCharacterColor(string ActivationTarget) {
         switch (ActivationTarget) {
             case "ink":
-                Debug.Log("Ã¹°æÇè");
-                Ink_production.Coloring("Instant", 0.2f, Ink_SR.color, new Color(1f, 1f, 1f, 1f));
-                Client_production.Coloring("Instant", 0.2f, Client_SR.color, new Color(0.415f, 0.415f, 0.415f, 1f));
+                Debug.Log("Ã¹ï¿½ï¿½ï¿½ï¿½");
+                Ink_production.Coloring("Lerp", 0.2f, Ink_SR.color, new Color(1f, 1f, 1f, 1f));
+                Client_production.Coloring("Lerp", 0.2f, Client_SR.color, new Color(0.415f, 0.415f, 0.415f, 1f));
                 break;
             case "client":
-                Debug.Log("µÎ ¹øÂ° °æÇè");
-                Ink_production.Coloring("Instant", 0.2f, Ink_SR.color, new Color(0.415f, 0.415f, 0.415f, 1f));
-                Client_production.Coloring("Instant", 0.2f, Client_SR.color, new Color(1f, 1f, 1f, 1f));
+                Debug.Log("ï¿½ï¿½ ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½");
+                Ink_production.Coloring("Lerp", 0.2f, Ink_SR.color, new Color(0.415f, 0.415f, 0.415f, 1f));
+                Client_production.Coloring("Lerp", 0.2f, Client_SR.color, new Color(1f, 1f, 1f, 1f));
                 break;
             case "managers":
-                Ink_production.Coloring("Instant", 0.2f, Ink_SR.color, new Color(0.415f, 0.415f, 0.415f, 1f));
-                Client_production.Coloring("Instant", 0.2f, Client_SR.color, new Color(0.415f, 0.415f, 0.415f, 1f));
+                Ink_production.Coloring("Lerp", 0.2f, Ink_SR.color, new Color(0.415f, 0.415f, 0.415f, 1f));
+                Client_production.Coloring("Lerp", 0.2f, Client_SR.color, new Color(0.415f, 0.415f, 0.415f, 1f));
                 break;
             default: 
-                Ink_production.Coloring("Instant", 0.2f, Ink_SR.color, new Color(1f, 1f, 1f, 1f));
-                Client_production.Coloring("Instant", 0.2f, Client_SR.color, new Color(1f, 1f, 1f, 1f));
+                Ink_production.Coloring("Lerp", 0.2f, Ink_SR.color, new Color(1f, 1f, 1f, 1f));
+                Client_production.Coloring("Lerp", 0.2f, Client_SR.color, new Color(1f, 1f, 1f, 1f));
                 break;
         }
     }
