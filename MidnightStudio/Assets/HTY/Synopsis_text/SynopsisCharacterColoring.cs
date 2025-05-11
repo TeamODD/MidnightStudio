@@ -11,10 +11,12 @@ public class SynopsisCharacterColoring : MonoBehaviour
     public void SetCharacterColor(string ActivationTarget) {
         switch (ActivationTarget) {
             case "ink":
+                Debug.Log("첫경험");
                 Ink_production.Coloring("Instant", 0.2f, Ink_SR.color, new Color(1f, 1f, 1f, 1f));
                 Client_production.Coloring("Instant", 0.2f, Client_SR.color, new Color(0.415f, 0.415f, 0.415f, 1f));
                 break;
             case "client":
+                Debug.Log("두 번째 경험");
                 Ink_production.Coloring("Instant", 0.2f, Ink_SR.color, new Color(0.415f, 0.415f, 0.415f, 1f));
                 Client_production.Coloring("Instant", 0.2f, Client_SR.color, new Color(1f, 1f, 1f, 1f));
                 break;

@@ -12,10 +12,15 @@ public class Start_text : MonoBehaviour
 
     public SynopsisManager manager;
     public float StartTextDelay = 0.05f;
+
     public TMP_Text startText;
+    public TMP_Text speaker_panel;
+
     public SpriteRenderer Client;
     public SpriteRenderer InkHead;
+
     public SynopsisCharacterColoring synopsisColorManager;
+    public Speaker_NextFlash speaker_nextFlash;
 
 
     private Dictionary<string, string[]> dialogues = new Dictionary<string, string[]>();
@@ -34,6 +39,7 @@ public class Start_text : MonoBehaviour
     {
         List<string> keys = StartTextList(prefix);
         bool isFirst = true;
+        
 
         foreach (string key in keys)
         {
@@ -82,17 +88,24 @@ public class Start_text : MonoBehaviour
         Debug.Log("����");
         if (speaker.Contains("ink"))
         {
+            speaker_panel.text = "잉크 헤드";
             target = startText;
             ApplyActImage(speaker, act);
+            synopsisColorManager.SetCharacterColor("ink");
+
         }
 
         else if (speaker.Contains("client"))
         {
+            speaker_panel.text = "의뢰인";
             target = startText;
             ApplyActImage(speaker, act);
+            synopsisColorManager.SetCharacterColor("client");
         }
         Debug.Log(index);
+        
         typingCoroutine = StartCoroutine(TextTyping(target, line));
+        
 
         // Ÿ���� ���߿� ����Ű�� ������ ������ �ڷ�ƾ �����ϰ� �������� �Ѿ
         while (typingCoroutine != null)
@@ -166,7 +179,8 @@ public class Start_text : MonoBehaviour
             yield return new WaitForSeconds(StartTextDelay);
         }
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
+        speaker_nextFlash.StartFlashButtonCoroutine();
     }
 
     private void SynopsisLoadCSV(string story) //�ε� �� ���� 
