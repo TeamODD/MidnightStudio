@@ -15,14 +15,21 @@ public class SynopsisCharacterColoring : MonoBehaviour
                 Ink_production.Coloring("Lerp", 0.2f, Ink_SR.color, new Color(1f, 1f, 1f, 1f));
                 Client_production.Coloring("Lerp", 0.2f, Client_SR.color, new Color(0.415f, 0.415f, 0.415f, 1f));
                 break;
+            case "just_ink":
+                Debug.Log("ù����");
+                Ink_production.Coloring("Lerp", 0.2f, Ink_SR.color, new Color(1f, 1f, 1f, 1f));
+                break;
             case "client":
                 Debug.Log("�� ��° ����");
                 Ink_production.Coloring("Lerp", 0.2f, Ink_SR.color, new Color(0.415f, 0.415f, 0.415f, 1f));
                 Client_production.Coloring("Lerp", 0.2f, Client_SR.color, new Color(1f, 1f, 1f, 1f));
                 break;
-            case "managers":
+            case "manager":
                 Ink_production.Coloring("Lerp", 0.2f, Ink_SR.color, new Color(0.415f, 0.415f, 0.415f, 1f));
                 Client_production.Coloring("Lerp", 0.2f, Client_SR.color, new Color(0.415f, 0.415f, 0.415f, 1f));
+                break;
+            case "just_manager":
+                Ink_production.Coloring("Lerp", 0.2f, Ink_SR.color, new Color(0.415f, 0.415f, 0.415f, 1f));
                 break;
             default: 
                 Ink_production.Coloring("Lerp", 0.2f, Ink_SR.color, new Color(1f, 1f, 1f, 1f));

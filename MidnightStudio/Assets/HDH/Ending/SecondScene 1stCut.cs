@@ -36,15 +36,15 @@ public class SecondScene_1stCut : MonoBehaviour
         Obj[0].Alpha("Instant", 0f, 0f, 1f);
         yield return new WaitForSeconds(0.25f);
 
-        Subtitle.Engage("지상 최강의 명사수라며?", "Down", 2.25f);
+        Subtitle.Engage("당신이 세레니티움의 월광이라며?", "Down", 2.25f);
         yield return new WaitForSeconds(2.25f);
 
-        Subtitle.Engage("그러면...", "Down", 2f);
+        Subtitle.Engage("뭘 가지러 온 건지...", "Down", 2f);
         Obj[0].Move("Smooth", 2f, "y", 0f, 0.15f);
         yield return new WaitForSeconds(2.25f);
         
         Enemy_SR.sprite = Enemy[1];
-        Subtitle.Engage("확인 좀 해볼까!", "Down", 2f);
+        Subtitle.Engage("확인 좀 해볼까!", "Down", 1f);
         Obj[0].Move("Smooth", 0.25f, "y", 0.15f, 0.5f);
         yield return new WaitForSeconds(0.25f);
 

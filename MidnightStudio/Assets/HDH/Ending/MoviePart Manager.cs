@@ -16,7 +16,7 @@ public class MoviePart_Manager : MonoBehaviour
         FirstScene.gameObject.SetActive(false);
         SecondScene.gameObject.SetActive(false);
         ThirdScene.gameObject.SetActive(false);
-        FourthScene.gameObject.SetActive(false);
+        //FourthScene.gameObject.SetActive(false);
 
         if (IsTest == true) { Production_Start(); }
     }

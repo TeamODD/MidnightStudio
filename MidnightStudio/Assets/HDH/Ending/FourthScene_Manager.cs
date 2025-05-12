@@ -8,7 +8,7 @@ public class FourthScene_Manager : MonoBehaviour
     private IEnumerator Total_Production_Start_Sign;
     private void Start()
     {
-        Cut_1st.gameObject.SetActive(false);
+        //Cut_1st.gameObject.SetActive(true);
 
         if (IsTest == true) { Production_Start(); }
     }

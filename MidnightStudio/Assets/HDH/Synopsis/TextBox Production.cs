@@ -58,13 +58,13 @@ public class TextBox_Production : MonoBehaviour
     {
         if (Peaker == "ink") { SpeakerBox.Image(SpeakerBox_Sprites[0]); }
         else if (Peaker == "client") { SpeakerBox.Image(SpeakerBox_Sprites[1]); }
+        else if (Peaker == "manager") { SpeakerBox.Image(SpeakerBox_Sprites[2]); }
 
         SpeakerBox.Move("Lerp", 0.1f, "x", -740f, -640f);
         SpeakerBox.Alpha("Lerp", 0.1f, 0f, 1f);
         yield return new WaitForSeconds(0.1f);
 
         SpeakerBox.Move("Smooth", 0.2f, "x", -640f, -675f);
-        SpeakerBox.Alpha("Smooth", 0.2f, 0f, 1f);
         yield return new WaitForSeconds(0.2f);
     }
 }

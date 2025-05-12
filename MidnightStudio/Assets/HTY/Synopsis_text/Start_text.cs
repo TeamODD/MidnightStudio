@@ -32,8 +32,8 @@ public class Start_text : MonoBehaviour
 
     public void Start()
     {
-        SynopsisLoadCSV("story1_intro");
-        StartCoroutine(StartTextIndex("story1_intro"));
+        SynopsisLoadCSV("story1_synopsis");
+        StartCoroutine(StartTextIndex("story1_synopsis"));
 
     }
 
@@ -87,8 +87,9 @@ public class Start_text : MonoBehaviour
         string act = dialogues[index][2];
 
         TMP_Text target = null;
-        Debug.Log("����");
-        if (speaker.Contains("ink"))
+        Debug.Log(speaker.Contains("ink"));
+
+        if (speaker == "ink")
         {
             if (LastSpeaker != "ink")
             {
@@ -99,10 +100,23 @@ public class Start_text : MonoBehaviour
             target = startText;
             ApplyActImage(speaker, act);
             synopsisColorManager.SetCharacterColor("ink");
+        }
+
+        else if (speaker == "just_ink")
+        {
+            if (LastSpeaker != "ink")
+            {
+                TextBox.SpeakerBox_Production_Start("ink");
+                LastSpeaker = "ink";
+            }
+            speaker_panel.text = "잉크 헤드";
+            target = startText;
+            ApplyActImage("ink", act);
+            synopsisColorManager.SetCharacterColor("just_ink");
 
         }
 
-        else if (speaker.Contains("client"))
+        else if (speaker == "client")
         {
             if (LastSpeaker != "client")
             {
@@ -113,6 +127,30 @@ public class Start_text : MonoBehaviour
             target = startText;
             ApplyActImage(speaker, act);
             synopsisColorManager.SetCharacterColor("client");
+        }
+
+        else if (speaker == "manager")
+        {
+            if (LastSpeaker != "manager")
+            {
+                TextBox.SpeakerBox_Production_Start("manager");
+                LastSpeaker = "manager";
+            }
+            speaker_panel.text = "영화 감독";
+            target = startText;
+            synopsisColorManager.SetCharacterColor("manager");
+        }
+
+        else if (speaker == "just_manager")
+        {
+            if (LastSpeaker != "manager")
+            {
+                TextBox.SpeakerBox_Production_Start("manager");
+                LastSpeaker = "manager";
+            }
+            speaker_panel.text = "영화 감독";
+            target = startText;
+            synopsisColorManager.SetCharacterColor("just_manager");
         }
         Debug.Log(index);
         
@@ -160,11 +198,11 @@ public class Start_text : MonoBehaviour
         string basePath = "";
         if (speaker.Contains("ink"))
         {
-            basePath = "Ink_Character/";
+            basePath = "Sysnopsis_Ink/";
         }
         else if (speaker.Contains("client"))
         {
-            basePath = "Client_Character/";
+            basePath = "Sysnopsis_Client/";
         }
         else
         {
