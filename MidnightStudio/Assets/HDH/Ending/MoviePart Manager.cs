@@ -8,6 +8,7 @@ public class MoviePart_Manager : MonoBehaviour
     public SecondScene_Manager SecondScene;
     public ThirdScene_Manager ThirdScene;
     public FourthScene_Manager FourthScene;
+    public FifthScene_Manager FifthScene;
     public bool IsTest = false;
     private IEnumerator Total_Production_Start_Sign;
 
@@ -40,7 +41,7 @@ public class MoviePart_Manager : MonoBehaviour
                     Debug.Log("1st Scene - 1st Cut Start.");
                     FirstScene.gameObject.SetActive(true);
                     FirstScene.Production_Start();
-                    yield return new WaitForSeconds(FirstScene.Cut_1st.Time + FirstScene.Cut_2nd.Time);
+                    yield return new WaitForSeconds(FirstScene.Cut_1st.Time + FirstScene.Cut_2nd.Time - 0.01f);
 
                     FirstScene.gameObject.SetActive(false);
                     break;
@@ -48,7 +49,7 @@ public class MoviePart_Manager : MonoBehaviour
                     Debug.Log("2nd Scene - 1st Cut Start.");
                     SecondScene.gameObject.SetActive(true);
                     SecondScene.Production_Start();
-                    yield return new WaitForSeconds(SecondScene.Cut_1st.Time);
+                    yield return new WaitForSeconds(SecondScene.Cut_1st.Time - 0.01f);
 
                     SecondScene.gameObject.SetActive(false);
                     break;
@@ -56,17 +57,25 @@ public class MoviePart_Manager : MonoBehaviour
                     Debug.Log("3rd Scene - 1st Cut Start.");
                     ThirdScene.gameObject.SetActive(true);
                     ThirdScene.Production_Start();
-                    yield return new WaitForSeconds(ThirdScene.Cut_1st.Time);
+                    yield return new WaitForSeconds(ThirdScene.Cut_1st.Time - 0.01f);
 
                     ThirdScene.gameObject.SetActive(false);
                     break;
                 case 3:
-                    Debug.Log("4th Scene - 1st Cut Start.");
+                    Debug.Log("4th Scene - 2nd Cut Start.");
                     FourthScene.gameObject.SetActive(true);
                     FourthScene.Production_Start();
-                    yield return new WaitForSeconds(FourthScene.Cut_1st.Time);
+                    yield return new WaitForSeconds(FourthScene.Cut_2nd.Time + FourthScene.Cut_3rd.Time + FourthScene.Cut_4th.Time - 0.01f);
 
                     FourthScene.gameObject.SetActive(false);
+                    break;
+                case 4:
+                    Debug.Log("5th Scene - 2nd Cut Start.");
+                    FifthScene.gameObject.SetActive(true);
+                    FifthScene.Production_Start();
+                    yield return new WaitForSeconds(FifthScene.Cut_1st.Time + FifthScene.Cut_2nd.Time + FifthScene.Cut_3rd.Time + FifthScene.Cut_4th.Time - 0.01f);
+
+                    FifthScene.gameObject.SetActive(false);
                     break;
             }
         }

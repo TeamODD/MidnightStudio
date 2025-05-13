@@ -1,4 +1,4 @@
 keys,speaker,act,dialogue,information
-story1_intro_0,client,client_idle,부탁드립니다.,
+story1_intro_0,client,clt_idle_1,부탁드립니다.,
 story1_intro_1,ink,ink_serious,"좋아, 이제 질문을 시작하지.",
 story1_intro_2,ink,ink_idle,그렇다면...,

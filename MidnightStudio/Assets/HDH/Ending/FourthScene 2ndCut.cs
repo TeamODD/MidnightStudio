@@ -6,7 +6,7 @@ public class FourthScene_2ndCut : MonoBehaviour
     public float Time;
     public UI_Production[] Obj = new UI_Production[5];
     public Obj_Production Mist_Obj;
-    public Sprite[] Protagonist = new Sprite[2];
+    public Sprite[] Enemy = new Sprite[2];
     public bool IsTest = false;
     public FourthScene_Manager Scene_Manager;
     public MoviePart_Subtitle Subtitle;
