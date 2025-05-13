@@ -12,6 +12,7 @@ public class TitleButtonControl : MonoBehaviour
     public RectTransform optionImg;
     public SceneFader sceneFader;
     public Title_Production TitleProduction;
+    public GameObject audioManagerPrefab;
 
     public bool CanControl;
 
@@ -23,7 +24,18 @@ public class TitleButtonControl : MonoBehaviour
     public Vector2 offScreenPosition = new Vector2(0f, -Screen.height); // �Ʒ��� ȭ�� ��
     public Vector2 onScreenPosition = Vector2.zero; // ���� ��ġ (�߾� ����)
 
-
+    void Start()
+    {
+        if (AudioManager.Instance == null)
+        {
+            Instantiate(audioManagerPrefab);
+            Debug.Log("AudioManager 프리팹 생성됨");
+        }
+        else
+        {
+            Debug.Log("AudioManager 이미 존재함");
+        }
+    }
     private void Awake()
     {
         //optionRect = optionPanel.GetComponent<RectTransform>();
