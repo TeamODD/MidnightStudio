@@ -54,6 +54,9 @@ public class ThirdScene_1stCut : MonoBehaviour
 
         Scene_Manager.Shake.Production_Start(15);
 
+        Effect_Obj[2].Move("Lerp", true, 0.5f, "y", 4.18f, 4.36f);
+        Effect_Obj[2].Coloring("Lerp", 1f, new Color(1f, 1f, 1f, 1f), new Color(1f, 1f, 1f, 0f));
+
         Chara_Obj.Rotation("Smooth", 0.15f, new Vector3(0f, 0f, 0f), new Vector3(0f, 0f, -9f));
         Scene_Manager.Fade_Panel.Coloring("Instant", 0f, new Color(0f, 0f, 0f, 1f), new Color(0.98f, 0.46f, 0.14f, 1f));
         Scene_Manager.Fade_Panel.Alpha("Lerp", 0.1f, 1f, 0f);

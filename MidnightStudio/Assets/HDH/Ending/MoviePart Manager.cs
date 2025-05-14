@@ -18,11 +18,11 @@ public class MoviePart_Manager : MonoBehaviour
 
     private void Start()
     {
-        FirstScene.gameObject.SetActive(false);
-        SecondScene.gameObject.SetActive(false);
-        ThirdScene.gameObject.SetActive(false);
-        FourthScene.gameObject.SetActive(false);
-        FifthScene.gameObject.SetActive(false);
+        // FirstScene.gameObject.SetActive(false);
+        // SecondScene.gameObject.SetActive(false);
+        // ThirdScene.gameObject.SetActive(false);
+        // FourthScene.gameObject.SetActive(false);
+        // FifthScene.gameObject.SetActive(false);
 
         if (IsTest == true) { Production_Start(Test_Sequence); }
     }

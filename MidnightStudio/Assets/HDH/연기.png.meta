@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2a5060388a472f84fb2a76ae44af6d5a
+guid: de5fadb58eb6cac48aa95dd459f1fd70
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4099415141620423932
-    second: panic_0
+      213: -1738614889074966604
+    second: "\uC5F0\uAE30_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: panic_0
+      name: "\uC5F0\uAE30_0"
       rect:
         serializedVersion: 2
-        x: 293
-        y: 0
-        width: 551
-        height: 941
+        x: 408
+        y: 895
+        width: 55
+        height: 185
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4036bd8f5a3fb17c0800000000000000
-      internalID: -4099415141620423932
+      spriteID: 4bf3b7f48f23fd7e0800000000000000
+      internalID: -1738614889074966604
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      panic_0: -4099415141620423932
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
