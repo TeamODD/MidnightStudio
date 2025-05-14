@@ -1264,6 +1264,7 @@ MonoBehaviour:
   camlight: {fileID: 50782150}
   ui_Production: {fileID: 254371746}
   parser: {fileID: 432035868}
+  GAME_OVER_TIME: 24
   step_timer: 0
 --- !u!114 &254371743
 MonoBehaviour:

@@ -4,16 +4,16 @@ public class Cut_production : MonoBehaviour
 {
     public UI_Production ui_production;
 
-    public void Cut_AlpahSetZero() { //Ã³À½ 0À¸·Î ÃÊ±âÈ­
+    public void Cut_AlpahSetZero() { //Ã³ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
         ui_production.Alpha("Instant", 1f, 1, 0);
     }
 
-    public void Cut_AlpahUpdate() { //½ÃÀÛ ¿¬Ãâ
+    public void Cut_AlpahUpdate() { //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         ui_production.Scale("Lerp",0.1f, new Vector3(3f,3f,1f), new Vector3(0.8f, 0.8f, 1f));
         ui_production.Alpha("Instant", 0.35f, 0, 1);
     }
 
-    public void Cut_AlpahFianl() //³¡ ¿¬Ãâ
+    public void Cut_AlpahFianl() //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     {
         ui_production.Scale("Smooth", 0.25f, new Vector3(0.8f, 0.8f, 1f), new Vector3(1f,1f,1f));
     }

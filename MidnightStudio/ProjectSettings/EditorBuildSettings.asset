@@ -12,14 +12,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Synopsis.unity
     guid: 92a1f5112dafeca4c9ad0e320eb72609
   - enabled: 1
-    path: Assets/Scenes/main.unity
-    guid: 3afa5e482c8b147d9b9de3233fb849bf
+    path: Assets/Scenes/RealMainGame.unity
+    guid: 2c85eccac7f25a24095ebb9dd118b082
+  - enabled: 1
+    path: Assets/Scenes/Epilog.unity
+    guid: bbd33baa40298d540b6141b0375be86c
   - enabled: 1
     path: Assets/Scenes/Ending.unity
     guid: e191a15fb1049cf4ebb82c6bffc9fb4f
   - enabled: 1
-    path: Assets/Scenes/RealMainGame.unity
-    guid: 2c85eccac7f25a24095ebb9dd118b082
+    path: Assets/Scenes/Result.unity
+    guid: a06acd76b0b82c043b1d4dc3bc86d919
+  - enabled: 1
+    path: Assets/Scenes/main.unity
+    guid: 3afa5e482c8b147d9b9de3233fb849bf
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

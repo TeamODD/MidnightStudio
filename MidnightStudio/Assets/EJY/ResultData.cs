@@ -6,7 +6,7 @@ public class ResultData : MonoBehaviour
     public static ResultData Instance { get; private set; }
     public GaugeControl gaugeControl;
 
-    // ½½·Ô ÀÎµ¦½º ¼ø¼­´ë·Î Scene Identifier¸¸ ÀúÀå
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Scene Identifierï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     public List<string> orderedSceneIdentifiers = new List<string>();
     public float finish_timer;
 
@@ -35,11 +35,11 @@ public class ResultData : MonoBehaviour
             }
             else
             {
-                orderedSceneIdentifiers.Add(""); // ºñ¾î ÀÖ´Â ½½·Ô Ã³¸®
+                orderedSceneIdentifiers.Add(""); // ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
             }
         }
         finish_timer = gaugeControl.step_timer;
 
-        Debug.Log("¾À ½Äº°ÀÚ ÀúÀå ¿Ï·á: " + string.Join(", ", orderedSceneIdentifiers));
+        Debug.Log("ï¿½ï¿½ ï¿½Äºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½: " + string.Join(", ", orderedSceneIdentifiers));
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 public class SecondScene_Manager : MonoBehaviour
 {
     public SecondScene_1stCut Cut_1st;
+    public bool IsLast = false;
     public bool IsTest = false;
     private IEnumerator Total_Production_Start_Sign;
 
@@ -31,7 +32,7 @@ public class SecondScene_Manager : MonoBehaviour
 
         Cut_1st.gameObject.SetActive(true);
         Cut_1st.Production_Start();
-        yield return new WaitForSeconds(Cut_1st.Time);
-        Cut_1st.gameObject.SetActive(false);
+        yield return new WaitForSeconds(Cut_1st.Time - 0.01f);
+        if (!IsLast) { Cut_1st.gameObject.SetActive(false); }
     }
 }

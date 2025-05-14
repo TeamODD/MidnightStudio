@@ -8,6 +8,7 @@ public class FirstScene_Manager : MonoBehaviour
     public FirstScene_1stCut Cut_1st;
     public FirstScene_2ndCut Cut_2nd;
     public UI_Production[] Production_Ojbects;
+    public bool IsLast = false;
     public bool IsTest = false;
     private IEnumerator Total_Production_Start_Sign;
 
@@ -36,7 +37,7 @@ public class FirstScene_Manager : MonoBehaviour
 
         Cut_1st.gameObject.SetActive(true);
         Cut_1st.Production_Start();
-        yield return new WaitForSeconds(Cut_1st.Time);
+        yield return new WaitForSeconds(Cut_1st.Time - 0.01f);
 
         Cut_1st.gameObject.SetActive(false);
 
@@ -46,7 +47,7 @@ public class FirstScene_Manager : MonoBehaviour
         
         Cut_2nd.gameObject.SetActive(true);
         Cut_2nd.Production_Start();
-        yield return new WaitForSeconds(Cut_2nd.Time);
-        Cut_2nd.gameObject.SetActive(false);
+        yield return new WaitForSeconds(Cut_2nd.Time - 0.01f);
+        if (!IsLast) { Cut_2nd.gameObject.SetActive(false); }
     }
 }

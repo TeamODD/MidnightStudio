@@ -67,7 +67,7 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
     private IEnumerator PlayCutsceneThenLoadEnding()
     {
         yield return StartCoroutine(GameCutCoroutine());  // 코루틴 종료까지 대기
-        SceneManager.LoadScene("Ending");                     // 이후 씬 전환
+        SceneManager.LoadScene("Epilog");                     // 이후 씬 전환
     }
 
     void Start()

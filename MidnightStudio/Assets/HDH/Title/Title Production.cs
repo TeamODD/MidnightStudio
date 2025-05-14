@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Title_Production : MonoBehaviour
 {   
+    public UI_Production Panel;
     public GameObject[] Background_Objects;
 
     public Background_Production Background_Production;
@@ -10,6 +11,12 @@ public class Title_Production : MonoBehaviour
     public Option_Production Option_Production;
 
     private IEnumerator Option_Production_Sign;
+
+    private void Start()
+    {
+        Panel.Move("Smooth", 1f, "x", 0f, -1920f);
+        Panel.Alpha("Instant", 0f, 0f, 1f);
+    }
 
     public void Option_Production_Start()
     {

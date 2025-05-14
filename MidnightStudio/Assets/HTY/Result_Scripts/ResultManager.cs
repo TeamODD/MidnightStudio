@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ResultMangager : MonoBehaviour
 {
@@ -6,9 +7,14 @@ public class ResultMangager : MonoBehaviour
     public Result_FindValue result_FindValue;
     public void Start()
     {
-        resultTMP_Production.StartShowResultObject();
+        result_FindValue.VarySet();
         result_FindValue.RemainTimeChecking();
         result_FindValue.CheckSceneNumber();
-        result_FindValue.CheckFinalResult();
+        resultTMP_Production.StartDissolve(result_FindValue.CheckFinalResult());
+    }
+
+    public void SceneChange()
+    {
+        SceneManager.LoadScene("Title");
     }
 }

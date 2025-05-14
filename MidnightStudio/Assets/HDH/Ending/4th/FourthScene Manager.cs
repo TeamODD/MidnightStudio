@@ -6,6 +6,7 @@ public class FourthScene_Manager : MonoBehaviour
     public FourthScene_2ndCut Cut_2nd;
     public FourthScene_3rdCut Cut_3rd;
     public FourthScene_4thCut Cut_4th;
+    public bool IsLast = false;
     public bool IsTest = false;
     private IEnumerator Total_Production_Start_Sign;
     private void Start()
@@ -32,7 +33,7 @@ public class FourthScene_Manager : MonoBehaviour
         
         Cut_2nd.gameObject.SetActive(true);
         Cut_2nd.Production_Start();
-        yield return new WaitForSeconds(Cut_2nd.Time);
+        yield return new WaitForSeconds(Cut_2nd.Time - 0.01f);
         Cut_2nd.gameObject.SetActive(false);
 
         // # 3rdCut 시작.
@@ -41,7 +42,7 @@ public class FourthScene_Manager : MonoBehaviour
         
         Cut_3rd.gameObject.SetActive(true);
         Cut_3rd.Production_Start();
-        yield return new WaitForSeconds(Cut_3rd.Time);
+        yield return new WaitForSeconds(Cut_3rd.Time - 0.01f);
         
         Cut_3rd.gameObject.SetActive(false);
 
@@ -51,8 +52,8 @@ public class FourthScene_Manager : MonoBehaviour
         
         Cut_4th.gameObject.SetActive(true);
         Cut_4th.Production_Start();
-        yield return new WaitForSeconds(Cut_4th.Time);
+        yield return new WaitForSeconds(Cut_4th.Time - 0.01f);
         
-        Cut_4th.gameObject.SetActive(false);
+        if (!IsLast) { Cut_4th.gameObject.SetActive(false); }
     }
 }

@@ -1,9 +1,13 @@
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class MoviePart_Manager : MonoBehaviour
 {
-    public int[] Sequence = new int[] {0, 1, 2, 3, 4};
+    public List<string> Test_Sequence = new List<string> { "0", "1", "2", "3", "4" };
+    public EndingManager EndingManager;
+    public UI_Production Fade_Panel;
     public FirstScene_Manager FirstScene;
     public SecondScene_Manager SecondScene;
     public ThirdScene_Manager ThirdScene;
@@ -17,66 +21,85 @@ public class MoviePart_Manager : MonoBehaviour
         FirstScene.gameObject.SetActive(false);
         SecondScene.gameObject.SetActive(false);
         ThirdScene.gameObject.SetActive(false);
-        //FourthScene.gameObject.SetActive(false);
+        FourthScene.gameObject.SetActive(false);
+        FifthScene.gameObject.SetActive(false);
 
-        if (IsTest == true) { Production_Start(); }
+        if (IsTest == true) { Production_Start(Test_Sequence); }
     }
 
     // # 애니메이션을 시작하는 함수.
-    public void Production_Start()
+    public void Production_Start(List<string> Sequence)
     {
         if (Total_Production_Start_Sign != null) { StopCoroutine(Total_Production_Start_Sign); }
-        Total_Production_Start_Sign = Production_Start_Coroutine();
+        Total_Production_Start_Sign = Production_Start_Coroutine(Sequence);
         StartCoroutine(Total_Production_Start_Sign);
     }
 
     // # 애니메이션 로직.
-    private IEnumerator Production_Start_Coroutine()
+    private IEnumerator Production_Start_Coroutine(List<string> Sequence)
     {
-        foreach(int Value in Sequence)
+        yield return new WaitForSeconds(1f);
+
+        Fade_Panel.Alpha("Lerp", 0.5f, 1f, 0f);
+
+        foreach (string Value in Sequence)
         {
-            switch(Value)
+            switch (Value)
             {
-                case 0:
+                case "1":
                     Debug.Log("1st Scene - 1st Cut Start.");
+                    if (Value == Sequence[4]) { FirstScene.IsLast = true; }
                     FirstScene.gameObject.SetActive(true);
                     FirstScene.Production_Start();
-                    yield return new WaitForSeconds(FirstScene.Cut_1st.Time + FirstScene.Cut_2nd.Time - 0.01f);
+                    yield return new WaitForSeconds(FirstScene.Cut_1st.Time + FirstScene.Cut_2nd.Time);
 
-                    FirstScene.gameObject.SetActive(false);
+                    if (FirstScene.IsLast == false) { FirstScene.gameObject.SetActive(false); }
                     break;
-                case 1:
+                case "3":
                     Debug.Log("2nd Scene - 1st Cut Start.");
+                    if (Value == Sequence[4]) { SecondScene.IsLast = true; }
                     SecondScene.gameObject.SetActive(true);
                     SecondScene.Production_Start();
-                    yield return new WaitForSeconds(SecondScene.Cut_1st.Time - 0.01f);
+                    yield return new WaitForSeconds(SecondScene.Cut_1st.Time);
 
-                    SecondScene.gameObject.SetActive(false);
+                    if (SecondScene.IsLast == false) { SecondScene.gameObject.SetActive(false); }
                     break;
-                case 2:
+                case "2":
                     Debug.Log("3rd Scene - 1st Cut Start.");
+                    if (Value == Sequence[4]) { ThirdScene.IsLast = true; }
                     ThirdScene.gameObject.SetActive(true);
                     ThirdScene.Production_Start();
-                    yield return new WaitForSeconds(ThirdScene.Cut_1st.Time - 0.01f);
+                    yield return new WaitForSeconds(ThirdScene.Cut_1st.Time);
 
-                    ThirdScene.gameObject.SetActive(false);
+                    if (ThirdScene.IsLast == false) { ThirdScene.gameObject.SetActive(false); }
                     break;
-                case 3:
+                case "4":
                     Debug.Log("4th Scene - 2nd Cut Start.");
+                    if (Value == Sequence[4]) { FourthScene.IsLast = true; }
                     FourthScene.gameObject.SetActive(true);
                     FourthScene.Production_Start();
-                    yield return new WaitForSeconds(FourthScene.Cut_2nd.Time + FourthScene.Cut_3rd.Time + FourthScene.Cut_4th.Time - 0.01f);
+                    yield return new WaitForSeconds(FourthScene.Cut_2nd.Time + FourthScene.Cut_3rd.Time + FourthScene.Cut_4th.Time);
 
-                    FourthScene.gameObject.SetActive(false);
+                    if (FourthScene.IsLast == false) { FourthScene.gameObject.SetActive(false); }
                     break;
-                case 4:
-                    Debug.Log("5th Scene - 2nd Cut Start.");
+                case "0":
+                    Debug.Log("5th Scene - 1st Cut Start.");
+                    if (Value == Sequence[4]) { FifthScene.IsLast = true; }
                     FifthScene.gameObject.SetActive(true);
                     FifthScene.Production_Start();
-                    yield return new WaitForSeconds(FifthScene.Cut_1st.Time + FifthScene.Cut_2nd.Time + FifthScene.Cut_3rd.Time + FifthScene.Cut_4th.Time - 0.01f);
+                    yield return new WaitForSeconds(
+                        FifthScene.Cut_1st.Time + FifthScene.Cut_2nd.Time + FifthScene.Cut_3rd.Time + FifthScene.Cut_4th.Time + FifthScene.Cut_5th.Time + FifthScene.Cut_6th.Time);
 
-                    FifthScene.gameObject.SetActive(false);
+                    if (FifthScene.IsLast == false) { FifthScene.gameObject.SetActive(false); }
                     break;
+            }
+
+            if (Sequence[4] == Value)
+            {
+                Fade_Panel.Alpha("Lerp", 0.5f, 0f, 1f);
+                yield return new WaitForSeconds(1f);
+
+                EndingManager.MovieEnd();
             }
         }
     }

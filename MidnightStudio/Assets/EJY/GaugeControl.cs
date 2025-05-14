@@ -9,17 +9,17 @@ public class GaugeControl : MonoBehaviour
     public Image camlight;
     public UI_Production ui_Production;
     public DialogueParser parser;
-    private float GAME_OVER_TIME = 240.0f;
+    public float GAME_OVER_TIME = 240.0f;
     public float step_timer = 0.0f;
 
-    private bool isEndingTriggered = false; // Áßº¹ È£Ãâ ¹æÁö
+    private bool isEndingTriggered = false; // ï¿½ßºï¿½ È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     private bool triggered25 = false;
     private bool triggered50 = false;
     private bool triggered60 = false;
     private bool triggered75 = false;
     private bool triggered80 = false;
 
-    private bool isTimerActive = false; // Å¸ÀÌ¸Ó È°¼º ¿©ºÎ
+    private bool isTimerActive = false; // Å¸ï¿½Ì¸ï¿½ È°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     // Update is called once per frame
     void Update()
@@ -73,7 +73,7 @@ public class GaugeControl : MonoBehaviour
         isTimerActive = true;
     }
 
-    // ÇÊ¿äÇÏ´Ù¸é ÀÏ½ÃÁ¤Áöµµ °¡´É
+    // ï¿½Ê¿ï¿½ï¿½Ï´Ù¸ï¿½ ï¿½Ï½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     public void PauseGauge()
     {
         isTimerActive = false;

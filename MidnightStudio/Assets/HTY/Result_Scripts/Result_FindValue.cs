@@ -1,24 +1,30 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Result_FindValue : MonoBehaviour
 {
     public TMP_Text RemainTime_Value;
-    public TMP_Text[] SceneValue;
     public TMP_Text Result;
 
-    private float RESULT = 0f; //ÃÖÁ¾ °á°ú°ª
+    public Image[] Scene_Images;
+    public Sprite[] Scene_Sprites;
+
+    private float RESULT = 0f; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
     private string[] CorrectResult = {"1","3","2","4","0"};
-    
+    public int Correct;
+
     private float timer;
-    private List<string> sceneIDs;
-    public void Start()
+    // [SerializeField]
+    public List<string> SceneIDs = new List<string>();
+
+    public void VarySet()
     {
-        // ¾À ½Äº°ÀÚ ¸®½ºÆ® °¡Á®¿À±â
-        List<string> sceneIDs = ResultData.Instance.orderedSceneIdentifiers;
-        // Å¸ÀÌ¸Ó °ª °¡Á®¿À±â
-        float timer = ResultData.Instance.finish_timer;
+        // ï¿½ï¿½ ï¿½Äºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        SceneIDs = GameObject.Find("ResultData").GetComponent<ResultData>().orderedSceneIdentifiers;
+        // Å¸ï¿½Ì¸ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        timer =  GameObject.Find("ResultData").GetComponent<ResultData>().finish_timer;
     }
 
     public void RemainTimeChecking() {
@@ -37,32 +43,23 @@ public class Result_FindValue : MonoBehaviour
     }
 
     public void CheckSceneNumber() {
-        
-        for (int i = 0; i < sceneIDs.Count; i++)
+        for (int i = 0; i < SceneIDs.Count; i++)
         {
-            if (sceneIDs[i] == CorrectResult[i])
+            Scene_Images[i].sprite  = Scene_Sprites[int.Parse(SceneIDs[i])];
+
+            if (SceneIDs[i] == CorrectResult[i])
             {
-                SceneValue[i].text = "Correct!";
                 RESULT += 1f;
-            }
-            else
-            {
-                SceneValue[i].text = "Error?";
+                Correct += 1;
             }
         }
+
+        Result.text = $"ì •ë‹µ ì¤‘ {Correct}ê°œì˜ ì¶”ë¦¬ ì •ë‹µ.";
     }
 
-    public void CheckFinalResult() {
-        if (RESULT == 6f)
-        {
-            Result.text = "A";
-        }
-        else if (RESULT > 3f && RESULT <= 6f)
-        {
-            Result.text = "B";
-        }
-        else {
-            Result.text = "C";
-        }
+    public string CheckFinalResult() {
+        if (RESULT > 6f) { return "A"; }
+        else if (RESULT > 3f && RESULT <= 6f) { return "B"; }
+        else { return "C"; }
     }
 }

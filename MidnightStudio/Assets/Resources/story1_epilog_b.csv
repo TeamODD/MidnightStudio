@@ -1,0 +1,11 @@
+keys,speaker,act,dialogue
+story1_synopsis_b_0,manager,,이제 촬영 시작 전입니다..! 각본가님... 준비된 건가요?
+story1_synopsis_b_1,ink,ink_idle,물론이네. 각본은 괜찮아.
+story1_synopsis_b_2,client,clt_laugh,이 정도면 괜찮을 것 같아요! 시나리오가 맞는 느낌이 확실히 들어요!
+story1_synopsis_b_3,ink,ink_idle,그래. 자네 덕분이네.
+story1_synopsis_b_4,ink,ink_idle,자네가 대략적인 시나리오를 알고 있어서 다행이였지.
+story1_synopsis_b_5,ink,ink_haught,이 영화는 괜찮을 걸세.
+story1_synopsis_b_6,client,clt_idle_1,알겠습니다! 노력해볼게요!
+story1_synopsis_b_7,manager,,주인님 오시기 시작하십니다!
+story1_synopsis_b_8,manager,,꿈이란 것을 눈치 못 차리게 잘 연기해주세요!
+story1_synopsis_b_9,client,clt_laugh,지금 갑니다~!

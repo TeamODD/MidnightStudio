@@ -5,50 +5,119 @@ using UnityEngine;
 public class ResultTMP_production : MonoBehaviour
 {
     public GameObject RemainTime;
-    public GameObject Scene1;
-    public GameObject Scene2;
-    public GameObject Scene3;
-    public GameObject Scene4;
-    public GameObject Scene5;
-    public GameObject Result;
+
+    public UI_Production[] Panel;
+    public UI_Production[] Total;
+    public UI_Production[] Sequences;
+    public UI_Production[] Timer;
+
+    private bool CanClick = true;
+
+    public ResultMangager Manager;
 
     public void Start()
     {
         //StartShowResultObject();
     }
 
-    public void StartShowResultObject() {
-        StartCoroutine(ShowResultObject());
+    public void StartDissolve(string Grade)
+    {
+        StartCoroutine(StartDissolve_Coroutine(Grade));
     }
 
-    IEnumerator ShowResultObject() {
+    private IEnumerator StartDissolve_Coroutine(string Grade)
+    {
+        Panel[0].Alpha("Lerp", 0.5f, 1f, 0f);
+        yield return new WaitForSeconds(2f);
 
-        RemainTime.SetActive(true);
-
-        yield return new WaitForSeconds(1f);
-
-        Scene1.SetActive(true);
-
-        yield return new WaitForSeconds(1f);
-
-        Scene2.SetActive(true);
-
-        yield return new WaitForSeconds(1f);
-
-        Scene3.SetActive(true);
-
-        yield return new WaitForSeconds(1f);
-
-        Scene4.SetActive(true);
-
-        yield return new WaitForSeconds(1f);
-
-        Scene5.SetActive(true);
-
-        yield return new WaitForSeconds(1f);
-        yield return new WaitForSeconds(0.7f);
-
-        Result.SetActive(true);
+        StartShowResultObject(Grade);
     }
 
+    public void StartShowResultObject(string Grade)
+    {
+        StartCoroutine(ShowResultObject(Grade));
+    }
+
+    private IEnumerator ShowResultObject(string Grade)
+    {
+        Panel[0].Alpha("Lerp", 0.1f, 0f, 1f);
+        Total[0].Scale("Lerp", 0.1f, new Vector3(2f, 2f, 2f), new Vector3(0.95f, 0.95f, 1f));
+        Total[0].Alpha("Lerp", 0.1f, 0f, 1f);
+        yield return new WaitForSeconds(0.1f);
+
+        Total[0].Scale("Smooth", 0.1f, new Vector3(0.95f, 0.95f, 1f), new Vector3(1f, 1f, 1f));
+        yield return new WaitForSeconds(1f);
+
+        Sequences[0].Move("Smooth", 0.2f, "x", -360f, -471f);
+        Sequences[0].Alpha("Lerp", 0.2f, 0f, 1f);
+        yield return new WaitForSeconds(0.5f);
+
+        for (int Repeat = 0; Repeat < 9; Repeat++)
+        {
+            Sequences[Repeat + 1].Move("Smooth", 0.1f, "y", -185f, -170f);
+            Sequences[Repeat + 1].Alpha("Lerp", 0.05f, 0f, 1f);
+            yield return new WaitForSeconds(0.25f);
+        }
+        yield return new WaitForSeconds(0.5f);
+
+        Sequences[10].Move("Smooth", 0.2f, "x", -610f, -721f);
+        Sequences[10].Alpha("Lerp", 0.2f, 0f, 1f);
+        yield return new WaitForSeconds(1f);
+
+        Timer[0].Move("Smooth", 0.2f, "x", -360f, -471f);
+        Timer[0].Alpha("Lerp", 0.2f, 0f, 1f);
+        yield return new WaitForSeconds(0.5f);
+
+        Timer[1].Move("Smooth", 0.1f, "y", -111f, 0f);
+        Timer[1].Alpha("Lerp", 0.2f, 0f, 1f);
+        yield return new WaitForSeconds(1f);
+
+        switch (Grade)
+        {
+            case "A":
+                Total[1].Scale("Lerp", 0.1f, new Vector3(2f, 2f, 1f), new Vector3(0.95f, 0.95f, 1f));
+                Total[1].Alpha("Instant", 0f, 0f, 1f);
+                yield return new WaitForSeconds(0.1f);
+
+                Total[1].Scale("Smooth", 0.1f, new Vector3(0.95f, 0.95f, 1f), new Vector3(1f, 1f, 1f));
+                break;
+            case "B":
+                Total[2].Scale("Lerp", 0.1f, new Vector3(2f, 2f, 1f), new Vector3(0.95f, 0.95f, 1f));
+                Total[2].Alpha("Instant", 0f, 0f, 1f);
+                yield return new WaitForSeconds(0.1f);
+
+                Total[2].Scale("Smooth", 0.1f, new Vector3(0.95f, 0.95f, 1f), new Vector3(1f, 1f, 1f));
+                break;
+            case "C":
+                Total[3].Scale("Lerp", 0.1f, new Vector3(2f, 2f, 1f), new Vector3(0.95f, 0.95f, 1f));
+                Total[3].Alpha("Instant", 0f, 0f, 1f);
+                yield return new WaitForSeconds(0.1f);
+
+                Total[3].Scale("Smooth", 0.1f, new Vector3(0.95f, 0.95f, 1f), new Vector3(1f, 1f, 1f));
+                break;
+        }
+        yield return new WaitForSeconds(1f);
+
+        Total[4].gameObject.SetActive(true);
+        Total[4].Move("Smooth", 0.2f, "y", -485f, -460f);
+        Total[4].Alpha("Lerp", 0.2f, 0f, 1f);
+    }
+
+    public void SceneChange()
+    {
+        if (CanClick == true)
+        {
+            CanClick = false;
+            StartCoroutine(SceneChange_Coroutine());
+        }
+    }
+
+    private IEnumerator SceneChange_Coroutine()
+    {
+        Panel[1].Move("Smooth", 1f, "x", 2400f, -1920f);
+        Panel[1].Alpha("Instant", 0f, 0f, 1f);
+        yield return new WaitForSeconds(0.5f);
+        
+        Manager.SceneChange();
+    }
 }

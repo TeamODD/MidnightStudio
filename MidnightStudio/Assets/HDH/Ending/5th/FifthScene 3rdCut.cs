@@ -1,13 +1,11 @@
 using UnityEngine;
 using System.Collections;
 
-public class FifthScene_2ndCut : MonoBehaviour
+public class FifthScene_3rdCut : MonoBehaviour
 {
     public float Time;
-    public SpriteRenderer Obj_SR;
     public Obj_Production Obj_OP;
     public UI_Production Obj_UP;
-    public Sprite[] Protagonist = new Sprite[2];
     public bool IsTest = false;
     public FifthScene_Manager Scene_Manager;
     public MoviePart_Subtitle Subtitle;
@@ -30,10 +28,11 @@ public class FifthScene_2ndCut : MonoBehaviour
     private IEnumerator Production_Start_Coroutine()
     {
         // * 액션.
-        Obj_SR.sprite = Protagonist[1];
+        Obj_UP.Position("Instant", 0f, Vector3.zero, new Vector3(4.5f, -1.95f, 0f));
 
-        Obj_UP.Position("Lerp", 5f, new Vector3(1.12f, -1.4f, 0f), new Vector3(-0.32f, -1.15f, 0f));
-        yield return new WaitForSeconds(2f);
+        Obj_UP.Position("Lerp", 5f, new Vector3(4.5f, -1.7f, 0f), new Vector3(3.15f, -1.95f, 0f));
+        Obj_UP.Scale("Lerp", 5f, new Vector3(1f, 1f, 0f), new Vector3(0.9275f, 0.9275f, 0f));
+        yield return new WaitForSeconds(0.2f);
         // * 컷.
     }
 }

@@ -3,11 +3,16 @@ using System.Collections;
 
 public class FifthScene_Manager : MonoBehaviour
 {
+    public UI_Production Fade_Panel;
     public FifthScene_1stCut Cut_1st;
     public FifthScene_2ndCut Cut_2nd;
     public FifthScene_3rdCut Cut_3rd;
     public FifthScene_4thCut Cut_4th;
+    public FifthScene_5thCut Cut_5th;
+    public FifthScene_6thCut Cut_6th;
+    public bool IsLast = false;
     public bool IsTest = false;
+    public MoviePart_Shake Shake;
     private IEnumerator Total_Production_Start_Sign;
     private void Start()
     {
@@ -33,7 +38,7 @@ public class FifthScene_Manager : MonoBehaviour
         
         Cut_1st.gameObject.SetActive(true);
         Cut_1st.Production_Start();
-        yield return new WaitForSeconds(Cut_1st.Time);
+        yield return new WaitForSeconds(Cut_1st.Time - 0.01f);
         Cut_1st.gameObject.SetActive(false);
 
         // # 2ndCut 시작.
@@ -42,7 +47,7 @@ public class FifthScene_Manager : MonoBehaviour
         
         Cut_2nd.gameObject.SetActive(true);
         Cut_2nd.Production_Start();
-        yield return new WaitForSeconds(Cut_2nd.Time);
+        yield return new WaitForSeconds(Cut_2nd.Time - 0.01f);
         Cut_2nd.gameObject.SetActive(false);
 
         // # 3rdCut 시작.
@@ -51,7 +56,7 @@ public class FifthScene_Manager : MonoBehaviour
         
         Cut_3rd.gameObject.SetActive(true);
         Cut_3rd.Production_Start();
-        yield return new WaitForSeconds(Cut_3rd.Time);
+        yield return new WaitForSeconds(Cut_3rd.Time - 0.01f);
         Cut_3rd.gameObject.SetActive(false);
 
         // # 4thCut 시작.
@@ -60,7 +65,27 @@ public class FifthScene_Manager : MonoBehaviour
         
         Cut_4th.gameObject.SetActive(true);
         Cut_4th.Production_Start();
-        yield return new WaitForSeconds(Cut_4th.Time);
+        yield return new WaitForSeconds(Cut_4th.Time - 0.01f);
         Cut_4th.gameObject.SetActive(false);
+
+        // # 5thCut 시작.
+        Debug.Log("5th Cut Start.");
+        yield return null;
+        
+        Cut_5th.gameObject.SetActive(true);
+        Cut_5th.Production_Start();
+        yield return new WaitForSeconds(Cut_5th.Time - 0.01f);
+        Cut_5th.gameObject.SetActive(false);
+
+        // # 6thCut 시작.
+        Debug.Log("6th Cut Start.");
+        yield return null;
+        
+        Cut_6th.gameObject.SetActive(true);
+        Cut_6th.Production_Start();
+        yield return new WaitForSeconds(Cut_6th.Time - 0.01f);
+        Cut_6th.gameObject.SetActive(false);
+
+       if (!IsLast) { Fade_Panel.Alpha("Instant", 0f, 0f, 0f); }
     }
 }
