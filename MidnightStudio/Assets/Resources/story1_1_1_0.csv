@@ -1,0 +1,26 @@
+keys,speaker,act,dialogue,information
+story1_1_1_0_0,ink,ink_serious,자네는 저 실루엣이 새로운 적으로 보이나?,
+story1_1_1_0_1,client,clt_laugh,아 그거 저에요.,실루엣은 의뢰인?
+story1_1_1_0_2,ink,ink_panic,아 자네인가?,
+story1_1_1_0_3,client,clt_idle_1,적으로 등장하도록 되어있잖아요.,
+story1_1_1_0_4,ink,ink_anger,그러면 이 장면의 순서를 기억해야 할 것 아닌가...!,
+story1_1_1_0_5,client,clt_panic,아... 그...,
+story1_1_1_0_6,client,clt_innocent,까먹었네요...,
+story1_1_1_0_7,ink,ink_anger,......,
+story1_1_1_0_8,ink,ink_serious,후... 그 부분은 넘어가도록 하지.,
+story1_1_1_0_9,ink,ink_haught,감각적인 부분으로는 어떻게 보이나?,
+story1_1_1_0_10,client,clt_idle_1,일단 분위기가 묘해요.,묘한 자세의 실루엣
+story1_1_1_0_11,client,clt_think,"저 벽에 기대선 자세, 여유롭긴 한데...",
+story1_1_1_0_12,client,clt_idle_1,그게 오히려 위협적으로 느껴지지 않나요?,
+story1_1_1_0_13,ink,ink_idle,주인공이 그제야 눈치챘다는 것도 이상하지.,
+story1_1_1_0_14,ink,ink_haught,꽤 가까운 거리였는데 말이야.,
+story1_1_1_0_15,client,clt_innocent,저건 로맨스 판타지처럼 우연한 마주침이 아니라구요.,
+story1_1_1_0_16,client,clt_think,누군가가 의도적으로 기다리고 있었던 것처럼 보여요.,의도적인 기다림
+story1_1_1_0_17,client,clt_laugh,무언가 주인공이 눈치챈 요소가 있지 않을까요?,눈치챈 요소
+story1_1_1_0_18,ink,ink_haught,실루엣만 보여서 누군지는 알 수 없지만...,
+story1_1_1_0_19,ink,ink_idle,일단 아군은 아닌 것 같군.,
+story1_1_1_0_20,client,clt_think,이미 실루엣 자체가 낯선 데다가...,
+story1_1_1_0_21,client,clt_think,등장하는 방식이 너무 조용해서 더 수상해요.,
+story1_1_1_0_22,ink,ink_haught,정체불명의 누군가가 이 조용한 순간을 깨러 온 거군.,
+story1_1_1_0_23,ink,ink_haught,"됐어, 이건 여기까지.",
+story1_1_1_0_24,ink,ink_idle,그렇다면...,

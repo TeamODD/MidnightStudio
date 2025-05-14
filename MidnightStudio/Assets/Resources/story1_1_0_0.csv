@@ -1,0 +1,15 @@
+keys,speaker,act,dialogue,information
+story1_1_0_0_0,ink,ink_serious,저 뒤의 그 실루엣 말이야.,
+story1_1_0_0_1,ink,ink_serious,주인공이 일전에 마주친 사람인 것 같나?,
+story1_1_0_0_2,client,clt_think,"글쎄요, 주인공의 반응이 놀란 것에 가까워 보여요.",
+story1_1_0_0_3,client,clt_idle_1,"눈을 힐끗하고, 몸이 순간 멈칫하잖아요?",
+story1_1_0_0_4,ink,ink_panic,그럼 완전히 처음 보는 사람이라는 것이군.,처음 보는 낯선자
+story1_1_0_0_5,client,clt_idle_1,그렇게 보이네요.,
+story1_1_0_0_6,client,clt_think,익숙함보다는 경계 쪽에 가까운 감정이 느껴져요.,
+story1_1_0_0_7,client,clt_idle_1,실루엣도 일부러 낯설게 연출된 것 같고요.,
+story1_1_0_0_8,ink,ink_haught,그럼 저건 단순한 마주침 식의 의미 없는 우연이 아니라...,
+story1_1_0_0_9,client,clt_innocent,어떤 일의 전환점이 되는 만남이었다고 보는 건가?,
+story1_1_0_0_10,client,clt_innocent,주인공이 미처 대비하지 못했던 누군가...,
+story1_1_0_0_11,client,clt_laugh,그게 이 장면의 긴장감을 만들어내는 거죠.,
+story1_1_0_0_12,ink,ink_haught,"됐어, 이건 여기까지.",
+story1_1_0_0_13,ink,ink_idle,그렇다면...,

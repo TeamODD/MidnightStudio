@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f9a50de05f785bd4293d30e123305947
+guid: 151583ae09f89b14e94bc9893d0a9496
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7792450770894005925
-    second: innocent_0
+      213: 8469481570976222680
+    second: left_bg_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: innocent_0
+      name: left_bg_0
       rect:
         serializedVersion: 2
-        x: 106
+        x: 0
         y: 0
-        width: 746
-        height: 941
+        width: 1217
+        height: 824
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b59d42f5f47abd390800000000000000
-      internalID: -7792450770894005925
+      spriteID: 8dd41c59d94a98570800000000000000
+      internalID: 8469481570976222680
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      innocent_0: -7792450770894005925
+      left_bg_0: 8469481570976222680
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,0 +1,18 @@
+keys,speaker,act,dialogue,information
+story1_3_9_0_0,ink,ink_serious,자네가 보기엔 이 장면이 매복의 시작으로 보이는 느낌이 드는가?,
+story1_3_9_0_1,client,clt_idle_1,흐음... 총을 겨누고 있는 저 자세는... 그냥 지나가다 총 들이민 건 아닌 것 같아요.,
+story1_3_9_0_2,client,clt_panic,"즉, 일단 겉보기엔 매복처럼 보이긴 해요.",
+story1_3_9_0_3,ink,ink_haught,겉보기에는 이라니?,
+story1_3_9_0_4,client,clt_think,벽에 기댄 채로 총까지 겨누고 있으니 말입니다. 하지만 가만 보면…,
+story1_3_9_0_5,client,clt_idle_1,그 시선이나 표정이 딱히 급박하거나 조급해 보이진 않더군요.,
+story1_3_9_0_6,ink,ink_idle,그러면 오래 숨어 있다 기회를 노린 쪽은 아니라는 말인가?,
+story1_3_9_0_7,client,clt_think,"매복이라기보단, 주인공을 관찰하다가 어느 순간 그냥...",
+story1_3_9_0_8,client,clt_laugh,흥미를 느껴서 나타난 느낌이랄까요.,
+story1_3_9_0_9,client,clt_idle_1,"그 여유로운 태도며, 일부러 들키려는 듯한 등장까지...",
+story1_3_9_0_10,client,clt_innocent,뭔가를 시험해 보려는 기색도 보여요.,
+story1_3_9_0_11,ink,ink_haught,그럼 이건 일종의 계획된 우연 같은 거군.,계획된 우연
+story1_3_9_0_12,ink,ink_idle,"확실히 굳이 숨지도 않았고, 정면에서 마주하려는 의도가 보여.",
+story1_3_9_0_13,ink,ink_serious,"그리고 위협은 있지만, 매복이라 하기엔 지나치게 노출돼 있지.",
+story1_3_9_0_14,client,clt_idle_1,"의도적인 등장, 그 자체가 메시지였던 듯해요.",
+story1_3_9_0_15,ink,ink_haught,"됐어, 이건 여기까지.",
+story1_3_9_0_16,ink,ink_idle,그렇다면...,

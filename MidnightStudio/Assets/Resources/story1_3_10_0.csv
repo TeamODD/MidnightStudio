@@ -1,0 +1,21 @@
+keys,speaker,act,dialogue,information
+story1_3_10_0_0,ink,ink_serious,적이 있는 주변 환경... 그게 공격을 위한 무대로 느껴지지 않나?,
+story1_3_10_0_1,client,clt_think,"오, 충분히 그럴 법하네요. 복도라는 공간 자체가 일직선이잖아요.",
+story1_3_10_0_2,client,clt_laugh,"숨을 곳도, 도망칠 곳도 마땅치 않고요.",
+story1_3_10_0_3,ink,ink_haught,"됐어, 이건 여기까지.",
+story1_3_10_0_4,client,clt_panic,"잠깐, 잠깐! 걸리는 부분이 있어요!",
+story1_3_10_0_5,client,clt_panic,확실히 좁은 복도는 기습엔 안성맞춤이지만...,
+story1_3_10_0_6,client,clt_panic,실은 그리 계획된 공간 같진 않아 보인다구요.,계획되지 않은 공간
+story1_3_10_0_7,ink,ink_serious,"우연히, 그 자리에 서 있었다는 말인가?",
+story1_3_10_0_8,client,ink_idle,복도 자체가 의도를 담고 만든 무대라기보다는...,
+story1_3_10_0_9,client,clt_innocent,단지 그 인물이 흥미를 느껴서 멈춘 지점 같았어요.,
+story1_3_10_0_10,client,ink_idle,"상황은 위협적이지만, 공간이 도운 건 아닌 것 같아요.",
+story1_3_10_0_11,ink,ink_idle,"그럼, 사전에 준비된 매복과는 거리가 있다 이건가?",
+story1_3_10_0_12,client,clt_innocent,그렇죠. 매복이라기엔 어딘가 즉흥적으로 보여요.,즉흥적
+story1_3_10_0_13,client,clt_think,"복도는 단지 통로였고, 공격이 거기서 일어난 건 환경 탓이 아니라...",
+story1_3_10_0_14,client,ink_idle,인물의 선택 때문이었다고 보는 편이 더 맞을 것 같아요.,
+story1_3_10_0_15,ink,ink_haught,"됐어, 이건 여기...",
+story1_3_10_0_16,ink,ink_panic,잠깐만. 혹시 끝났으면 넘어가도 괜찮겠나?,
+story1_3_10_0_17,client,clt_panic,"아, 여기서 더는 모르겠네요...",
+story1_3_10_0_18,ink,ink_haught,"그러면... 됐어, 이건 여기까지.",
+story1_3_10_0_19,ink,ink_idle,그렇다면...,

@@ -1,0 +1,17 @@
+keys,speaker,act,dialogue,information
+story1_3_7_0_0,ink,ink_serious,조준 중인 인물에게서 감정의 동요가 보이나?,
+story1_3_7_0_1,client,clt_panic,어... 글쎄요? 자세히 들여봐도 동요하는 느낌은 아닌데요...?,
+story1_3_7_0_2,client,clt_think,적이 조용해 보이진 않아요. 오히려 여유로워 보이는데요.,여유로운 적
+story1_3_7_0_3,ink,ink_idle,확실히 저 눈빛은 차갑지 않군.,
+story1_3_7_0_4,ink,ink_haught,"그 대신, 뭔가 좀 깔보는 듯한 느낌이지 않나?",
+story1_3_7_0_5,client,clt_innocent,"총구를 들이대고는 있지만, 긴장감이 아니라 흥미를 느끼고 있는 것 같아요.",
+story1_3_7_0_6,client,clt_laugh,뭔가 성격이 가벼운 느낌이라고 해야 하나?,
+story1_3_7_0_7,ink,ink_panic,냉정한 판단에 따른 움직임은 아니었던 건가...,
+story1_3_7_0_8,client,clt_idle_1,냉정하다기보다는... 여유로운 느낌에 가까워 보여요.,
+story1_3_7_0_9,client,clt_think,적의 눈엔 주인공이 상대라기보단...,
+story1_3_7_0_10,client,clt_think,지켜보다가 슬슬 처리해도 되는 표적처럼 보이지 않았을까요?,
+story1_3_7_0_11,client,clt_idle_1,"감정이 없었던 게 아니라, 감정을 둘 가치조차 못 느낀달까.",
+story1_3_7_0_12,ink,ink_haught,"그러니까, 싸움이라기보단 사냥이라는 거군?",
+story1_3_7_0_13,client,clt_innocent,그렇죠. 본인은 이미 승부가 끝났다고 여기는 듯한 태도처럼 보여요.,
+story1_3_7_0_14,ink,ink_haught,"됐어, 이건 여기까지.",
+story1_3_7_0_15,ink,ink_idle,그렇다면...,

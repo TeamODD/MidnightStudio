@@ -1,0 +1,19 @@
+keys,speaker,act,dialogue,information
+story1_1_2_0_0,ink,ink_serious,주인공은 이 상황에서 말을 건넬 준비를 하는 듯한 기색이 보이나?,
+story1_1_2_0_1,client,clt_think,음... 자세히 보면 주인공의 어깨가 살짝 풀려 있네요.,
+story1_1_2_0_2,client,clt_idle_1,긴장감이 팽팽한 와중에도 말이에요.,
+story1_1_2_0_3,client,clt_idle_1,"그게 꼭 무기를 들기보단, 입을 열 기세처럼 느껴져요.",주인공은 입을 열 기세
+story1_1_2_0_4,ink,ink_idle,"시선은 정면이 아니고, 실루엣 쪽으로 슬쩍 가 있군.",
+story1_1_2_0_5,ink,ink_idle,무언가 말할 기회를 보는 듯한 느낌도 있고.,
+story1_1_2_0_6,client,clt_idle_1,당장 싸우려 하기보단 뭔가 확인하려는 사람처럼 보여요.,
+story1_1_2_0_7,client,clt_think,대화의 여지가 남아 있는 거 아닐까요?,
+story1_1_2_0_8,ink,ink_haught,하지만 침묵이 길어지면 그 여지도 금방 사라지겠군.,
+story1_1_2_0_9,client,clt_idle_1,지금이 아슬아슬한 경계 같아요.,
+story1_1_2_0_10,client,clt_innocent,"말 한마디, 혹은 하지 않은 그 한마디가 모든 걸 바꿀 수 있는 순간인 거죠.",
+story1_1_2_0_11,ink,ink_idle,내 생각에는 실루엣이 이미 무기부터 꺼낸 것 같은 느낌이네.,적은 무기를 이미 꺼냄
+story1_1_2_0_12,client,clt_idle_1,확실히 오히려 이 장면이 조용해서 더 위태롭게 느껴져요.,
+story1_1_2_0_13,client,clt_panic,"말이 나올 수도 있고, 총성이 먼저 터질 수도 있고...",
+story1_1_2_0_14,ink,ink_idle,지금이 아마 그 둘 사이의 마지막 여유겠군.,
+story1_1_2_0_15,ink,ink_serious,"그게 침묵으로 끝날지, 한마디로 이어질지는 모르지만.",
+story1_1_2_0_16,ink,ink_haught,"됐어, 이건 여기까지.",
+story1_1_2_0_17,ink,ink_idle,그렇다면...,

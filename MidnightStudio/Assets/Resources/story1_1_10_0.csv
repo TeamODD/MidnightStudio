@@ -1,0 +1,18 @@
+keys,speaker,act,dialogue,information
+story1_1_10_0_0,ink,ink_serious,이 장면 전체가 함정처럼 보이진 않는가?,
+story1_1_10_0_1,client,clt_panic,어... 그니까...,
+story1_1_10_0_2,client,clt_innocent,순서를 헷갈리게 만드는 장면처럼 보이지 않은가..!,
+story1_1_10_0_3,ink,ink_panic,... 내 흉내를 낸건가?,
+story1_1_10_0_4,client,clt_think,분위기만 보면 그럴 수도 있을 것 같아요.,
+story1_1_10_0_5,client,clt_think,"딱히 총성이 울린 것도, 말이 오간 것도 아닌데...",
+story1_1_10_0_6,client,clt_idle_1,뭔가 일이 일어난 것 같은 기분이 들지 않아요?,
+story1_1_10_0_7,ink,ink_anger,어이.,
+story1_1_10_0_8,client,clt_think,딱 보기에 단순한 조우 같지만...,
+story1_1_10_0_9,client,clt_idle_1,전후 맥락이 안 보이니까 오히려 더 혼란스러운 장면이네요.,
+story1_1_10_0_10,client,clt_think,이미 사건이 끝난 뒤인지...,사건이 끝난 뒤
+story1_1_10_0_11,client,clt_think,막 시작되려는 건지...,사건이 시작하기 전
+story1_1_10_0_12,client,clt_panic,애매하게 걸쳐있는 느낌?,
+story1_1_10_0_13,ink,ink_haught,그럼 이 장면이 순서 퍼즐의 한 조각이라는 거군.,
+story1_1_10_0_14,client,clt_innocent,그런 느낌이죠.,
+story1_1_10_0_15,ink,ink_haught,"됐어, 이건 여기까지.",
+story1_1_10_0_16,ink,ink_idle,그렇다면...,

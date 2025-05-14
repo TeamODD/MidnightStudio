@@ -1,0 +1,17 @@
+keys,speaker,act,dialogue,information
+story1_2_10_0_0,ink,ink_serious,"놀람이라는 감정은, 육체적 충격 때문인가 정신적 충격 때문으로 보이나?",
+story1_2_10_0_1,client,clt_idle_1,둘 다인 것으로 보이네요.,
+story1_2_10_0_2,client,clt_think,"일단, 어깨 쪽에 맞은 듯한 피격의 충격은 분명해 보여요.",
+story1_2_10_0_3,client,clt_idle_1,"반사적으로 몸이 움찔했고, 눈도 순간 크게 뜬 게 보이잖아요.",
+story1_2_10_0_4,ink,ink_idle,"즉, 단순한 고통 반응 이상이라는 거군.",
+story1_2_10_0_5,client,clt_think,표정에선 아픔뿐만 아니라 갑자기 일어난 상황에 대한 당황도 읽혔어요.,
+story1_2_10_0_6,client,clt_idle_1,"마치 예상하지 못한 누군가에게, 예상하지 못한 순간에 공격당한 느낌...",
+story1_2_10_0_7,client,clt_innocent,기습이었을 가능성이 높겠죠.,적의 기습
+story1_2_10_0_8,ink,ink_haught,그렇다면 저 표정은 단지 총에 맞아서 그런 게 아니라는 건가?,
+story1_2_10_0_9,client,clt_laugh,정확해요.,
+story1_2_10_0_10,client,clt_idle_1,"몸도 놀랐고, 마음도 그에 못지않게 동요했을 거에요.",
+story1_2_10_0_11,ink,ink_idle,"정신이 먼저 얼어붙고, 그다음에 통증이 따라왔겠고...",
+story1_2_10_0_12,ink,ink_haught,"한마디로, 물리적이고 심리적인 충격이 한순간에 겹쳐진 거다, 이건가?",
+story1_2_10_0_13,client,clt_innocent,바로 그거죠.,
+story1_2_10_0_14,ink,ink_haught,"됐어, 이건 여기까지.",
+story1_2_10_0_15,ink,ink_idle,그렇다면...,

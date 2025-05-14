@@ -1,0 +1,18 @@
+keys,speaker,act,dialogue,information
+story1_3_4_0_0,ink,ink_serious,"적의 조준은 즉흥적이라고 생각하나, 계획된 행동이라고 생각하나?",
+story1_3_4_0_1,client,clt_think,"자세부터 표정, 그리고 총을 꺼내 드는 타이밍까지...",
+story1_3_4_0_2,client,clt_idle_1,즉흥적이라기엔 너무 매끄러워요.,
+story1_3_4_0_3,client,clt_panic,전부 계획이라는 단어 말고는 설명이 안 돼요.,
+story1_3_4_0_4,client,clt_innocent,마치 기다리고 있었던 것처럼요.,
+story1_3_4_0_5,ink,ink_haught,주인공의 움직임을 예측하고 거기 서 있었던 걸까?,
+story1_3_4_0_6,client,clt_panic,"마주친 게 아니라, 정확히 거기 있을 줄 알고, 먼저 도착해 있었던 사람처럼요.",
+story1_3_4_0_7,client,clt_think,"총구도 너무 자연스럽게 주인공 쪽으로 향했고, 그 눈빛이랄까?",
+story1_3_4_0_8,ink,ink_idle,그렇다면 이건 단순한 충돌이 아니라...,
+story1_3_4_0_9,ink,ink_serious,사전에 짜인 매복... 혹은 암살 시도였겠군.,암살 시도
+story1_3_4_0_10,client,clt_idle_1,특히 주인공이 반응하기도 전에 먼저 조준이 들어갔다는 점에서요.,
+story1_3_4_0_11,client,clt_laugh,그건 즉흥적인 상황에선 어렵거든요.,
+story1_3_4_0_12,ink,ink_panic,본인이 주도권을 쥐고 있다는 확신이 없으면 그렇게 여유롭게 벽에 기댄 채 기다릴 수는 없으니...,
+story1_3_4_0_13,ink,ink_idle,확실히 모든 움직임이 기회가 아니라 결정으로 보였다 이거군.,
+story1_3_4_0_14,client,clt_idle_1,적이 이 장면에서 보여준 건 상황 판단이 아니라 실행인 것 같아요.,
+story1_3_4_0_15,ink,ink_haught,"됐어, 이건 여기까지.",
+story1_3_4_0_16,ink,ink_idle,그렇다면...,

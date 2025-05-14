@@ -1,0 +1,18 @@
+keys,speaker,act,dialogue,information
+story1_2_8_0_0,ink,ink_serious,주인공의 조준이 결말로 이어질 것 같은 긴장을 만들어낸 것으로 보이나?,
+story1_2_8_0_1,client,clt_idle_1,"네, 긴장이 꽤 고조된 것으로 보여요.",
+story1_2_8_0_2,client,clt_think,총을 맞은 뒤 바로 조준이라니...,
+story1_2_8_0_3,client,clt_innocent,그 자체로 상황이 팽팽하죠.,팽팽한 상황
+story1_2_8_0_4,ink,ink_haught,마무리를 암시하는 분위기라는 건가?,
+story1_2_8_0_5,client,clt_idle_1,"음... 그렇다기보단, 뭔가 더 벌어질 것 같은 긴장감이랄까요.",
+story1_2_8_0_6,client,clt_innocent,이 장면에서 끝나기엔 아직 너무 많은게 남아 있는 느낌이라구요.,
+story1_2_8_0_7,ink,ink_idle,그렇다면 갈등이 점점 고조되는 시점?,
+story1_2_8_0_8,client,clt_think,"네, 딱 그정도?",
+story1_2_8_0_9,client,clt_idle_1,"끝맺음이 아니라, 폭발 직전의 숨죽임 같아요.",폭발 직전의 숨죽임
+story1_2_8_0_10,ink,ink_haught,겉보기엔 클라이맥스 같아도...,
+story1_2_8_0_11,ink,ink_serious,실은 전부가 아니란 뜻이군.,
+story1_2_8_0_12,client,clt_innocent,총구는 향해 있지만 끝은 아직 좀 더 먼 곳에 있을 거에요.,
+story1_2_8_0_13,ink,ink_panic,어... 무슨 판타지 소설을 읽은 건가?,
+story1_2_8_0_14,client,clt_panic,하드보일드라구요...,
+story1_2_8_0_15,ink,ink_haught,"됐어, 이건 여기까지.",
+story1_2_8_0_15,ink,ink_idle,그렇다면...,

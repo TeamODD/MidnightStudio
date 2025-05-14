@@ -1,0 +1,17 @@
+keys,speaker,act,dialogue,information
+story1_2_1_0_0,ink,ink_serious,자네가 생각하기엔 주인공의 표정이나 눈빛에 주저함이 보이는가?,
+story1_2_1_0_1,client,clt_think,제 생각에는 주저함이라기보단...,
+story1_2_1_0_2,client,clt_idle_1,놀람에 조금 더 가까운 것 같아요.,
+story1_2_1_0_3,client,clt_think,뭔가 총을 이미 꺼내 놓은 것도 그렇고...,
+story1_2_1_0_4,client,clt_laugh,얼굴은 그 직후 얼어붙은 표정이잖아요.,
+story1_2_1_0_5,ink,ink_serious,이미 피격된 것을 보면 확실히 그래 보이는 군.,
+story1_2_1_0_6,client,clt_idle_1,마치 갑자기 여기서? 같은 눈을 하고 있네요.,
+story1_2_1_0_7,client,clt_idle_1,"계획에 없던 일이 일어났다는 눈빛, 그건 확실해요.",계획에 없던 일
+story1_2_1_0_8,ink,ink_haught,싸우기 전에 망설인 흔적은 있는 것 같나?,
+story1_2_1_0_9,client,clt_think,그건 전혀 없는 것 같아요.,
+story1_2_1_0_10,client,clt_think,총을 들고 격발한 상황을 보아하니...,
+story1_2_1_0_11,client,clt_idle_1,주인공은 주저한 게 아닌 것 같기도 하고...,
+story1_2_1_0_12,client,clt_innocent,오히려 너무 빨리 판단했을 수도 있겠네요.,
+story1_2_1_0_13,ink,ink_idle,주인공에게는 최속의 판단이었겠군.,
+story1_2_1_0_14,ink,ink_haught,"됐어, 이건 여기까지.",
+story1_2_1_0_15,ink,ink_idle,그렇다면...,

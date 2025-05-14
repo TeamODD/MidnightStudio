@@ -1,0 +1,18 @@
+keys,speaker,act,dialogue,information
+story1_3_3_0_0,ink,ink_serious,자네가 보기엔 적이 조용히 기회를 엿보는 느낌이었나?,
+story1_3_3_0_1,client,clt_think,분명히 기회를 노리고 있는 건 맞아 보였는데요...,
+story1_3_3_0_2,client,clt_panic,어... 일반적으로 우리가 떠올리는 은밀한 접근하고는 좀 다른 것 같아요.,
+story1_3_3_0_3,ink,ink_idle,보통 그런 사람들은 그림자에 숨어들긴 하지.,
+story1_3_3_0_4,ink,ink_serious,그런데 저 인물은... 너무 노골적으로 드러나 있군.,
+story1_3_3_0_5,client,clt_panic,"복도 한복판에, 그것도 벽에 기댄 채로 말이에요.",
+story1_3_3_0_6,ink,ink_haught,그럼 오히려 일부러 보이라는 식의 연출이라는 것은 어떤가?,
+story1_3_3_0_7,client,clt_idle_1,그것도 괜찮은 느낌이에요.,
+story1_3_3_0_8,client,clt_idle_1,"기회를 엿보되, 숨기지 않는 대범함이라고 보면 되죠.",숨기지 않는 대범함
+story1_3_3_0_9,client,clt_innocent,"숨어서 덮치는 대신, 당신을 알고 있다는 식으로 압박하는 거니까요.",
+story1_3_3_0_10,ink,ink_serious,"주인공 입장에선, 그 자체가 도발로 느껴졌을 수도 있겠군.",
+story1_3_3_0_11,client,clt_think,그 자는 총을 바로 들이대진 않았지만...,
+story1_3_3_0_12,client,clt_innocent,이미 분위기를 장악하고 있는 느낌이었죠.,
+story1_3_3_0_13,ink,ink_haught,그러니 주인공도 그냥 지나치지 못했던 거고 말이지.,
+story1_3_3_0_14,client,clt_laugh,"그 어색한 정적 속에선, 총성보다 먼저 심장 소리가 더 컸을 겁니다.",
+story1_3_3_0_15,ink,ink_haught,"됐어, 이건 여기까지.",
+story1_3_3_0_16,ink,ink_idle,그렇다면...,

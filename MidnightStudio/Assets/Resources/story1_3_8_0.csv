@@ -1,0 +1,20 @@
+keys,speaker,act,dialogue,information
+story1_3_8_0_0,ink,ink_serious,자네가 보기엔 이 장면이 충돌의 시작점처럼 보이나?,
+story1_3_8_0_1,client,clt_idle_1,그렇게 보일 수도 있겠지만... 저는 조금 다르게 느껴졌어요.,
+story1_3_8_0_2,client,clt_panic,"겉으로는 총구가 겨눠지고, 서로를 노려보는 그 순간이 이제 시작이다 싶겠지만요.",
+story1_3_8_0_3,client,clt_idle_1,그 밑바닥에는 이미 꽤 전부터 고여 있던 긴장이 있었던 것 같아요.,고여 있던 긴장
+story1_3_8_0_4,ink,ink_haught,고여 있던... 무언가가 있었단 말인가?,
+story1_3_8_0_5,client,clt_innocent,그런 느낌이죠.,
+story1_3_8_0_6,client,clt_think,저 눈빛을 보니 누가 봐도 처음 보는 사이의 반응은 아닌 것 같아요.,
+story1_3_8_0_7,client,clt_panic,주인공은 쪽은... 적을 처음 보는 것 같지만요.,
+story1_3_8_0_8,ink,ink_haught,그러면 이게 시작은 아니라는 말인가?,
+story1_3_8_0_9,client,clt_idle_1,그건 애매하네요.,
+story1_3_8_0_10,client,clt_think,갈등의 시작 부분인 것은 맞는 것 같은데...,
+story1_3_8_0_11,client,clt_idle_1,"분명히 강렬하지만, 아주 처음은 아닌 것 같아요.",
+story1_3_8_0_12,ink,ink_serious,"그보다 약간 뒤, 정확히는... 기름에 불이 붙기 직전, 성냥을 문지르는 느낌이라는 것이군.",
+story1_3_8_0_13,client,clt_panic,"맞긴 한 데, 비유가 너무 낡았어요...",
+story1_3_8_0_14,ink,ink_anger,......,
+story1_3_8_0_15,client,clt_idle_1,"긴장도, 감정도 이미 절정 근처인 것 같고...",
+story1_3_8_0_16,client,clt_innocent,"그것들이 마침내 형태를 갖추고 충돌로 이어지기 위해 시작한, 전환점에 가까워 보여요.",전환점
+story1_3_8_0_21,ink,ink_haught,"됐어, 이건 여기까지.",
+story1_3_8_0_22,ink,ink_idle,그렇다면...,
