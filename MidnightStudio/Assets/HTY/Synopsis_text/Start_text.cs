@@ -23,8 +23,9 @@ public class Start_text : MonoBehaviour
 
     public SynopsisCharacterColoring synopsisColorManager;
     public Speaker_NextFlash speaker_nextFlash;
+    public Sprite[] Image_index = new Sprite[] { };
 
-
+    private SpriteRenderer ImageDisplay;
     private Dictionary<string, string[]> dialogues = new Dictionary<string, string[]>();
     private Coroutine typingCoroutine;
 
@@ -85,10 +86,11 @@ public class Start_text : MonoBehaviour
         string speaker = dialogues[index][0];
         string line = dialogues[index][1];
         string act = dialogues[index][2];
+        string imageIndex = dialogues[index][3];  // "0"등 외의 값 부르기(추가된 거)
 
+        
         TMP_Text target = null;
         Debug.Log(speaker.Contains("ink"));
-
         if (speaker == "ink")
         {
             if (LastSpeaker != "ink")
@@ -110,6 +112,7 @@ public class Start_text : MonoBehaviour
                 LastSpeaker = "ink";
             }
             speaker_panel.text = "잉크 헤드";
+            ShowImageByIndex(imageIndex); // By image_index's value, change the image that HDH want. you know? GO 241's Line.
             target = startText;
             ApplyActImage("ink", act);
             synopsisColorManager.SetCharacterColor("just_ink");
@@ -235,22 +238,35 @@ public class Start_text : MonoBehaviour
         speaker_nextFlash.StartFlashButtonCoroutine();
     }
 
+    private void ShowImageByIndex(string imageIndex) // Yeah this.
+    {
+        if (!int.TryParse(imageIndex, out int index)) return; //imageIndex -> sting value change int value -> on int index ->
+
+        Sprite Sprite = Image_index[index];
+        if (ImageDisplay != null) //if same number? then do not try saem code. you nam sang?
+        {
+            ImageDisplay.sprite = Sprite; //Display the image.
+        }
+    }
+
+
     private void SynopsisLoadCSV(string story) //�ε� �� ���� 
     {
         var csvData = CSVReader.Read(story); // Resources/dialogue.csv // �ӽ� ����-story1_0_3_0
         //story1_0_0_0
         foreach (var row in csvData)
         {
-            if (!row.ContainsKey("keys") || !row.ContainsKey("speaker") || !row.ContainsKey("act") || !row.ContainsKey("dialogue"))
+            if (!row.ContainsKey("keys") || !row.ContainsKey("speaker") || !row.ContainsKey("act") || !row.ContainsKey("dialogue") || !row.ContainsKey("image_index"))
                 continue;
 
             string index = row["keys"].ToString().Trim();
             string speaker = row["speaker"].ToString().Trim();
             string animation = row["act"].ToString().Trim();
             string dialogue = row["dialogue"].ToString().Trim();
+            string image = row["image_index"].ToString().Trim();
 
             if (!dialogues.ContainsKey(index))
-                dialogues.Add(index, new string[] { speaker, dialogue, animation });
+                dialogues.Add(index, new string[] { speaker, dialogue, animation, image });
         }
     }
 }

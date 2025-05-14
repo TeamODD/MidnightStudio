@@ -1695,6 +1695,7 @@ MonoBehaviour:
   InkHead: {fileID: 1365454714}
   synopsisColorManager: {fileID: 1681451879}
   speaker_nextFlash: {fileID: 1681451880}
+  Image_index: []
 --- !u!4 &1681451877
 Transform:
   m_ObjectHideFlags: 0
