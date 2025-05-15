@@ -42,6 +42,8 @@ public class QuestionManager : MonoBehaviour
     public AudioClip[] Clips;
     private AudioManager AudioPlayer;
 
+    public bool IsProductioning = false;
+
 
     void Awake()
     {

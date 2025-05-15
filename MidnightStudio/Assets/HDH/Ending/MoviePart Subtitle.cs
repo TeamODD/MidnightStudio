@@ -24,10 +24,12 @@ public class MoviePart_Subtitle : MonoBehaviour
         switch (Height)
         {
             case "Up":
-                Self_Production.Move("Instant", 0f, "y", 0f, 335f);
+                Self_Production.Anchor(new Vector2(0.5f, 1f), new Vector2(0.5f, 1f));
+                Self_Production.Move("Instant", 0f, "y", 0f, -205f);
                 break;
             case "Down":
-                Self_Production.Move("Instant", 0f, "y", 0f, -335f);
+                Self_Production.Anchor(new Vector2(0.5f, 0f), new Vector2(0.5f, 0f));
+                Self_Production.Move("Instant", 0f, "y", 0f, 205f);
                 break;
         }
 

@@ -88,7 +88,21 @@ public class End_text : MonoBehaviour
 
             isFirst = false;
         }
-        manager.sceneFader.FadeToSceneAdditive("Ending");
+
+        Epilog_Result.MoviePlayer();
+
+        switch (Epilog_Result.Grade)
+        {
+            case "A":
+                manager.sceneFader.FadeToSceneAdditive("Ending");
+                break;
+            case "B":
+                manager.sceneFader.FadeToSceneAdditive("Ending");
+                break;
+            case "C":
+                manager.sceneFader.FadeToSceneAdditive("Result");
+                break;
+        }
     }
 
     IEnumerator WaitForEnterKey()

@@ -5,6 +5,7 @@ public class EndingManager : MonoBehaviour
 {
     public MoviePart_Manager MoviePartManager;
     public AudioManager AudioPlayer;
+    public Epilog_Result EpilogResult;
 
     private void Start()
     {
@@ -23,6 +24,16 @@ public class EndingManager : MonoBehaviour
 
     public void MovieEnd()
     {
-        SceneManager.LoadScene("Result");
+        EpilogResult.MoviePlayer();
+
+        switch (EpilogResult.Grade)
+        {
+            case "A":
+                SceneManager.LoadScene("Credit");
+                break;
+            case "B":
+                SceneManager.LoadScene("Result");
+                break;
+        }
     }
 }

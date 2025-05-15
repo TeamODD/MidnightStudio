@@ -37,6 +37,7 @@ public class UIStart : MonoBehaviour
 
     void Start()
     {
+        QuestionManager.IsProductioning = true;
         AudioPlayer = AudioManager.Instance;
         AudioPlayer.StopBGM();
 
@@ -70,6 +71,7 @@ public class UIStart : MonoBehaviour
         gauge.StartGauge();
         QuestionManager.IntroProduction();
         AudioPlayer.PlayBGM(Clips[3]);
+        QuestionManager.IsProductioning = false;
     }
 
     IEnumerator PlayCountdownSequence()

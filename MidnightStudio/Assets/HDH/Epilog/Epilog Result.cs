@@ -7,7 +7,7 @@ public class Epilog_Result : MonoBehaviour
     private float Score = 0f;
     public string Grade = null;
     private List<string> Real_Sequence = new List<string> {"1", "3", "2", "4", "0"};
-
+    
     public void MoviePlayer()
     {
         ResultData resultData_ = GameObject.Find("ResultData").GetComponent<ResultData>();
@@ -17,11 +17,16 @@ public class Epilog_Result : MonoBehaviour
 
     private void Result_Cal(float Time, List<string> Sequence)
     {
-        if (Time <= 24f) { Score += 3f; }
+        if (Time < 90f) { Score = 0f; }
+        else if (Time >= 90f && Time < 300f) { Score = 3f; }
+        else if (Time >= 300f && Time < 360f) { Score = 2f; }
+        else if (Time >= 360f && Time < 420f) { Score = 1f; }
+        else if (Time >= 420f) { Score = 0f; }
+
         for (int i = 0; i < 5; i++) { if (Sequence[i] == Real_Sequence[i]) { Score += 1f; } }
 
-        if (Score > 6f) { Grade = "A"; }
-        else if (Score > 3f && Score <= 6f) { Grade = "B"; }
+        if (Score >= 8f) { Grade = "A"; }
+        else if (Score > 4f && Score < 8f) { Grade = "B"; }
         else { Grade = "C"; }
     }
 }

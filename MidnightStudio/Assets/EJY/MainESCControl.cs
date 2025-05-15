@@ -8,6 +8,7 @@ using System.Collections.Generic;
 public class MainESCControl : MonoBehaviour
 {
     public GameObject optionPanel;
+    public GameObject Slate;
     public RectTransform optionRect;
     public RectTransform optionImg;
     public GaugeControl gauge;
@@ -17,23 +18,26 @@ public class MainESCControl : MonoBehaviour
     public SceneFader sceneFader;
 
     public float slideDuration = 1f;
-    private Vector2 onScreenPosition = Vector2.zero;
-    private Vector2 offScreenPosition;
 
+    public Option_Production Option_Production;
     private bool isOptionOpen = false;
+
+    private AudioManager AudioPlayer;
+    public AudioClip[] Clips;
+    public QuestionManager QuestionManager;
+    private bool FUCKINGWAIT = false;
 
     void Awake()
     {
         optionRect = optionPanel.GetComponent<RectTransform>();
-        offScreenPosition = new Vector2(0f, -Screen.height); // ¾Æ·¡ÂÊ¿¡¼­ ½ÃÀÛ
 
-        // EventSystemÀÌ ¿¬°áµÇ¾î ÀÖÁö ¾ÊÀ¸¸é ÀÚµ¿ ÇÒ´ç
+        // EventSystemï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ ï¿½Ò´ï¿½
         if (eventSystem == null)
         {
             eventSystem = FindObjectOfType<EventSystem>();
             if (eventSystem == null)
             {
-                Debug.LogWarning("EventSystemÀÌ ¾À¿¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù. ÀÚµ¿ »ı¼ºÇÕ´Ï´Ù.");
+                Debug.LogWarning("EventSystemï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê½ï¿½ï¿½Ï´ï¿½. ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
                 GameObject es = new GameObject("EventSystem");
                 eventSystem = es.AddComponent<EventSystem>();
                 es.AddComponent<StandaloneInputModule>();
@@ -42,8 +46,7 @@ public class MainESCControl : MonoBehaviour
     }
     void Start()
     {
-        offScreenPosition = new Vector2(0f, -Screen.height);
-        optionRect.anchoredPosition = offScreenPosition;
+        AudioPlayer = AudioManager.Instance;
         optionPanel.SetActive(false);
     }
 
@@ -51,40 +54,57 @@ public class MainESCControl : MonoBehaviour
     {
         if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {
-            if (!isOptionOpen) OpenOptionPanel();
-            else CloseOptionPanel();
-        }
-
-        if (isOptionOpen && Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            if (!IsPointerOverUI(optionImg))
-                CloseOptionPanel();
+            if (!isOptionOpen && QuestionManager.IsProductioning == false) OpenOptionPanel();
+            Debug.Log("ì‘ë™í•¨");
         }
     }
 
     void OpenOptionPanel()
     {
-        isOptionOpen = true;
-        sceneFader.FadeToGray(0.4f);
-        optionPanel.SetActive(true);
-        StartCoroutine(Slide(optionRect, onScreenPosition));
-        gauge.PauseGauge();
-
-        if (sceneFader.fadeImage != null)
-            sceneFader.fadeImage.raycastTarget = true;
+        Slate.SetActive(true);
+        Option_Production.Production_Start();
+        StartCoroutine(OnOptionClicked_ObjActive());
+        Debug.Log("ì‘ë™ë¨");
+        AudioPlayer.PlaySE(Clips[0]);
     }
 
-    void CloseOptionPanel()
+    private IEnumerator OnOptionClicked_ObjActive()
     {
-        isOptionOpen = false;
-        sceneFader.FadeOutGray();
-        StartCoroutine(SlideAndDeactivate(optionRect, offScreenPosition, () =>
+        isOptionOpen = true;
+        yield return new WaitForSeconds(0.5f);
+
+        optionPanel.SetActive(true);
+        yield return new WaitForSeconds(0.45f);
+
+        Slate.SetActive(false);
+    }
+
+    public void CloseOptionPanel()
+    {
+        if (isOptionOpen && FUCKINGWAIT == false && QuestionManager.IsProductioning == false)
         {
-            optionPanel.SetActive(false);
-            if (sceneFader.fadeImage != null)
-                sceneFader.fadeImage.raycastTarget = false; // ´Ù½Ã UI Å¬¸¯ Çã¿ë
-        }));
+            FUCKINGWAIT = true;
+            Slate.SetActive(true);
+            Option_Production.Production_Start();
+            StartCoroutine(OnOptionClicked_ObjDisactive());
+            Debug.Log("ì‘ë™ë¨");
+            AudioPlayer.PlaySE(Clips[0]);
+        }
+    }
+    private IEnumerator OnOptionClicked_ObjDisactive()
+    {
+        yield return new WaitForSeconds(0.5f);
+        optionPanel.SetActive(false);
+
+        yield return new WaitForSeconds(0.45f);
+        Slate.SetActive(false);
+
+        optionPanel.SetActive(false);
         gauge.StartGauge();
+        yield return null;
+
+        isOptionOpen = false;
+        FUCKINGWAIT = false;
     }
 
     private IEnumerator Slide(RectTransform rect, Vector2 target)
