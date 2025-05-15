@@ -16,7 +16,7 @@ public class ThirdScene_Manager : MonoBehaviour
     {
         AudioPlayer = AudioManager.Instance;
         
-        Cut_1st.gameObject.SetActive(false);
+        //Cut_1st.gameObject.SetActive(false);
 
         if (IsTest == true) { Production_Start(); }
     }

@@ -3642,7 +3642,7 @@ MonoBehaviour:
   ThirdScene: {fileID: 874055819}
   FourthScene: {fileID: 552017576}
   FifthScene: {fileID: 455031142}
-  IsTest: 1
+  IsTest: 0
 --- !u!1 &726721552
 GameObject:
   m_ObjectHideFlags: 0
@@ -4793,7 +4793,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &893713303
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5604,7 +5604,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1033592634
 RectTransform:
   m_ObjectHideFlags: 0
