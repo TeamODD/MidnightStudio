@@ -1,33 +1,33 @@
-keys,speaker,act,dialogue
-story1_synopsis_0,just_ink,ink_idle,"아, 전화받고 왔다네."
-story1_synopsis_1,just_manager,,"각본가님, 오셨군요! 저는 이번 꿈 영화감독입니다."
-story1_synopsis_2,just_ink,ink_haught,그래... 도대체 무슨 일인가? 난 은퇴한 몸이라고. 충분한 휴식을 취하지 않으면 안 된다네.
-story1_synopsis_3,just_manager,,아... 엄청 급한 일이 있어서 연락드렸습니다.
-story1_synopsis_4,just_ink,ink_idle,얼마나 급한 일인지 한 번 들어나 보게. 도대체 무슨 일인가?
-story1_synopsis_5,just_manager,,아... 그게......
-story1_synopsis_6,just_manager,,저희 막내가 시나리오 자료를 엎어버려서 순서가 뒤죽박죽이 된 데다가...
-story1_synopsis_7,just_manager,,꿈 촬영까지 총 7분 남았습니다.
-story1_synopsis_8,just_ink,ink_haught,그럼 시나리오 디렉터에게 연락하면 되는 거 아닌가? 나는 그저 각본가인데?
-story1_synopsis_9,just_ink,ink_haught,혹시 새로 시나리오를 작성해달라는 요구를 하기 위함인가?
-story1_synopsis_10,just_manager,,아... 그건 아닙니다. 그 정도로 시간이 있진 않습니다...
-story1_synopsis_11,just_manager,,"또한 시나리오 디렉터가 과로로 인해 지쳐, 뇌에서 수면을 취하고 있습니다. 이대로 깨우면 수면 패턴이 망가질 것이 뻔합니다."
-story1_synopsis_12,just_ink,ink_idle,그렇군... 페이지마다 번호는 안 붙여 놓았나?
-story1_synopsis_13,just_manager,,번호는 없었습니다... 다음부터는 주의하겠습니다.
-story1_synopsis_14,just_ink,ink_think,흠... 대충 시나리오의 내용을 알고 있는 사람은?
-story1_synopsis_15,just_manager,,저희 배우가 대략적인 시나리오를 알고 있습니다. 불러올까요?
-story1_synopsis_16,just_ink,ink_idle,"그래, 부탁하네."
-story1_synopsis_17,client,clt_idle_1,"아, 안녕하세요. 이번 꿈의 악역 배우예요."
-story1_synopsis_18,ink,ink_idle,안녕한가. 잉크 헤드라고 하네. 혹시 이번 영화의 주제를 알고 있나?
-story1_synopsis_19,client,clt_idle_1,어... 대충 하드보일드한 총격전을 연출하는 것으로 기억하는데...
-story1_synopsis_20,client,clt_panic,정확히 기억은 안 나네요...
-story1_synopsis_21,ink,ink_think,... 대본을 읽어보긴 했나?
-story1_synopsis_22,client,clt_panic,보통은 촬영 직전에 다 외워서 연기하기에 정확한 내용 기억은 못 해요...
-story1_synopsis_23,ink,ink_haught,결국은 이야기를 들어봐야 한다는 것이군... 좋아. 이 꿈 촬영소 주인의 사진은 있나?
-story1_synopsis_24,client,clt_laugh,여기 있어요! 정말 귀여운 분이죠.
-story1_synopsis_25,manager,,"꿈 촬영까지 총 5분 남았습니다! 각본가님, 제발 부탁드립니다..!"
-story1_synopsis_26,ink,ink_idle,알겠네... 감독? 엎어버린 시나리오를 가져오게. 순서를 맞춰보지.
-story1_synopsis_27,ink,ink_idle,"자네는 나와 장면에 대한 대화를 진행하며, 시나리오의 순서를 맞추어야 한다네."
-story1_synopsis_28,ink,ink_idle,일반적으로 내가 자네에게 질문을 하는 방식으로 갈 거야.
-story1_synopsis_29,ink,ink_idle,그렇다면 자네는 나에게 그에 대한 기억을 최대한 나에게 말해주면 되네. 그것이 추측이어도 상관없으니 말이지.
-story1_synopsis_30,client,clt_idle_1,물론이죠! 최선을 다해볼게요.
-story1_synopsis_31,ink,ink_idle,"좋아, 이제 시작해볼까?"
+keys,speaker,act,dialogue,image_index
+story1_synopsis_0,just_ink,ink_idle,"아, 전화받고 왔다네.",
+story1_synopsis_1,manager,,"각본가님, 오셨군요! 저는 이번 꿈 영화감독입니다.",
+story1_synopsis_2,just_ink,ink_think,그래... 도대체 무슨 일인가? 난 은퇴한 몸이라고. 충분한 휴식을 취하지 않으면 안 된다네.,
+story1_synopsis_3,manager,,아... 엄청 급한 일이 있어서 연락드렸습니다.,
+story1_synopsis_4,just_ink,ink_idle,얼마나 급한 일인지 한 번 들어나 보게. 도대체 무슨 일인가?,
+story1_synopsis_5,manager,,아... 그게......,
+story1_synopsis_6,manager,,저희 막내가 시나리오 자료를 엎어버려서 순서가 뒤죽박죽이 된 데다가...,
+story1_synopsis_7,manager,,꿈 촬영까지 총 7분 남았습니다.,
+story1_synopsis_8,just_ink,ink_think,그럼 시나리오 디렉터에게 연락하면 되는 거 아닌가? 나는 그저 각본가인데?,
+story1_synopsis_9,just_ink,ink_think,혹시 새로 시나리오를 작성해달라는 요구를 하기 위함인가?,
+story1_synopsis_10,manager,,아... 그건 아닙니다. 그 정도로 시간이 있진 않습니다...,
+story1_synopsis_11,manager,,"또한 시나리오 디렉터가 과로로 인해 지쳐, 뇌에서 수면을 취하고 있습니다. 이대로 깨우면 수면 패턴이 망가질 것이 뻔합니다.",
+story1_synopsis_12,just_ink,ink_idle,그렇군... 페이지마다 번호는 안 붙여 놓았나?,
+story1_synopsis_13,manager,,번호는 없었습니다... 다음부터는 주의하겠습니다.,
+story1_synopsis_14,just_ink,ink_panic,흠... 대충 시나리오의 내용을 알고 있는 사람은?,
+story1_synopsis_15,manager,,저희 배우가 대략적인 시나리오를 알고 있습니다. 불러올까요?,
+story1_synopsis_16,just_ink,ink_idle,"그래, 부탁하네.",
+story1_synopsis_17,client,client_idle,"아, 안녕하세요. 이번 꿈의 악역 배우예요.",
+story1_synopsis_18,ink,ink_idle,안녕한가. 잉크 헤드라고 하네. 혹시 이번 영화의 주제를 알고 있나?,
+story1_synopsis_19,client,client_think,어... 대충 하드보일드한 총격전을 연출하는 것으로 기억하는데...,
+story1_synopsis_20,client,client_panic,정확히 기억은 안 나네요...,
+story1_synopsis_21,ink,ink_panic,... 대본을 읽어보긴 했나?,
+story1_synopsis_22,client,client_panic,보통은 촬영 직전에 다 외워서 연기하기에 정확한 내용 기억은 못 해요...,
+story1_synopsis_23,ink,ink_think,결국은 이야기를 들어봐야 한다는 것이군... 좋아. 이 꿈 촬영소 주인의 사진은 있나?,
+story1_synopsis_24,client,client_laugh,여기 있어요! 정말 귀여운 분이죠.,
+story1_synopsis_25,manager,,"꿈 촬영까지 총 5분 남았습니다! 각본가님, 제발 부탁드립니다..!",
+story1_synopsis_26,ink,ink_idle,알겠네... 감독? 엎어버린 시나리오를 가져오게. 순서를 맞춰보지.,
+story1_synopsis_27,ink,ink_idle,"자네는 나와 장면에 대한 대화를 진행하며, 시나리오의 순서를 맞추어야 한다네.",
+story1_synopsis_28,ink,ink_idle,일반적으로 내가 자네에게 질문을 하는 방식으로 갈 거야.,
+story1_synopsis_29,ink,ink_idle,그렇다면 자네는 나에게 그에 대한 기억을 최대한 나에게 말해주면 되네. 그것이 추측이어도 상관없으니 말이지.,
+story1_synopsis_30,client,client_laugh,물론이죠! 최선을 다해볼게요.,
+story1_synopsis_31,ink,ink_idle,"좋아, 이제 시작해볼까?",

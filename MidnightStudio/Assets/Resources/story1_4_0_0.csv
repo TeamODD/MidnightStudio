@@ -1,0 +1,12 @@
+keys,speaker,act,dialogue,information
+story1_4_0_0_0,ink,ink_serious,이 장면 이전에 이미 총성이 있었던 흔적이 보이는가?,
+story1_4_0_0_1,client,clt_think,음... 딱 총구 주변이요. 살짝 뿌연 느낌이 나요.,
+story1_4_0_0_2,client,clt_idle_1,"막 담배 연기처럼 사라지진 않았고, 머물러 있는 기운이랄까...",
+story1_4_0_0_3,ink,ink_haught,그럼... 방아쇠가 한 번 당겨졌을 가능성도 배제할 수는 없겠군.,
+story1_4_0_0_4,client,clt_idle_1,"예, 꼭 그렇다는 건 아니지만, 뭔가 한 번 공기가 가른 느낌이 있어요.",
+story1_4_0_0_5,client,clt_innocent,아직 잔열 같은 게 공기 중에 감도는 듯하고요.,잔열
+story1_4_0_0_6,ink,ink_panic,"발포가 있었다면, 이미 싸움이 시작된 셈인데...",
+story1_4_0_0_7,client,clt_think,"다만, 지금 저 둘은 여전히 서로 겨눈 채로 멈춰 있어요.",
+story1_4_0_0_8,client,clt_laugh,"그걸 보면, 아직 결정적인 균형은 깨지지 않았다는 인상이에요.",
+story1_4_0_0_9,ink,ink_haught,"됐어, 이건 여기까지.",
+story1_4_0_0_10,ink,ink_idle,그렇다면...,

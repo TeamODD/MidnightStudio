@@ -1,0 +1,18 @@
+keys,speaker,act,dialogue,information
+story1_4_2_0_0,ink,ink_serious,"총을 겨누는 자세가  방어적으로 보이나, 아니면 공격적으로 보이나?",
+story1_4_2_0_1,client,clt_panic,자세 자체는 명확히 안 보이는데요...,
+story1_4_2_0_2,ink,ink_panic,확실히 실루엣으로 보이니까 말이지...,
+story1_4_2_0_3,client,clt_think,하지만 분위기는 좀... 말해주는 구석이 있는 느낌이에요.,
+story1_4_2_0_4,ink,ink_haught,어떤 분위기를 느꼈나?,
+story1_4_2_0_5,client,clt_think,서로 움직임은 거의 없는데...,
+story1_4_2_0_6,client,clt_idle_1,기류는 꽤 날카로운 느낌이에요.,
+story1_4_2_0_7,client,clt_innocent,누가 먼저 움직여도 이상하지 않을 팽팽함이 있었달까요.,
+story1_4_2_0_8,client,clt_laugh,"그저 맞서고 있다는 것보단, 기회를 노리고 있다는 인상이 더 강해요.",
+story1_4_2_0_9,ink,ink_serious,"방어선이라기보다는, 당기기 직전의 준비동작이라는 말인가?",당기기 전의 준비동작
+story1_4_2_0_10,client,clt_innocent,"네. 말 그대로, 쏠 각을 재는 느낌?",
+story1_4_2_0_11,client,clt_think,조금이라도 먼저 보는 쪽이 이긴다는 걸 두 사람 다 알고 있는 듯해요.,
+story1_4_2_0_12,ink,ink_idle,그건... 이미 방어의 선은 무너졌다는 의미일 수도 있겠군.,
+story1_4_2_0_13,client,clt_idle_1,이건 서로를 막는 자세가 아니라...,
+story1_4_2_0_14,client,clt_innocent,서로를 끝내기 위한 정적인 시동 같았어요.,
+story1_4_2_0_15,ink,ink_haught,"됐어, 이건 여기까지.",
+story1_4_2_0_16,ink,ink_idle,그렇다면...,

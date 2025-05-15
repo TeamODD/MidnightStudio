@@ -1,0 +1,15 @@
+keys,speaker,act,dialogue,information
+story1_4_3_0_0,ink,ink_serious,"주변에… 혹시 다른 인물의 흔적이나, 이미 벌어진 싸움의 자취 같은 건 있었나?",
+story1_4_3_0_1,client,clt_think,딱히 그런 건 안 보이네요...,
+story1_4_3_0_2,client,clt_idle_1,주변에 뿌연 느낌이 들긴 하는데...,
+story1_4_3_0_3,client,clt_idle_1,"바닥이며 벽이며, 피나 발자국 같은 건 없었어요.",
+story1_4_3_0_4,ink,ink_serious,그 말은...,
+story1_4_3_0_5,ink,ink_haught,이 자리는 그 둘만의 무대였던 것이군.,둘의 무대
+story1_4_3_0_6,client,clt_laugh,"셋도, 넷도 아닌 정확히 둘.",
+story1_4_3_0_7,client,clt_innocent,"싸움도, 시작도, 끝도 오직 저 두 사람 사이에서 이뤄지는 분위기에요.",
+story1_4_3_0_8,ink,ink_haught,"고립된 싸움, 그리고 조용한 마무리.",
+story1_4_3_0_9,ink,ink_idle,그런 결이로군.,
+story1_4_3_0_10,client,clt_think,심지어 배경이 말을 아끼고 있는 듯한 느낌?,
+story1_4_3_0_11,client,clt_laugh,굳이 아무도 끼어들 이유가 없다는 듯이요.,
+story1_4_3_0_12,ink,ink_haught,"됐어, 이건 여기까지.",
+story1_4_3_0_13,ink,ink_idle,그렇다면...,

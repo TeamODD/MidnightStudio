@@ -32,8 +32,13 @@ public class UIStart : MonoBehaviour
     private Color originalInkColor;
     private Color originalClientColor;
 
+    public AudioClip[] Clips;
+    private AudioManager AudioPlayer;
+
     void Start()
     {
+        AudioPlayer = AudioManager.Instance;
+
         // 카운트다운 텍스트 기본 설정
         countdownTexts[0] = new CountdownText { content = "lights", color = Color.white };
         countdownTexts[1] = new CountdownText { content = "Camera!", color = Color.white };
@@ -85,13 +90,16 @@ public class UIStart : MonoBehaviour
         {
             case "lights":
                 TotalScale = new Vector3(4f, 4f, 1f);
+                AudioPlayer.PlaySE(Clips[0]);
                 break;
             case "Camera!":
                 TotalScale = new Vector3(5f, 5f, 1f);
+                AudioPlayer.PlaySE(Clips[1]);
                 break;
             case "ACTION!!!":
                 Main_Production.Clapper_Production_Start();
                 TotalScale = new Vector3(6f, 6f, 1f);
+                AudioPlayer.PlaySE(Clips[2]);
                 break;
         }
         CountDown_Production.Scale("Lerp", 0.1f, TotalScale, TotalScale - new Vector3(3.1f, 3.1f, 1f));
