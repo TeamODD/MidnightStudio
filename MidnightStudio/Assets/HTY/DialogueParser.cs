@@ -251,6 +251,7 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
 
                 panel_ink_production.Move_Ink_Panel_Right();
 
+
                 Line_ink_check = true;
                 name_box_ink.SetNativeSize();
                 target = targetText_ink;
@@ -275,6 +276,7 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
                     panel_client_production.Move_Client_Panel_Right();
 
                     panel_ink_production.Move_Ink_Panel_Right();
+
 
                     Line_ink_check = false;
                     Line_Client_check = true;

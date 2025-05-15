@@ -4,6 +4,8 @@ public class Panel_Ink_Production : MonoBehaviour
 {
     public UI_Production ui_production;
     public RectTransform PanelInkRect;
+    public UI_Production Right_Bg;
+    public UI_Production Left_Bg;
 
     public void Hide_Ink_Panel()
     {
