@@ -13,6 +13,8 @@ public class TitleButtonControl : MonoBehaviour
     public SceneFader sceneFader;
     public Title_Production TitleProduction;
     public GameObject audioManagerPrefab;
+    public SceneBGMSetter titleBGMSetter;
+    public VolumeSlider titleVolumeSlider;
 
     public bool CanControl;
 
@@ -26,6 +28,7 @@ public class TitleButtonControl : MonoBehaviour
 
     public AudioClip[] Clips;
     private AudioManager AudioPlayer;
+    
 
     void Start()
     {
@@ -40,6 +43,11 @@ public class TitleButtonControl : MonoBehaviour
         }
 
         AudioPlayer = AudioManager.Instance;
+        AudioPlayer.AudioSetting();
+
+        titleBGMSetter.SettingBGM();
+
+        titleVolumeSlider.sliderSetting();
     }
     private void Awake()
     {

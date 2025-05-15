@@ -2467,6 +2467,8 @@ MonoBehaviour:
   sceneFader: {fileID: 1943513023}
   TitleProduction: {fileID: 742768800}
   audioManagerPrefab: {fileID: 8730362283098424797, guid: 9ce4f455542707440a9461bc52f17d4f, type: 3}
+  titleBGMSetter: {fileID: 1374929739}
+  titleVolumeSlider: {fileID: 232357841}
   CanControl: 1
   raycaster: {fileID: 1544191842}
   eventSystem: {fileID: 67451663}

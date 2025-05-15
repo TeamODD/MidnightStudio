@@ -52,6 +52,7 @@ public class UIStart : MonoBehaviour
         MakeTransparentExcept();
         dontTouch.SetActive(true);
         StartCoroutine(FullIntroSequence());
+        
     }
 
     IEnumerator FullIntroSequence()

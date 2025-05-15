@@ -8,4 +8,9 @@ public class SceneBGMSetter : MonoBehaviour
     {
         AudioManager.Instance?.PlayBGM(bgmClip);
     }
+
+    public void SettingBGM()
+    {
+        AudioManager.Instance?.PlayBGM(bgmClip);
+    }
 }

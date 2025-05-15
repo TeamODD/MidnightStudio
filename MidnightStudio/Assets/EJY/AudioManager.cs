@@ -24,8 +24,15 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         // ����� ���� �ҷ�����, �⺻���� 0.7
-        bgmVolume = PlayerPrefs.GetFloat("BGMVolume", 0.7f);
-        seVolume = PlayerPrefs.GetFloat("SEVolume", 0.7f);
+        
+    }
+    
+    public void AudioSetting()
+    {
+        bgmVolume = PlayerPrefs.GetFloat("BGMVolume", 0.05f);
+        seVolume = PlayerPrefs.GetFloat("SEVolume", 0.5f);
+
+        ApplyVolume();
     }
 
     private void Start()
