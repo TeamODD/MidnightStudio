@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using UnityEditor.Rendering.Universal;
 
 public class ResultCharaPoyong : MonoBehaviour
 {
