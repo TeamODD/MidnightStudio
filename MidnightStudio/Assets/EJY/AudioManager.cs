@@ -23,7 +23,7 @@ public class AudioManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        // ÀúÀåµÈ º¼·ý ºÒ·¯¿À±â, ±âº»°ªÀº 0.7
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½âº»ï¿½ï¿½ï¿½ï¿½ 0.7
         bgmVolume = PlayerPrefs.GetFloat("BGMVolume", 0.7f);
         seVolume = PlayerPrefs.GetFloat("SEVolume", 0.7f);
     }

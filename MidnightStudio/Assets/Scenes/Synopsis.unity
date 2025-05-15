@@ -765,6 +765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui_production: {fileID: 809955954}
+  Obj: {fileID: 0}
   ink_panel_Rect: {fileID: 809955955}
 --- !u!114 &809955954
 MonoBehaviour:
@@ -1934,7 +1935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0b05ebd9a0d21e4eb9b580c09ca08a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgmClip: {fileID: 0}
+  bgmClip: {fileID: 8300000, guid: 79ff82cc9bedca949a84009704538b3a, type: 3}
 --- !u!4 &2099357233
 Transform:
   m_ObjectHideFlags: 0

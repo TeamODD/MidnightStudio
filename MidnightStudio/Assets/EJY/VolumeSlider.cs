@@ -8,14 +8,14 @@ public class VolumeSlider : MonoBehaviour
 
     private void Start()
     {
-        // ÃÊ±â°ª ¼³Á¤
+        // ï¿½Ê±â°ª ï¿½ï¿½ï¿½ï¿½
         if (AudioManager.Instance != null)
         {
             bgmSlider.value = AudioManager.Instance.GetBGMVolume();
             seSlider.value = AudioManager.Instance.GetSEVolume();
         }
 
-        // º¯°æ ½Ã AudioManager¿¡ ¹Ý¿µ
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ AudioManagerï¿½ï¿½ ï¿½Ý¿ï¿½
         bgmSlider.onValueChanged.AddListener((v) =>
         {
             AudioManager.Instance?.SetBGMVolume(v);
