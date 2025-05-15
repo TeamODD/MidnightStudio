@@ -4,10 +4,14 @@ using UnityEngine.SceneManagement;
 public class EndingManager : MonoBehaviour
 {
     public MoviePart_Manager MoviePartManager;
+    public AudioManager AudioPlayer;
 
     private void Start()
     {
-         MoviePlayer();
+        AudioPlayer = AudioManager.Instance;
+        AudioPlayer.StopBGM();
+
+        MoviePlayer();
     }
 
     private void MoviePlayer()

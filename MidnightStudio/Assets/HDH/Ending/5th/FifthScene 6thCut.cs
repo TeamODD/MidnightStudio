@@ -10,6 +10,7 @@ public class FifthScene_6thCut : MonoBehaviour
     public FifthScene_Manager Scene_Manager;
     public MoviePart_Subtitle Subtitle;
     private IEnumerator Production_Start_Sign;
+    public AudioClip[] Clips;
 
     private void Start()
     {
@@ -38,7 +39,9 @@ public class FifthScene_6thCut : MonoBehaviour
         Scene_Manager.Shake.Production_Start(15);
 
         Scene_Manager.Fade_Panel.Coloring("Instant", 0f, new Color(0f, 0f, 0f, 1f), new Color(0.98f, 0.46f, 0.14f, 1f));
+        Scene_Manager.AudioPlayer.PlaySE(Clips[0]);
         yield return new WaitForSeconds(0.05f);
+        
 
         Scene_Manager.Fade_Panel.Coloring("Instant", 0f, new Color(0f, 0f, 0f, 1f), new Color(0f, 0f, 0f, 1f));
         Spark_UP.Alpha("Instant", 0f, 0f, 0f);

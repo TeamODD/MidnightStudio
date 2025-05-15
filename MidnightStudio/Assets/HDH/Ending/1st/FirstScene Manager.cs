@@ -12,8 +12,12 @@ public class FirstScene_Manager : MonoBehaviour
     public bool IsTest = false;
     private IEnumerator Total_Production_Start_Sign;
 
+    public AudioManager AudioPlayer;
+
     private void Start()
     {
+        AudioPlayer = AudioManager.Instance;
+
         Cut_1st.gameObject.SetActive(false);
         Cut_2nd.gameObject.SetActive(false);
 

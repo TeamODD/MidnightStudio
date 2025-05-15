@@ -9,9 +9,11 @@ public class FourthScene_4thCut : MonoBehaviour
     public UI_Production Obj_UP;
     public Sprite[] Protagonist = new Sprite[2];
     public bool IsTest = false;
-    public FifthScene_Manager Scene_Manager;
+    public FourthScene_Manager Scene_Manager;
     public MoviePart_Subtitle Subtitle;
     private IEnumerator Production_Start_Sign;
+
+    public AudioClip[] Clips;
 
     private void Start()
     {
@@ -38,6 +40,8 @@ public class FourthScene_4thCut : MonoBehaviour
 
         Obj_UP.Position("Smooth", 0.3f, new Vector3(2.6f, -1.45f, 0f), new Vector3(2.6f, -1.3f, 0f));
         Obj_OP.Coloring("Lerp", 0.07f, new Color(1f, 1f, 1f, 0.5f), new Color(1f, 1f, 1f, 1f));
+
+        Scene_Manager.AudioPlayer.PlaySE(Clips[0]);
         yield return new WaitForSeconds(0.75f);
         // * 컷.
     }

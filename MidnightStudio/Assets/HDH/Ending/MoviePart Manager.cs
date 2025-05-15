@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MoviePart_Manager : MonoBehaviour
 {
-    public List<string> Test_Sequence = new List<string> { "0", "1", "2", "3", "4" };
+    public List<string> Test_Sequence = new List<string> { "2", "3", "1", "4", "0" };
     public EndingManager EndingManager;
     public UI_Production Fade_Panel;
     public FirstScene_Manager FirstScene;

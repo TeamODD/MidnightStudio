@@ -9,8 +9,13 @@ public class FourthScene_Manager : MonoBehaviour
     public bool IsLast = false;
     public bool IsTest = false;
     private IEnumerator Total_Production_Start_Sign;
+
+    public AudioManager AudioPlayer;
+
     private void Start()
     {
+        AudioPlayer = AudioManager.Instance;
+        
         //Cut_2nd.gameObject.SetActive(true);
 
         if (IsTest == true) { Production_Start(); }

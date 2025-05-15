@@ -13,6 +13,8 @@ public class FifthScene_2ndCut : MonoBehaviour
     public MoviePart_Subtitle Subtitle;
     private IEnumerator Production_Start_Sign;
 
+    public AudioClip[] Clips;
+
     private void Start()
     {
         if (IsTest == true) { Production_Start(); }
@@ -31,8 +33,9 @@ public class FifthScene_2ndCut : MonoBehaviour
     {
         // * 액션.
         Obj_SR.sprite = Protagonist[1];
-
+        
         Obj_UP.Position("Lerp", 5f, new Vector3(0.53f, -0.93f, 0f), new Vector3(-1.4f, -0.6f, 0f));
+        Scene_Manager.AudioPlayer.PlaySE(Clips[0]);
         yield return new WaitForSeconds(2f);
         // * 컷.
     }

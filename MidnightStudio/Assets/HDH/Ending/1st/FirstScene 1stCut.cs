@@ -11,6 +11,8 @@ public class FirstScene_1stCut : MonoBehaviour
     private IEnumerator Production_Start_Sign;
     private IEnumerator Production_Protagonist_Sign;
 
+    public AudioClip[] Clips;
+
     private void Start()
     {
         if (IsTest == true) { Production_Start(); }
@@ -56,6 +58,13 @@ public class FirstScene_1stCut : MonoBehaviour
             Obj[1].Move("Lerp", 0.1f, "y", -1f, -1.3f);
             yield return new WaitForSeconds(0.1f);
             Obj[1].Move("Smooth", 0.7f, "y", -1.3f, -1f);
+            Scene_Manager.AudioPlayer.PlaySE(Clips[0]);
+            yield return new WaitForSeconds(0.7f);
+
+            Obj[1].Move("Lerp", 0.1f, "y", -1f, -1.3f);
+            yield return new WaitForSeconds(0.1f);
+            Obj[1].Move("Smooth", 0.7f, "y", -1.3f, -1f);
+            Scene_Manager.AudioPlayer.PlaySE(Clips[1]);
             yield return new WaitForSeconds(0.7f);
         }
     }

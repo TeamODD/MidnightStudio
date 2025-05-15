@@ -12,6 +12,7 @@ public class ThirdScene_1stCut : MonoBehaviour
     public ThirdScene_Manager Scene_Manager;
     public MoviePart_Subtitle Subtitle;
     private IEnumerator Production_Start_Sign;
+    public AudioClip[] Clips;
 
     private void Start()
     {
@@ -33,9 +34,11 @@ public class ThirdScene_1stCut : MonoBehaviour
         Protagonist_SR.sprite = Protagonist[0];
         Chara_Obj.Position("Smooth", 0.3f, new Vector3(2f, -0.95f, -1f), new Vector3(2.6f, -0.95f, -1f));
         Chara_Obj.Rotation("Lerp", 0.1f, new Vector3(0f, 0f, 0f), new Vector3(0f, 0f, 3f));
+        Scene_Manager.AudioPlayer.PlaySE(Clips[0]);
         yield return new WaitForSeconds(0.1f);
 
         Chara_Obj.Rotation("Smooth", 0.1f, new Vector3(0f, 0f, 3f), new Vector3(0f, 0f, 0f));
+        Scene_Manager.AudioPlayer.PlaySE(Clips[1]);
         yield return new WaitForSeconds(0.5f);
 
         Protagonist_SR.sprite = Protagonist[1];
@@ -44,6 +47,7 @@ public class ThirdScene_1stCut : MonoBehaviour
         yield return null;
 
         Effect_Obj[0].Coloring("Lerp", 0.25f, new Color(1f, 1f, 1f, 1f), new Color(1f, 1f, 1f, 0f));
+        Scene_Manager.AudioPlayer.PlaySE(Clips[2]);
         yield return new WaitForSeconds(0.45f);
 
         Effect_Obj[0].gameObject.SetActive(false);
@@ -60,7 +64,11 @@ public class ThirdScene_1stCut : MonoBehaviour
         Chara_Obj.Rotation("Smooth", 0.15f, new Vector3(0f, 0f, 0f), new Vector3(0f, 0f, -9f));
         Scene_Manager.Fade_Panel.Coloring("Instant", 0f, new Color(0f, 0f, 0f, 1f), new Color(0.98f, 0.46f, 0.14f, 1f));
         Scene_Manager.Fade_Panel.Alpha("Lerp", 0.1f, 1f, 0f);
-        yield return new WaitForSeconds(0.3f);
+        Scene_Manager.AudioPlayer.PlaySE(Clips[3]);
+        yield return new WaitForSeconds(0.05f);
+
+        Scene_Manager.AudioPlayer.PlaySE(Clips[4]);
+        yield return new WaitForSeconds(0.25f);
 
         Protagonist_SR.sprite = Protagonist[2];
         Scene_Manager.Shake.Production_Start(30);
@@ -72,7 +80,12 @@ public class ThirdScene_1stCut : MonoBehaviour
 
         Chara_Obj.Position("Smooth", 0.15f, new Vector3(2.6f, -0.95f, -1f), new Vector3(3.2f, -0.95f, -1f));
         Chara_Obj.Rotation("Smooth", 0.5f, new Vector3(0f, 0f, 0f), new Vector3(0f, 0f, 6f));
-        yield return new WaitForSeconds(0.15f);
+        Scene_Manager.AudioPlayer.PlaySE(Clips[5]);
+        yield return new WaitForSeconds(0.05f);
+
+        Scene_Manager.AudioPlayer.PlaySE(Clips[4]);
+        Scene_Manager.AudioPlayer.PlaySE(Clips[6]);
+        yield return new WaitForSeconds(0.1f);
 
         Chara_Obj.Position("Smooth", 0.4f, new Vector3(3.2f, -0.95f, -1f), new Vector3(3.4f, -0.95f, -1f));
         yield return new WaitForSeconds(0.4f);

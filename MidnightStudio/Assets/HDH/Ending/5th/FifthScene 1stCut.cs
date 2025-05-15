@@ -9,6 +9,8 @@ public class FifthScene_1stCut : MonoBehaviour
     public MoviePart_Subtitle Subtitle;
     private IEnumerator Production_Start_Sign;
 
+    public AudioClip[] Clips;
+
     private void Start()
     {
         if (IsTest == true) { Production_Start(); }
@@ -27,12 +29,15 @@ public class FifthScene_1stCut : MonoBehaviour
     {
         // * 액션.
         yield return new WaitForSeconds(0.25f);
-        
+
         Subtitle.Engage("어머. 소심한 반항인걸까?", "Down", 2f);
         yield return new WaitForSeconds(2.25f);
 
         Subtitle.Engage("그냥 순순히 최후를 맞이ㅎ...", "Down", 1.5f);
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
+
+        Scene_Manager.AudioPlayer.PlaySE(Clips[0]);
+        yield return new WaitForSeconds(0.05f);
         // * 컷.
     }
 }

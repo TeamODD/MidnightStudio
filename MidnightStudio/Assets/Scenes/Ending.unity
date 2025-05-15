@@ -378,6 +378,7 @@ MonoBehaviour:
   - {fileID: 2017263006}
   IsLast: 0
   IsTest: 0
+  AudioPlayer: {fileID: 0}
 --- !u!1 &49305990
 GameObject:
   m_ObjectHideFlags: 0
@@ -1230,6 +1231,10 @@ MonoBehaviour:
   IsTest: 0
   Scene_Manager: {fileID: 552017576}
   Subtitle: {fileID: 475963707}
+  Clips:
+  - {fileID: 8300000, guid: 3b66faa24da33e24babcdb635d3677c2, type: 3}
+  - {fileID: 8300000, guid: ef530e5b8c94a1c449f3a6437d560667, type: 3}
+  - {fileID: 8300000, guid: d1cd8e1315fa63c4e8583a2afc578046, type: 3}
 --- !u!1 &197588265
 GameObject:
   m_ObjectHideFlags: 0
@@ -2035,8 +2040,10 @@ MonoBehaviour:
   - {fileID: 8251639310034765046, guid: 8ac6b7d87d1157546a8fbc461013d2a8, type: 3}
   - {fileID: -3079492901182263467, guid: ab3a31b6720d16f479e8e3840ebf5d73, type: 3}
   IsTest: 0
-  Scene_Manager: {fileID: 455031142}
+  Scene_Manager: {fileID: 552017576}
   Subtitle: {fileID: 475963707}
+  Clips:
+  - {fileID: 8300000, guid: 519ba3336e0230247819501e55a472af, type: 3}
 --- !u!1 &430751276
 GameObject:
   m_ObjectHideFlags: 0
@@ -2093,6 +2100,9 @@ MonoBehaviour:
   IsTest: 0
   Scene_Manager: {fileID: 455031142}
   Subtitle: {fileID: 475963707}
+  Clips:
+  - {fileID: 8300000, guid: 92c7c97a4be125e4fbb9316d9d45f1e1, type: 3}
+  - {fileID: 8300000, guid: 92c7c97a4be125e4fbb9316d9d45f1e1, type: 3}
 --- !u!1 &436937241
 GameObject:
   m_ObjectHideFlags: 0
@@ -2364,6 +2374,7 @@ MonoBehaviour:
   IsLast: 0
   IsTest: 0
   Shake: {fileID: 97838443}
+  AudioPlayer: {fileID: 0}
 --- !u!1 &475963701
 GameObject:
   m_ObjectHideFlags: 0
@@ -2724,6 +2735,10 @@ MonoBehaviour:
   IsTest: 1
   Scene_Manager: {fileID: 33618217}
   Subtitle: {fileID: 475963707}
+  Clips:
+  - {fileID: 8300000, guid: 167897ecf2286c6428a5f6582a5e1cd7, type: 3}
+  - {fileID: 8300000, guid: 3b66faa24da33e24babcdb635d3677c2, type: 3}
+  - {fileID: 8300000, guid: 541c86692868d324e9bc69bb07226dcb, type: 3}
 --- !u!1 &534432999
 GameObject:
   m_ObjectHideFlags: 0
@@ -2784,6 +2799,8 @@ MonoBehaviour:
   IsTest: 0
   Scene_Manager: {fileID: 455031142}
   Subtitle: {fileID: 475963707}
+  Clips:
+  - {fileID: 8300000, guid: d18aedc70dfcd1d4a91aa45bf4e6ff62, type: 3}
 --- !u!1 &543684515
 GameObject:
   m_ObjectHideFlags: 0
@@ -2953,6 +2970,7 @@ MonoBehaviour:
   Cut_4th: {fileID: 401098989}
   IsLast: 0
   IsTest: 0
+  AudioPlayer: {fileID: 1438241345}
 --- !u!1 &588897495
 GameObject:
   m_ObjectHideFlags: 0
@@ -3612,11 +3630,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Test_Sequence:
-  - 0
   - 1
-  - 2
   - 3
+  - 2
   - 4
+  - 0
   EndingManager: {fileID: 1602254420}
   Fade_Panel: {fileID: 533129}
   FirstScene: {fileID: 33618217}
@@ -3624,7 +3642,7 @@ MonoBehaviour:
   ThirdScene: {fileID: 874055819}
   FourthScene: {fileID: 552017576}
   FifthScene: {fileID: 455031142}
-  IsTest: 0
+  IsTest: 1
 --- !u!1 &726721552
 GameObject:
   m_ObjectHideFlags: 0
@@ -4462,6 +4480,8 @@ MonoBehaviour:
   IsTest: 0
   Scene_Manager: {fileID: 552017576}
   Subtitle: {fileID: 475963707}
+  Clips:
+  - {fileID: 8300000, guid: ef530e5b8c94a1c449f3a6437d560667, type: 3}
 --- !u!1 &874055817
 GameObject:
   m_ObjectHideFlags: 0
@@ -4516,6 +4536,7 @@ MonoBehaviour:
   IsLast: 0
   IsTest: 0
   Shake: {fileID: 97838443}
+  AudioPlayer: {fileID: 0}
 --- !u!1 &877744171
 GameObject:
   m_ObjectHideFlags: 0
@@ -4636,6 +4657,9 @@ MonoBehaviour:
   IsTest: 0
   Scene_Manager: {fileID: 33618217}
   Subtitle: {fileID: 475963707}
+  Clips:
+  - {fileID: 8300000, guid: 167897ecf2286c6428a5f6582a5e1cd7, type: 3}
+  - {fileID: 8300000, guid: 3b66faa24da33e24babcdb635d3677c2, type: 3}
 --- !u!1 &892111157
 GameObject:
   m_ObjectHideFlags: 0
@@ -4820,6 +4844,14 @@ MonoBehaviour:
   IsTest: 0
   Scene_Manager: {fileID: 874055819}
   Subtitle: {fileID: 475963707}
+  Clips:
+  - {fileID: 8300000, guid: 167897ecf2286c6428a5f6582a5e1cd7, type: 3}
+  - {fileID: 8300000, guid: b06f12284663b0748be64b77843155fc, type: 3}
+  - {fileID: 8300000, guid: d1b27c00ea7662e46ac0e135e5a79861, type: 3}
+  - {fileID: 8300000, guid: 92c7c97a4be125e4fbb9316d9d45f1e1, type: 3}
+  - {fileID: 8300000, guid: edd9f7fdd85de4440946fd70d9df424f, type: 3}
+  - {fileID: 8300000, guid: a4272d23f0e144a4896624e2b49673f1, type: 3}
+  - {fileID: 8300000, guid: a8b2919682508d84884743fbcd03abf8, type: 3}
 --- !u!1 &897705642
 GameObject:
   m_ObjectHideFlags: 0
@@ -5617,6 +5649,13 @@ MonoBehaviour:
   IsTest: 1
   Scene_Manager: {fileID: 2087972532}
   Subtitle: {fileID: 475963707}
+  Clips:
+  - {fileID: 8300000, guid: 79cfdd1a29c6aa4478508ddcf3d51f4a, type: 3}
+  - {fileID: 8300000, guid: 541c86692868d324e9bc69bb07226dcb, type: 3}
+  - {fileID: 8300000, guid: d1b27c00ea7662e46ac0e135e5a79861, type: 3}
+  - {fileID: 8300000, guid: 085c5ec5138fb624eb9df6fcd349ef1b, type: 3}
+  - {fileID: 8300000, guid: ef530e5b8c94a1c449f3a6437d560667, type: 3}
+  - {fileID: 8300000, guid: e36b648d9d48df4489aeb9719ffc6945, type: 3}
 --- !u!1 &1052567816
 GameObject:
   m_ObjectHideFlags: 0
@@ -6121,6 +6160,7 @@ MonoBehaviour:
   IsTest: 0
   Scene_Manager: {fileID: 552017576}
   Subtitle: {fileID: 475963707}
+  Clips: []
 --- !u!1 &1247880707
 GameObject:
   m_ObjectHideFlags: 0
@@ -7182,6 +7222,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1438241345 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1389064146279362531, guid: 9ce4f455542707440a9461bc52f17d4f, type: 3}
+  m_PrefabInstance: {fileID: 1743157231}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 223a3438f0da2344f9d9ad36d9aae365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1464608233
 GameObject:
   m_ObjectHideFlags: 0
@@ -7941,6 +7992,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoviePartManager: {fileID: 663284285}
+  AudioPlayer: {fileID: 0}
 --- !u!1 &1615655885
 GameObject:
   m_ObjectHideFlags: 0
@@ -8549,6 +8601,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8205fd0dc581492428dc2a9c81b166fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1743157231
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2242182390008318394, guid: 9ce4f455542707440a9461bc52f17d4f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3821958689360022756, guid: 9ce4f455542707440a9461bc52f17d4f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3821958689360022756, guid: 9ce4f455542707440a9461bc52f17d4f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3821958689360022756, guid: 9ce4f455542707440a9461bc52f17d4f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3821958689360022756, guid: 9ce4f455542707440a9461bc52f17d4f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3821958689360022756, guid: 9ce4f455542707440a9461bc52f17d4f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3821958689360022756, guid: 9ce4f455542707440a9461bc52f17d4f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3821958689360022756, guid: 9ce4f455542707440a9461bc52f17d4f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3821958689360022756, guid: 9ce4f455542707440a9461bc52f17d4f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3821958689360022756, guid: 9ce4f455542707440a9461bc52f17d4f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3821958689360022756, guid: 9ce4f455542707440a9461bc52f17d4f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730362283098424797, guid: 9ce4f455542707440a9461bc52f17d4f, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9ce4f455542707440a9461bc52f17d4f, type: 3}
 --- !u!1 &1819662222
 GameObject:
   m_ObjectHideFlags: 0
@@ -9013,6 +9126,8 @@ MonoBehaviour:
   IsTest: 0
   Scene_Manager: {fileID: 455031142}
   Subtitle: {fileID: 475963707}
+  Clips:
+  - {fileID: 8300000, guid: 167897ecf2286c6428a5f6582a5e1cd7, type: 3}
 --- !u!1 &1865963636
 GameObject:
   m_ObjectHideFlags: 0
@@ -10261,6 +10376,7 @@ MonoBehaviour:
   Cut_1st: {fileID: 1033592635}
   IsLast: 0
   IsTest: 0
+  AudioPlayer: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -10271,3 +10387,4 @@ SceneRoots:
   - {fileID: 2017263004}
   - {fileID: 1602254419}
   - {fileID: 348715287}
+  - {fileID: 1743157231}

@@ -1,0 +1,17 @@
+keys,speaker,act,dialogue,information
+story1_0_10_0_0,ink,ink_serious,"자네가 보기엔 상황상 대화가 오가기 직전인가, 이미 말이 끝난 후인가?",
+story1_0_10_0_1,client,clt_think,음... 분위기를 보면...,
+story1_0_10_0_2,client,clt_idle_1,대화는 이미 끝난 것 같아요.,
+story1_0_10_0_3,client,clt_idle_1,"주인공의 시선이며, 총을 겨눈 자세가...",
+story1_0_10_0_4,client,clt_innocent,뭔가 결심이 굳어진 느낌이에요.,
+story1_0_10_0_5,client,clt_think,그 짧은 순간에 무슨 말이 오갔는지는 모르겠지만...,
+story1_0_10_0_6,client,clt_laugh,이제는 말이 더 이상 통하지 않는다는 판단이 서 있었던 것 아닐까요?,
+story1_0_10_0_7,ink,ink_haught,확실히... 말보다 행동이 앞설 때가 있지.,
+story1_0_10_0_8,ink,ink_idle,"이건 마치, 마지막 말까지 다 뱉고 이제는 실천으로 옮기는 표정이군.",
+story1_0_10_0_9,client,clt_innocent,바로 그거에요!,
+story1_0_10_0_10,client,clt_think,주인공의 눈빛에서 머뭇거림이 없다는 건...,
+story1_0_10_0_11,client,clt_idle_1,감정적인 갈등이 이미 정리됐다는 뜻이기도 하니까요.,
+story1_0_10_0_12,client,clt_idle_1,어쩌면 서로가 마지막 말을 한 후...,
+story1_0_10_0_13,client,clt_idle_1,더 이상 설득도 변명도 통하지 않는 지점에 도달한 거겠죠.,설득 불가의 지점
+story1_0_10_0_14,ink,ink_haught,"됐어, 이건 여기까지.",
+story1_0_10_0_15,ink,ink_idle,그렇다면...,

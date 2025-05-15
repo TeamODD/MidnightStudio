@@ -1,0 +1,13 @@
+keys,speaker,act,dialogue,information
+story1_0_6_0_0,ink,ink_idle,"자네가 보기엔 적은 방심한 상태였는가, 아니면 이미 경계하고 있었는가?",
+story1_0_6_0_1,client,clt_think,글쎄요. 화면 속 분위기를 보면...,
+story1_0_6_0_2,client,clt_panic,전혀 그런 기색은 안보이네요.,
+story1_0_6_0_3,client,clt_innocent,"자세도 느슨하고, 시선도 주인공 쪽이 아니었죠.",
+story1_0_6_0_4,ink,ink_panic,"그 말인즉, 예상치 못했다는 거군.",
+story1_0_6_0_5,client,clt_idle_1,"정확히 말하자면, 이건 기습이라기보다 사각에서 들어온 일격에 가까워보여요.",
+story1_0_6_0_6,client,clt_idle_1,"적이 빈틈을 만들고, 그 틈을 주인공이 놓치지 않았던거죠.",
+story1_0_6_0_7,ink,ink_haught,결국 방심이 자초한 결과로군.,적은 방심함
+story1_0_6_0_8,client,clt_think,주인공의 낮은 자세도 그런 방심을 뚫고 들어가기 위한 선택이었을 겁니다.,
+story1_0_6_0_9,client,clt_innocent,이건 기민한 판단이었죠.,
+story1_0_6_0_10,ink,ink_haught,"됐어, 이건 여기까지.",
+story1_0_6_0_11,ink,ink_idle,그렇다면...,
