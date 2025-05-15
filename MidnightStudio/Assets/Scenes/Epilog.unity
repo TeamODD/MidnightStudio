@@ -1754,6 +1754,9 @@ MonoBehaviour:
   synopsisColorManager: {fileID: 1681451879}
   speaker_nextFlash: {fileID: 1681451880}
   Epilog_Result: {fileID: 1681451882}
+  Clips:
+  - {fileID: 8300000, guid: f6546b5517bddc94999a3cc14ad560d2, type: 3}
+  - {fileID: 8300000, guid: 66db7a934fce40b498aeb7cf83d82c18, type: 3}
 --- !u!114 &1681451882
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -29,10 +29,15 @@ public class End_text : MonoBehaviour
     private Dictionary<string, string[]> dialogues = new Dictionary<string, string[]>();
     private Coroutine typingCoroutine;
 
+    private AudioManager AudioPlayer;
+    public AudioClip[] Clips;
+
     // 1 ��� �ҷ����� -> �ؽ�Ʈ Ÿ���� ���� -> ��� ����, ���ͷθ� �Ѿ�� -> ���� ������ ���� ��� <�ݺ� ���� ������> -> ������ ����� �α�(manager.EnableProceed())
 
     public void Start()
     {
+        AudioPlayer = AudioManager.Instance;
+
         Epilog_Result.MoviePlayer();
         PlayProductionbyGrade(Epilog_Result.Grade);
     }
@@ -93,6 +98,7 @@ public class End_text : MonoBehaviour
         {
             yield return null;
         }
+        AudioPlayer.PlaySE(Clips[1]);
     }
 
     private List<string> StartTextList(string prefix)
@@ -256,6 +262,7 @@ public class End_text : MonoBehaviour
         foreach (char c in text)
         {
             target.text += c;
+            AudioPlayer.PlaySE(Clips[0]);
             yield return new WaitForSeconds(StartTextDelay);
         }
 

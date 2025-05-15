@@ -79,6 +79,7 @@ public class ResultTMP_production : MonoBehaviour
 
         Timer[1].Move("Smooth", 0.1f, "y", -111f, 0f);
         Timer[1].Alpha("Lerp", 0.2f, 0f, 1f);
+        AudioPlayer.PlaySE(Clips[2]);
         yield return new WaitForSeconds(1f);
 
         switch (Grade)

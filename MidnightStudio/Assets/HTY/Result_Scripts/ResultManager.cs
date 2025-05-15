@@ -15,7 +15,15 @@ public class ResultMangager : MonoBehaviour
 
     public void SceneChange()
     {
-        Destroy(ResultData.Instance);
+        // ResultData 삭제
+        ResultData result = FindObjectOfType<ResultData>();
+        if (result != null)
+        {
+            Destroy(result.gameObject);
+            Debug.Log("ResultData 오브젝트 삭제 완료");
+        }
+
+        // 타이틀 씬으로 전환
         SceneManager.LoadScene("Title");
     }
 }

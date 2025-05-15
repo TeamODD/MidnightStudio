@@ -3,8 +3,9 @@ using UnityEngine.UI;
 
 public class SlotPriviewController : MonoBehaviour
 {
-    public GameObject[] slotObjects; // ½½·Ô ¿ÀºêÁ§Æ®µé (1~5)
+    public GameObject[] slotObjects; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ (1~5)
     public Canvas targetCanvas;
+    public QuestionManager QuestionManager;
 
     private GameObject currentPreview;
     private int currentPreviewIndex = -1;
@@ -16,7 +17,7 @@ public class SlotPriviewController : MonoBehaviour
         {
             KeyCode key = KeyCode.Alpha1 + i;
 
-            if (Input.GetKeyDown(key) && !isPreviewLocked)
+            if (Input.GetKeyDown(key) && !isPreviewLocked && QuestionManager.canClick)
             {
                 ShowPreview(slotObjects[i]);
                 currentPreviewIndex = i;
@@ -30,6 +31,7 @@ public class SlotPriviewController : MonoBehaviour
                 isPreviewLocked = false;
             }
         }
+
     }
 
     void ShowPreview(GameObject slot)
@@ -39,7 +41,7 @@ public class SlotPriviewController : MonoBehaviour
         Image sourceImage = slot.GetComponentInChildren<Image>();
         if (sourceImage == null)
         {
-            Debug.LogWarning("Image ÄÄÆ÷³ÍÆ®¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+            Debug.LogWarning("Image ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
             return;
         }
 
@@ -52,20 +54,20 @@ public class SlotPriviewController : MonoBehaviour
         Button[] buttons = currentPreview.GetComponentsInChildren<Button>(true);
         foreach (Button b in buttons)
         {
-            Destroy(b); //  ¹öÆ° Å¬¸¯ ±â´É ¿ÏÀü Á¦°Å
+            Destroy(b); //  ï¿½ï¿½Æ° Å¬ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
 
         RectTransform rt = currentPreview.GetComponent<RectTransform>();
 
-        // À§Ä¡ Á¤·Ä ¹× º¸Á¤
+        // ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         rt.anchorMin = rt.anchorMax = new Vector2(0.5f, 0.5f);
         rt.pivot = new Vector2(0.5f, 0.5f);
         rt.anchoredPosition = Vector2.zero;
-        rt.localPosition = Vector3.zero; //  º¸Á¤
-        rt.localScale = Vector3.one * 5f;
-        rt.sizeDelta = sourceImage.rectTransform.sizeDelta; //  Å©±â º¸Á¤
+        rt.localPosition = Vector3.zero; //  ï¿½ï¿½ï¿½ï¿½
+        rt.localScale = Vector3.one * 10f;
+        rt.sizeDelta = sourceImage.rectTransform.sizeDelta; //  Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-        // Å¬¸¯ Â÷´Ü ¹æÁö
+        // Å¬ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         Image previewImage = currentPreview.GetComponent<Image>();
         if (previewImage != null)
             previewImage.raycastTarget = false;

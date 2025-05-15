@@ -97,7 +97,7 @@ public class MoviePart_Manager : MonoBehaviour
             if (Sequence[4] == Value)
             {
                 Fade_Panel.Alpha("Lerp", 0.5f, 0f, 1f);
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(3f);
 
                 EndingManager.MovieEnd();
             }

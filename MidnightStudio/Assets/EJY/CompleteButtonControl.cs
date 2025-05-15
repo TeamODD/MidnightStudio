@@ -18,7 +18,7 @@ public class CompleteButtonControl : MonoBehaviour
         }
     }
 
-    void OnClickHandler()
+    public void OnClickHandler()
     {
         float timeSinceLastClick = Time.time - lastClickTime;
         lastClickTime = Time.time;
@@ -35,13 +35,13 @@ public class CompleteButtonControl : MonoBehaviour
         }
         else
         {
-            clickCount = 1; // »õ Å¬¸¯ ½ÃÀÛ
+            clickCount = 1; // ï¿½ï¿½ Å¬ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
     }
 
     void OnDoubleClick()
     {
-        Debug.Log("¹öÆ° ´õºíÅ¬¸¯ °¨ÁöµÊ!");
+        Debug.Log("ï¿½ï¿½Æ° ï¿½ï¿½ï¿½ï¿½Å¬ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!");
         parser.CutProduction();
     }
 }
