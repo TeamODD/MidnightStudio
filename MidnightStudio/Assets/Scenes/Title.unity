@@ -414,6 +414,7 @@ MonoBehaviour:
   IsTest: 1
   ClapperBoard: {fileID: 156215195}
   ClapperBar: {fileID: 1158317655}
+  Clip: {fileID: 8300000, guid: bc8385962287fe14ebe43bf9384f1ba1, type: 3}
 --- !u!114 &156215195
 MonoBehaviour:
   m_ObjectHideFlags: 0

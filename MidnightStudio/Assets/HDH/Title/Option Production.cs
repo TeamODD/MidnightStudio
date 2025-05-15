@@ -10,8 +10,12 @@ public class Option_Production : MonoBehaviour
 
     private IEnumerator ClapperBorad_Production_Sign;
 
+    public AudioClip Clip;
+    private AudioManager AudioPlayer;
+
     private void Start()
     {
+        AudioPlayer = AudioManager.Instance;
         if (IsTest == true) { Production_Start(); }
     }
 
@@ -50,6 +54,7 @@ public class Option_Production : MonoBehaviour
 
         ClapperBoard.Position("Smooth", 0.15f, new Vector3(-100f, -375f, 0f), new Vector3(-100f, 105f, 0f));
         ClapperBoard.Rotation("Smooth", 0.15f, new Vector3(0f, 0f, 0f), new Vector3(0f, 0f, 5f));
+        AudioPlayer.PlaySE(Clip);
         yield return new WaitForSeconds(0.2f);
 
         ClapperBoard.Position("Smooth", 0.2f, new Vector3(-100f, 105f, 0f), new Vector3(-2260f, -530f, 0f));

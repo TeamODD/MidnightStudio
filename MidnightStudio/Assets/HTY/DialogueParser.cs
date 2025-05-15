@@ -34,6 +34,8 @@ public class DialogueParser : MonoBehaviour
     //public Clapper_production clapper_production;
     //public Clap_production clap_production;
     public Cut_production cut_production;
+    public AudioManager AudioPlayer;
+    public Main_hdh_Production Main_Production;
     public SceneFader Fader;
 
     public float delay = 0.06f; //글자가 움직이는 속도
@@ -80,6 +82,7 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
         //StartCoroutine(GameEndCoroutine());
         //StartCoroutine(GameCutCoroutine());
         cut_production.Cut_AlpahSetZero();
+        AudioPlayer = AudioManager.Instance;
 
         Show_Ink_Panel_check = false;
         Show_Client_Panel_check = false;
@@ -137,9 +140,10 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
     {
         Debug.Log("샌즈");
 
-
-        yield return new WaitForSeconds(0.01f);
+        AudioPlayer.StopBGM();
         cut_production.Cut_AlpahUpdate();
+        yield return new WaitForSeconds(0.01f);
+        Main_Production.Clapper_Production_Start();
         yield return new WaitForSeconds(0.1f);
         cut_production.Cut_AlpahFianl();
         yield return new WaitForSeconds(2.25f);

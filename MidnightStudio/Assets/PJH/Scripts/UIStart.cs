@@ -38,6 +38,7 @@ public class UIStart : MonoBehaviour
     void Start()
     {
         AudioPlayer = AudioManager.Instance;
+        AudioPlayer.StopBGM();
 
         // 카운트다운 텍스트 기본 설정
         countdownTexts[0] = new CountdownText { content = "lights", color = Color.white };
@@ -66,8 +67,8 @@ public class UIStart : MonoBehaviour
         // UI 다시 활성화
         EnableUI();
         gauge.StartGauge();
-
         QuestionManager.IntroProduction();
+        AudioPlayer.PlayBGM(Clips[3]);
     }
 
     IEnumerator PlayCountdownSequence()
@@ -95,6 +96,7 @@ public class UIStart : MonoBehaviour
             case "Camera!":
                 TotalScale = new Vector3(5f, 5f, 1f);
                 AudioPlayer.PlaySE(Clips[1]);
+                yield return new WaitForSeconds(0.05f);
                 break;
             case "ACTION!!!":
                 Main_Production.Clapper_Production_Start();
@@ -108,7 +110,7 @@ public class UIStart : MonoBehaviour
 
         CountDown_Production.Scale("Lerp", 0.05f, TotalScale - new Vector3(3.1f, 3.1f, 1f), TotalScale - new Vector3(3f, 3f, 1f));
         yield return new WaitForSeconds(0.05f);
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.3f);
 
         if (Contents == "ACTION!!!")
         {

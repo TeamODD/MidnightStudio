@@ -173,6 +173,7 @@ public class QuestionManager : MonoBehaviour
             }
             rerollQuestionSign = rerollQuestionCoroutine();
             StartCoroutine(rerollQuestionSign);
+            AudioPlayer.PlaySE(Clips[1]);
         }
     }
 

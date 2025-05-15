@@ -2038,6 +2038,8 @@ MonoBehaviour:
   character_client_production: {fileID: 204162435}
   character_ink_panel_production: {fileID: 1458695097}
   cut_production: {fileID: 611290853}
+  AudioPlayer: {fileID: 0}
+  Main_Production: {fileID: 1838206717}
   Fader: {fileID: 689032185}
   delay: 0.06
   Show_Ink_Panel_check: 0
@@ -2981,7 +2983,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2025243771}
+  m_Father: {fileID: 1627435315}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3013,6 +3015,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui_production: {fileID: 611290852}
+  Clips:
+  - {fileID: 8300000, guid: fc32cb7c7e696eb4ba50aa67d5f80183, type: 3}
+  - {fileID: 8300000, guid: 2b813eb219a770848b81e838c31f8afa, type: 3}
 --- !u!225 &611290854
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3469,9 +3474,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 874bb69492044f84080ffb62c30ea414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsTest: 1
+  IsTest: 0
   ClapperBoard: {fileID: 687185798}
   ClapperBar: {fileID: 1232723109}
+  Clip: {fileID: 8300000, guid: bc8385962287fe14ebe43bf9384f1ba1, type: 3}
 --- !u!1 &689032183
 GameObject:
   m_ObjectHideFlags: 0
@@ -4086,51 +4092,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotIndex: 0
---- !u!1 &886586844
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 886586846}
-  - component: {fileID: 886586845}
-  m_Layer: 0
-  m_Name: BGMSetter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &886586845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 886586844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0b05ebd9a0d21e4eb9b580c09ca08a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bgmClip: {fileID: 8300000, guid: 5026944f4b1105444ab5c446a6288ede, type: 3}
---- !u!4 &886586846
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 886586844}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1030.6473, y: 375.6996, z: 3.664716}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &903477248
 GameObject:
   m_ObjectHideFlags: 0
@@ -4561,8 +4522,9 @@ MonoBehaviour:
     color: {r: 1, g: 1, b: 1, a: 1}
   Clips:
   - {fileID: 8300000, guid: d23a3f6d1df36884eaa81d0f0d5413ed, type: 3}
-  - {fileID: 8300000, guid: a8e290744bf0ea446ae77473b9243da7, type: 3}
+  - {fileID: 8300000, guid: 9b8e7546d1aae25408135d0e4990bd16, type: 3}
   - {fileID: 8300000, guid: 15e116e9e211c464cbf8ea6e1c820fa4, type: 3}
+  - {fileID: 8300000, guid: 5026944f4b1105444ab5c446a6288ede, type: 3}
   allGroups1:
   - {fileID: 1558286686}
   - {fileID: 8943193859818236810}
@@ -7840,6 +7802,7 @@ RectTransform:
   - {fileID: 1672066171}
   - {fileID: 1838206716}
   - {fileID: 1018113264}
+  - {fileID: 611290851}
   - {fileID: 689032184}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8757,6 +8720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Clapper_Production: {fileID: 687185799}
+  Clip: {fileID: 8300000, guid: 5026944f4b1105444ab5c446a6288ede, type: 3}
 --- !u!1 &1853408919
 GameObject:
   m_ObjectHideFlags: 0
@@ -9391,7 +9355,6 @@ RectTransform:
   - {fileID: 64265741}
   - {fileID: 1301221145}
   - {fileID: 111949511}
-  - {fileID: 611290851}
   m_Father: {fileID: 1627435315}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -10564,5 +10527,4 @@ SceneRoots:
   - {fileID: 469812517}
   - {fileID: 923230849}
   - {fileID: 1629994091}
-  - {fileID: 886586846}
   - {fileID: 1179718715}
