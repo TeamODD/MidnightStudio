@@ -1271,7 +1271,7 @@ MonoBehaviour:
   camlight: {fileID: 50782150}
   ui_Production: {fileID: 254371746}
   parser: {fileID: 432035868}
-  GAME_OVER_TIME: 16
+  GAME_OVER_TIME: 300
   step_timer: 0
 --- !u!114 &254371743
 MonoBehaviour:
@@ -3905,7 +3905,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.0068750004, y: 0.5074074}
   m_AnchorMax: {x: 0.22022916, y: 0.74355555}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -76}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &836183593
@@ -8420,7 +8420,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC9C8\uBB38 \uB9AC\uB864"
+  m_text: Reroll
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f622ed0e5aec5554997cc0d5edb58e53, type: 2}
   m_sharedMaterial: {fileID: 2821774897124990202, guid: f622ed0e5aec5554997cc0d5edb58e53, type: 2}
