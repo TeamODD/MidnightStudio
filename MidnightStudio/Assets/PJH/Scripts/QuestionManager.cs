@@ -20,6 +20,7 @@ public class QuestionManager : MonoBehaviour
     public bool canClick = true;
     public DialogueParser parser;
     public GameObject reroll;
+    public GameObject complete;
     public List<GameObject> questionBox = new List<GameObject>();
     private string sceneIndex;
     public List<Image> scene = new List<Image>();
@@ -315,6 +316,7 @@ public class QuestionManager : MonoBehaviour
     {
         questionArrowOff();
         rerollOff();
+        completeOff();
         questionHide();
         questionProduction.objectInstantDisappear();
         canClick = false;
@@ -417,6 +419,11 @@ public class QuestionManager : MonoBehaviour
         reroll.SetActive(false);
     }
 
+    public void completeOff()
+    {
+        complete.SetActive(false);
+    }
+
     public void questionArrowOff()
     {
         foreach (TMP_Text obj in questionText)
@@ -428,6 +435,7 @@ public class QuestionManager : MonoBehaviour
     public void allOn()
     { //정보가 없음
         reroll.SetActive(true);
+        complete.SetActive(true);
 
         if (slotManager == null) { Debug.LogError("SlotManager가 QuestionManager에 할당되지 않아 allOn을 실행할 수 없습니다."); return; }
         if (cachedSlots.Count == 0) CacheSlots();
