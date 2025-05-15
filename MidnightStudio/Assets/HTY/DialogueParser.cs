@@ -34,6 +34,7 @@ public class DialogueParser : MonoBehaviour
     //public Clapper_production clapper_production;
     //public Clap_production clap_production;
     public Cut_production cut_production;
+    public SceneFader Fader;
 
     public float delay = 0.06f; //글자가 움직이는 속도
     public bool Show_Ink_Panel_check = false;
@@ -60,6 +61,7 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
 
     public void CutProduction()
     {
+        QuestionManager.canClick = false;
         SlotManager.Instance.SaveSlotResultsForNextScene();
         StartCoroutine(PlayCutsceneThenLoadEnding());
     }
@@ -67,7 +69,7 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
     private IEnumerator PlayCutsceneThenLoadEnding()
     {
         yield return StartCoroutine(GameCutCoroutine());  // 코루틴 종료까지 대기
-        SceneManager.LoadScene("Epilog");                     // 이후 씬 전환
+        Fader.FadeToScene("Epilog");                  // 이후 씬 전환
     }
 
     void Start()
@@ -131,10 +133,11 @@ public IEnumerator delayQuestion(TMP_Text target, string text)
 
     //}
 
-    IEnumerator GameCutCoroutine() {
+    IEnumerator GameCutCoroutine()
+    {
         Debug.Log("샌즈");
 
-        
+
         yield return new WaitForSeconds(0.01f);
         cut_production.Cut_AlpahUpdate();
         yield return new WaitForSeconds(0.1f);

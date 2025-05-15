@@ -24,6 +24,9 @@ public class TitleButtonControl : MonoBehaviour
     public Vector2 offScreenPosition = new Vector2(0f, -Screen.height); // �Ʒ��� ȭ�� ��
     public Vector2 onScreenPosition = Vector2.zero; // ���� ��ġ (�߾� ����)
 
+    public AudioClip[] Clips;
+    private AudioManager AudioPlayer;
+
     void Start()
     {
         if (AudioManager.Instance == null)
@@ -35,6 +38,8 @@ public class TitleButtonControl : MonoBehaviour
         {
             Debug.Log("AudioManager 이미 존재함");
         }
+
+        AudioPlayer = AudioManager.Instance;
     }
     private void Awake()
     {
@@ -78,6 +83,7 @@ public class TitleButtonControl : MonoBehaviour
         {
             CanControl = false;
             sceneFader.FadeToScene("Synopsis");
+            AudioPlayer.PlaySE(Clips[0]);
         }
     }
 
@@ -92,6 +98,7 @@ public class TitleButtonControl : MonoBehaviour
             StartCoroutine(OnOptionClicked_ObjActive());
             Debug.Log("작동됨");
             // StartCoroutine(Slide(optionRect, onScreenPosition));
+            AudioPlayer.PlaySE(Clips[0]);
         }
     }
     private IEnumerator OnOptionClicked_ObjActive()
@@ -116,6 +123,7 @@ public class TitleButtonControl : MonoBehaviour
 
             TitleProduction.Option_Production_End();
             StartCoroutine(OnExitClosed_ObjActive());
+            AudioPlayer.PlaySE(Clips[0]);
         }
     }
 
@@ -156,6 +164,7 @@ public class TitleButtonControl : MonoBehaviour
         if (CanControl)
         {
             CanControl = false;
+            AudioPlayer.PlaySE(Clips[0]);
             Application.Quit();
 
 #if UNITY_EDITOR

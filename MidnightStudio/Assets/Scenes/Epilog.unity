@@ -1766,6 +1766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd8ee5de8c5995944b572eaa0afc2963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Score: 0
   Grade: 
 --- !u!1 &1966317034
 GameObject:
@@ -1948,7 +1949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0b05ebd9a0d21e4eb9b580c09ca08a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgmClip: {fileID: 0}
+  bgmClip: {fileID: 8300000, guid: 79ff82cc9bedca949a84009704538b3a, type: 3}
 --- !u!4 &2099357233
 Transform:
   m_ObjectHideFlags: 0

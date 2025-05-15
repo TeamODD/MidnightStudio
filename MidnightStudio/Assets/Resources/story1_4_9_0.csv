@@ -1,0 +1,14 @@
+keys,speaker,act,dialogue,information
+story1_4_9_0_0,ink,ink_serious,자네가 보기엔... 이 둘 중 누가 먼저 총을 내릴 가능성이라도 있어 보이나?,
+story1_4_9_0_1,client,clt_panic,어... 그건 어려워보이네요.,
+story1_4_9_0_2,client,clt_think,"지금 분위기라면, 확실히 먼저 총을 내리는 쪽이 지는 거잖아요? ",
+story1_4_9_0_3,client,clt_idle_1,둘 다 그걸 너무 잘 알고 있는거 같아요.,
+story1_4_9_0_4,ink,ink_haught,서로 끝까지 물러서지 않겠다... 그런 기세군.,
+story1_4_9_0_5,client,clt_think,누가 먼저 움찔하는 순간...,
+story1_4_9_0_6,client,clt_idle_1,그게 곧바로 결론이 되는 것이죠.,
+story1_4_9_0_7,client,clt_panic,어설픈 타협은 애초에 이 공기 속에 자리가 없는 느낌이랄까.,
+story1_4_9_0_8,ink,ink_serious,그럼 이건 대화가 아니라 결심의 대치라는 것인가...,
+story1_4_9_0_9,client,clt_innocent,정확히 이해하셨네요.,
+story1_4_9_0_10,client,clt_idle_1,"이건 말보다, 누가 더 오래 총을 들고 설 수 있느냐의 문제죠.",이후엔 총을 내리지 않는다
+story1_4_9_0_11,ink,ink_haught,"됐어, 이건 여기까지.",
+story1_4_9_0_12,ink,ink_idle,그렇다면...,

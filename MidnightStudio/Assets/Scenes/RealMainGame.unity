@@ -1271,7 +1271,7 @@ MonoBehaviour:
   camlight: {fileID: 50782150}
   ui_Production: {fileID: 254371746}
   parser: {fileID: 432035868}
-  GAME_OVER_TIME: 300
+  GAME_OVER_TIME: 16
   step_timer: 0
 --- !u!114 &254371743
 MonoBehaviour:
@@ -2038,6 +2038,7 @@ MonoBehaviour:
   character_client_production: {fileID: 204162435}
   character_ink_panel_production: {fileID: 1458695097}
   cut_production: {fileID: 611290853}
+  Fader: {fileID: 689032185}
   delay: 0.06
   Show_Ink_Panel_check: 0
   Show_Client_Panel_check: 0
