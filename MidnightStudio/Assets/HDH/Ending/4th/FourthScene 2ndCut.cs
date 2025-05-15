@@ -12,6 +12,8 @@ public class FourthScene_2ndCut : MonoBehaviour
     public MoviePart_Subtitle Subtitle;
     private IEnumerator Production_Start_Sign;
 
+    public AudioClip[] Clips;
+
     private void Start()
     {
         if (IsTest == true) { Production_Start(); }
@@ -43,6 +45,8 @@ public class FourthScene_2ndCut : MonoBehaviour
 
         Obj[4].Position("Smooth", 0.1f, new Vector3(3.325f, -3.05f, -1f), new Vector3(3.25f, -2.95f, -1f));
         Obj[4].Rotation("Smooth", 0.1f, new Vector3(0f, 0f, 3f), new Vector3(0f, 0f, 8f));
+        Scene_Manager.AudioPlayer.PlaySE(Clips[0]);
+        Scene_Manager.AudioPlayer.PlaySE(Clips[1]);
         yield return new WaitForSeconds(0.2f);
 
         Obj[3].gameObject.SetActive(false);
@@ -57,6 +61,7 @@ public class FourthScene_2ndCut : MonoBehaviour
         Mist_Obj.Scale("Smooth", 3f, new Vector3(1.052632f, 1.263158f, 1f), new Vector3(1.3f, 1.5f, 1f));
 
         Mist_Obj.Coloring("Lerp", 3f, new Color(0.8396226f, 0.2970363f, 0.2970363f, 0.5882353f), new Color(0.8396226f, 0.2970363f, 0.2970363f, 0f));
+        Scene_Manager.AudioPlayer.PlaySE(Clips[2]);
         yield return new WaitForSeconds(0.2f);
 
         Obj[0].Rotation("Smooth", 5f, new Vector3(0f, 0f, 6f), new Vector3(0f, 0f, 0f));

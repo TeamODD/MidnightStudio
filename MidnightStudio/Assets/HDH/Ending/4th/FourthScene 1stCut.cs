@@ -11,6 +11,7 @@ public class FourthScene_1stCut : MonoBehaviour
     public bool IsTest = false;
     public FourthScene_Manager Scene_Manager;
     public MoviePart_Subtitle Subtitle;
+    public AudioClip[] Clips;
     private IEnumerator Production_Start_Sign;
 
     private void Start()
@@ -38,6 +39,7 @@ public class FourthScene_1stCut : MonoBehaviour
 
         Obj_UP.Position("Smooth", 0.25f, new Vector3(-1.4f, 0f, 0f), new Vector3(-0.8f, -0.25f, 0f));
         Obj_UP.Rotation("Smooth", 0.25f, Vector3.zero, new Vector3(0f, 0f, -6f));
+        Scene_Manager.AudioPlayer.PlaySE(Clips[0]);
         yield return new WaitForSeconds(0.1f);
 
         Obj_SR.sprite = Enemy[1];

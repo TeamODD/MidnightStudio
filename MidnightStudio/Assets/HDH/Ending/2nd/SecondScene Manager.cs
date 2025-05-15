@@ -8,8 +8,12 @@ public class SecondScene_Manager : MonoBehaviour
     public bool IsTest = false;
     private IEnumerator Total_Production_Start_Sign;
 
+    public AudioManager AudioPlayer;
+
     private void Start()
     {
+        AudioPlayer = AudioManager.Instance;
+        
         Cut_1st.gameObject.SetActive(false);
 
         if (IsTest == true) { Production_Start(); }

@@ -14,8 +14,13 @@ public class FifthScene_Manager : MonoBehaviour
     public bool IsTest = false;
     public MoviePart_Shake Shake;
     private IEnumerator Total_Production_Start_Sign;
+
+    public AudioManager AudioPlayer;
+
     private void Start()
     {
+        AudioPlayer = AudioManager.Instance;
+        
         //Cut_2nd.gameObject.SetActive(true);
 
         if (IsTest == true) { Production_Start(); }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SecondScene_1stCut : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class SecondScene_1stCut : MonoBehaviour
     public SecondScene_Manager Scene_Manager;
     public MoviePart_Subtitle Subtitle;
     private IEnumerator Production_Start_Sign;
+
+    public AudioClip[] Clips;
 
     private void Start()
     {
@@ -34,6 +37,7 @@ public class SecondScene_1stCut : MonoBehaviour
         Obj[0].Position("Smooth", 2f, new Vector3(-1.6f, -0.25f, -1f), new Vector3(-1.4f, 0f, -1f));
         Obj[0].Rotation("Smooth", 2f, new Vector3(0f, 0f, 4f), new Vector3(0f, 0f, 0f));
         Obj[0].Alpha("Instant", 0f, 0f, 1f);
+        Scene_Manager.AudioPlayer.PlaySE(Clips[0]);
         yield return new WaitForSeconds(0.25f);
 
         Subtitle.Engage("당신이 세레니티움의 월광이라며?", "Down", 2.25f);
@@ -46,14 +50,18 @@ public class SecondScene_1stCut : MonoBehaviour
         Enemy_SR.sprite = Enemy[1];
         Subtitle.Engage("확인 좀 해볼까!", "Down", 1f);
         Obj[0].Move("Smooth", 0.25f, "y", 0.15f, 0.5f);
+        Scene_Manager.AudioPlayer.PlaySE(Clips[2]);
+        Scene_Manager.AudioPlayer.PlaySE(Clips[3]);
         yield return new WaitForSeconds(0.25f);
 
         Enemy_SR.sprite = Enemy[2];
         Obj[0].Move("Instant", 0f, "x", 0f, 0.04f);
         Obj[0].Move("Lerp", 0.05f, "y", 0.5f, -0.3f);
+        Scene_Manager.AudioPlayer.PlaySE(Clips[4]);
         yield return new WaitForSeconds(0.1f);
 
         Obj[0].Move("Smooth", 0.1f, "y", -0.3f, 0f);
+        Scene_Manager.AudioPlayer.PlaySE(Clips[5]);
         yield return new WaitForSeconds(0.2f);
 
         // * 컷.

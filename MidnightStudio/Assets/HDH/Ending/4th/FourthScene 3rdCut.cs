@@ -11,6 +11,8 @@ public class FourthScene_3rdCut : MonoBehaviour
     public MoviePart_Subtitle Subtitle;
     private IEnumerator Production_Start_Sign;
 
+    public AudioClip[] Clips;
+    
     private void Start()
     {
         if (IsTest == true) { Production_Start(); }
@@ -31,6 +33,7 @@ public class FourthScene_3rdCut : MonoBehaviour
         // * 액션.
         Obj_UP.Move("Smooth", 0.15f, "x", -1.25f, -0.7f);
         Obj_OP.Coloring("Lerp", 0.07f, new Color(1f, 1f, 1f, 0.5f), new Color(1f, 1f, 1f, 1f));
+        Scene_Manager.AudioPlayer.PlaySE(Clips[0]);
         yield return new WaitForSeconds(0.15f);
 
         Subtitle.Engage("세레니티움도 별거 아니군.", "Down", 2f);

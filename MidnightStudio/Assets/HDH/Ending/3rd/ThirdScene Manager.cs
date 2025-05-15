@@ -8,9 +8,14 @@ public class ThirdScene_Manager : MonoBehaviour
     public bool IsLast = false;
     public bool IsTest = false;
     public MoviePart_Shake Shake;
-    private IEnumerator Total_Production_Start_Sign;
+    public IEnumerator Total_Production_Start_Sign;
+
+    public AudioManager AudioPlayer;
+
     private void Start()
     {
+        AudioPlayer = AudioManager.Instance;
+        
         Cut_1st.gameObject.SetActive(false);
 
         if (IsTest == true) { Production_Start(); }
