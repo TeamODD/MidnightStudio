@@ -39,6 +39,9 @@ public class QuestionManager : MonoBehaviour
 
     private IEnumerator rerollQuestionSign;
 
+    public AudioClip[] Clips;
+    private AudioManager AudioPlayer;
+
 
     void Awake()
     {
@@ -146,6 +149,8 @@ public class QuestionManager : MonoBehaviour
 
     void Start()
     {
+        AudioPlayer = AudioManager.Instance;
+
         // 시작하자마자 페이드 인
         if (sceneFader != null)
         {
@@ -300,6 +305,8 @@ public class QuestionManager : MonoBehaviour
             canClick = false;
             questionHide();
             parser.AnswerToQuestion(dialogIndex);
+
+            AudioPlayer.PlaySE(Clips[1]);
         }
     }
 
@@ -491,11 +498,22 @@ public class QuestionManager : MonoBehaviour
     }
     public void questionShow()
     {
+        StartCoroutine(QuestionShow_Production());
+    }
+
+    private IEnumerator QuestionShow_Production()
+    {
+        AudioPlayer.PlaySE(Clips[0]);
+        yield return new WaitForSeconds(0.15f);
+
         for (int i = 0; i < 3; i++)
         {
             background[i].show();
+            yield return new WaitForSeconds(0.1f);
         }
     }
+
+
     public List<string> GetClueList()
     {
         return new List<string>(clueList); // 복사본 반환
