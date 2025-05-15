@@ -90,7 +90,5 @@ public class FifthScene_Manager : MonoBehaviour
         Cut_6th.Production_Start();
         yield return new WaitForSeconds(Cut_6th.Time - 0.01f);
         Cut_6th.gameObject.SetActive(false);
-
-       if (!IsLast) { Fade_Panel.Alpha("Instant", 0f, 0f, 0f); }
     }
 }

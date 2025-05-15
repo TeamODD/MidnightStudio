@@ -90,7 +90,10 @@ public class MoviePart_Manager : MonoBehaviour
                     yield return new WaitForSeconds(
                         FifthScene.Cut_1st.Time + FifthScene.Cut_2nd.Time + FifthScene.Cut_3rd.Time + FifthScene.Cut_4th.Time + FifthScene.Cut_5th.Time + FifthScene.Cut_6th.Time);
 
-                    if (FifthScene.IsLast == false) { FifthScene.gameObject.SetActive(false); }
+                    if (FifthScene.IsLast == false)
+                    {
+                        FifthScene.gameObject.SetActive(false);
+                    }
                     break;
             }
 

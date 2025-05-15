@@ -39,6 +39,5 @@ public class ThirdScene_Manager : MonoBehaviour
         Cut_1st.gameObject.SetActive(true);
         Cut_1st.Production_Start();
         yield return new WaitForSeconds(Cut_1st.Time - 0.01f);
-        if (!IsLast) { Cut_1st.gameObject.SetActive(false); }
     }
 }
