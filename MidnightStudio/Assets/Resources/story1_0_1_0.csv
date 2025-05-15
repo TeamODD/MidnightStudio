@@ -1,0 +1,16 @@
+keys,speaker,act,dialogue,information
+story1_0_1_0_0,ink,ink_serious,흠... 조준 자세가 상당히 날카롭군.,
+story1_0_1_0_1,ink,ink_serious,"이것이 계획된 움직임으로 보이나, 아니면 즉흥적인 기습으로 보이나?",
+story1_0_1_0_2,client,clt_think,흠... 개인적으로는 말이에요...,
+story1_0_1_0_3,client,clt_idle_1,갑작스러운 움직임처럼 보여요.,
+story1_0_1_0_4,client,clt_laugh,계획적인 사람이었다면 좀 더 유리한 위치에서 조준했겠죠.,
+story1_0_1_0_5,client,clt_innocent,굳이 이렇게 바닥 가까이까지 내려갈 이유는 없었을 테니까요.,
+story1_0_1_0_6,ink,ink_haught,그러니까... 뭔가 위급한 상황에서 순간적으로 반응한 듯한 인상이라는 거군.,
+story1_0_1_0_7,client,clt_think,"그렇죠. 급소를 노린 듯하면서도, 자세가 꽤 낮고...",
+story1_0_1_0_8,client,clt_panic,다소 불안정한 기색도 보여요.,
+story1_0_1_0_9,client,clt_panic,허나 그 와중에도 조준은 정확한 편이라...,
+story1_0_1_0_10,client,clt_idle_1,"아마 빠른 기습, 거기에 경험이 얹힌 움직임이었겠지요.",
+story1_0_1_0_11,ink,ink_idle,"계획은 아니었지만, 몸이 먼저 움직였다는 거군.",
+story1_0_1_0_12,ink,ink_serious,이건... 꽤 오래 익숙해진 움직이라고 보는게 좋겠어.,익숙해진 움직임
+story1_0_1_0_13,ink,ink_haught,"됐어, 이건 여기까지.",
+story1_0_1_0_14,ink,ink_idle,그렇다면...,

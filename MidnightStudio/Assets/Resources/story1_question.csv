@@ -1,61 +1,61 @@
 key,question,dialogTrue,dialogFalse
-story1_question_0_0,주인공은 왜 눈을 가린 채 앉아 있었는가?,story1_0_0_0,story1_0_0_1
-story1_question_0_1,주인공의 태도는 긴장감보다 여유로워 보였는가?,story1_0_1_0,story1_0_1_1
-story1_question_0_2,주변에 다른 사람이 있는 듯한 기색이 있었나?,story1_0_2_0,story1_0_2_1
-story1_question_0_3,"담배를 피우는 행동은 자기 방어적인가, 도발적인가?",story1_0_3_0,story1_0_3_1
-story1_question_0_4,공간은 혼자만의 장소로 보였는가?,story1_0_4_0,story1_0_4_1
-story1_question_0_5,주인공은 부상을 입었거나 피곤해 보였는가?,story1_0_5_0,story1_0_5_1
-story1_question_0_6,조명이나 연출이 불안정한 분위기를 암시했는가?,story1_0_6_0,story1_0_6_1
-story1_question_0_7,"주인공의 손은 떨렸는가, 침착했는가?",story1_0_7_0,story1_0_7_1
-story1_question_0_8,눈을 가린 이유가 스스로 선택한 것처럼 보였는가?,story1_0_8_0,story1_0_8_1
-story1_question_0_9,이 장면이 시작이라면 어떤 일이 일어날 것 같은가?,story1_0_9_0,story1_0_9_1
-story1_question_0_10,이 장면이 끝이라면 어떤 일이 있었던 것 같았나?,story1_0_10_0,story1_0_10_1
-story1_question_0_11,주인공의 상태는 이전에 무언가 겪었다는 인상을 주었는가?,story1_0_11_0,story1_0_11_1
-story1_question_1_0,주인공은 어떤 신체 반응으로 뒤를 의식했는가?,story1_1_0_0,story1_1_0_1
-story1_question_1_1,"그림자의 실루엣은 위협적인가, 정적인가?",story1_1_1_0,story1_1_1_1
-story1_question_1_2,주인공이 그를 향해 반응하려는 듯했는가?,story1_1_2_0,story1_1_2_1
-story1_question_1_3,등장한 인물은 주인공과 어떤 관계로 보였는가?,story1_1_3_0,story1_1_3_1
-story1_question_1_4,실루엣의 위치는 은밀함을 강조했는가?,story1_1_4_0,story1_1_4_1
-story1_question_1_5,소리나 빛이 인물의 존재를 알렸는가?,story1_1_5_0,story1_1_5_1
-story1_question_1_6,주인공이 이미 그를 예상하고 있었던 것 같았는가?,story1_1_6_0,story1_1_6_1
-story1_question_1_7,이 장면 이후 어떤 반응이 나올 것 같았나?,story1_1_7_0,story1_1_7_1
-story1_question_1_8,주인공은 경계심을 얼마나 드러냈는가?,story1_1_8_0,story1_1_8_1
-story1_question_1_9,누가 먼저 움직일 것처럼 보였는가?,story1_1_9_0,story1_1_9_1
-story1_question_1_10,두 인물 사이에 긴장이 쌓여 있는 듯했는가?,story1_1_10_0,story1_1_10_1
-story1_question_1_11,이 장면에서 이전 갈등의 조짐이 보였는가?,story1_1_11_0,story1_1_11_1
+story1_question_0_0,왜 주인공은 굳이 낮은 자세를 선택했을까?,story1_0_0_0,story1_0_0_1
+story1_question_0_1,이 조준은 계획된 움직임으로 보이는가?,story1_0_1_0,story1_0_1_1
+story1_question_0_2,적은 이 조준 상황을 인지하고 있었을까?,story1_0_2_0,story1_0_2_1
+story1_question_0_3,"주인공이 상대를 죽일 의도였는가, 제압하려는 의도였는가?",story1_0_3_0,story1_0_3_1
+story1_question_0_4,이 장면에서 주인공에게 망설임은 느껴지는가?,story1_0_4_0,story1_0_4_1
+story1_question_0_5,주변 환경이 은밀한 접근을 가능하게 만든 듯한 구조인가?,story1_0_5_0,story1_0_5_1
+story1_question_0_6,"적은 방심한 상태였는가, 아니면 이미 경계하고 있었는가?",story1_0_6_0,story1_0_6_1
+story1_question_0_7,주인공의 표정이나 눈빛에서 감정의 동요가 보이는가?,story1_0_7_0,story1_0_7_1
+story1_question_0_8,적의 머리 아래라는 위치가 의미하는 바는 무엇일까?,story1_0_8_0,story1_0_8_1
+story1_question_0_9,"이 장면은 갈등의 정점인가, 결말 직전의 일시적 우위인가?",story1_0_9_0,story1_0_9_1
+story1_question_0_10,"상황상 대화가 오가기 직전인가, 이미 말이 끝난 후인가?",story1_0_10_0,story1_0_10_1
+story1_question_0_11,이 자세와 구도는 주도권이 누구에게 있는지를 암시하는가?,story1_0_11_0,story1_0_11_1
+story1_question_1_0,그 실루엣이 일전에 마주친 사람인 것 같나?,story1_1_0_0,story1_1_0_1
+story1_question_1_1,새로운 적이 나타난 것으로 보이나?,story1_1_1_0,story1_1_1_1
+story1_question_1_2,주인공은 이 상황에서 말을 건네려고 하는가?,story1_1_2_0,story1_1_2_1
+story1_question_1_3,바닥에 떨어진 것들은 어떤 것들로 이루어져 있는지 보이나?,story1_1_3_0,story1_1_3_1
+story1_question_1_4,연출이 두 인물 사이의 긴장감을 의도적으로 강조하고 있는가?,story1_1_4_0,story1_1_4_1
+story1_question_1_5,곧 마찰이 있을 법한 기류가 흘렀는가?,story1_1_5_0,story1_1_5_1
+story1_question_1_6,실루엣은 무기를 쥐고 있었는가?,story1_1_6_0,story1_1_6_1
+story1_question_1_7,누군가를 만나기로 약속되어 있던 상황같나?,story1_1_7_0,story1_1_7_1
+story1_question_1_8,주변 환경에서 실루엣 인물의 목적이나 성격이 암시되는가?,story1_1_8_0,story1_1_8_1
+story1_question_1_9,"주인공은 이후, 어떤 행동을 취할 것 같나?",story1_1_9_0,story1_1_9_1
+story1_question_1_10,이 장면 전체가 함정처럼 보이진 않는가?,story1_1_10_0,story1_1_10_1
+story1_question_1_11,실루엣의 등장 방식이 은밀한 접근처럼 느껴지는가?,story1_1_11_0,story1_1_11_1
 story1_question_2_0,조준 대상이 카메라 밖에 있는 이유는 무엇일까?,story1_2_0_0,story1_2_0_1
 story1_question_2_1,주인공의 표정이나 눈빛에 주저함이 보였는가?,story1_2_1_0,story1_2_1_1
 story1_question_2_2,총을 겨눈 손이 흔들리거나 굳어 있었는가?,story1_2_2_0,story1_2_2_1
 story1_question_2_3,"총을 겨누는 자세는 익숙한가, 어색한가?",story1_2_3_0,story1_2_3_1
 story1_question_2_4,"이 조준은 공격인가, 방어인가?",story1_2_4_0,story1_2_4_1
-story1_question_2_5,"조명이 주인공의 얼굴을 강조했는가, 숨겼는가?",story1_2_5_0,story1_2_5_1
-story1_question_2_6,조준 대상이 중요한 인물이라는 암시가 있었는가?,story1_2_6_0,story1_2_6_1
-story1_question_2_7,총을 겨누기까지 어떤 감정의 흐름이 있었을 것 같은가?,story1_2_7_0,story1_2_7_1
-story1_question_2_8,주인공은 명확한 결심을 한 듯 보였는가?,story1_2_8_0,story1_2_8_1
-story1_question_2_9,조준 직전에 대화가 있었을 것 같은 분위기였는가?,story1_2_9_0,story1_2_9_1
-story1_question_2_10,이 장면이 이야기의 시작이었을 가능성은 얼마나 있을까?,story1_2_10_0,story1_2_10_1
-story1_question_2_11,이 조준이 결말로 이어질 것 같은 긴장을 만들어냈는가?,story1_2_11_0,story1_2_11_1
-story1_question_3_0,"이 인물의 걸음은 급했는가, 느렸는가?",story1_3_0_0,story1_3_0_1
-story1_question_3_1,걸음걸이에서 위협적인 느낌이 있었는가?,story1_3_1_0,story1_3_1_1
-story1_question_3_2,이 장면은 누군가를 향한 복수나 추적처럼 보였는가?,story1_3_2_0,story1_3_2_1
-story1_question_3_3,총을 들고 걷는 태도는 목적이 분명해 보였는가?,story1_3_3_0,story1_3_3_1
-story1_question_3_4,총의 위치(겨눈 정도 등)로 어떤 긴장이 느껴졌는가?,story1_3_4_0,story1_3_4_1
-story1_question_3_5,이 장면은 마지막을 암시하는 듯했는가?,story1_3_5_0,story1_3_5_1
-story1_question_3_6,"인물은 익숙한 얼굴인가, 생소한 인물인가?",story1_3_6_0,story1_3_6_1
-story1_question_3_7,카메라 쪽 인물이 위험에 처해 있을 것 같았는가?,story1_3_7_0,story1_3_7_1
-story1_question_3_8,걸어오는 장소는 사건 현장 같았는가?,story1_3_8_0,story1_3_8_1
-story1_question_3_9,이 인물은 전 장면에서 언급된 적이 있을 듯한가?,story1_3_9_0,story1_3_9_1
-story1_question_3_10,조명이 이 인물을 강조하거나 숨기고 있었는가?,story1_3_10_0,story1_3_10_1
-story1_question_3_11,총을 들고 등장한 인물의 감정은 드러났는가?,story1_3_11_0,story1_3_11_1
-story1_question_4_0,누가 먼저 총을 겨눈 것처럼 보였는가?,story1_4_0_0,story1_4_0_1
-story1_question_4_1,양쪽의 위치나 자세에서 우위가 느껴졌는가?,story1_4_1_0,story1_4_1_1
-story1_question_4_2,"서로 말없이 겨누었는가, 대화가 있었을 것 같은가?",story1_4_2_0,story1_4_2_1
-story1_question_4_3,이 장면 이전에 갈등이 있었을 것 같았는가?,story1_4_3_0,story1_4_3_1
-story1_question_4_4,"총을 든 손이 흔들렸는가, 안정적이었는가?",story1_4_4_0,story1_4_4_1
-story1_question_4_5,어느 쪽이 먼저 방아쇠를 당길 것 같았는가?,story1_4_5_0,story1_4_5_1
-story1_question_4_6,"주변은 폐허, 실내, 야외 중 어디로 보였는가?",story1_4_6_0,story1_4_6_1
-story1_question_4_7,"감정적 대립(복수, 배신 등)이 느껴졌는가?",story1_4_7_0,story1_4_7_1
-story1_question_4_8,총을 겨누는 이유가 명확히 드러났는가?,story1_4_8_0,story1_4_8_1
-story1_question_4_9,두 사람 중 누군가 망설이고 있었는가?,story1_4_9_0,story1_4_9_1
-story1_question_4_10,"이 장면이 결말처럼 보였는가, 절정처럼 보였는가?",story1_4_10_0,story1_4_10_1
-story1_question_4_11,이 장면 이후에 벌어질 일을 예측할 수 있었는가?,story1_4_11_0,story1_4_11_1
+story1_question_2_5,조준 직전에 대화가 있었을 것 같은 분위기였는가?,story1_2_5_0,story1_2_5_1
+story1_question_2_6,총을 겨누기까지 어떤 감정의 흐름이 있었을 것 같은가?,story1_2_6_0,story1_2_6_1
+story1_question_2_7,이 장면이 이야기의 시작이었을 가능성은 얼마나 있을까?,story1_2_7_0,story1_2_7_1
+story1_question_2_8,이 조준이 결말로 이어질 것 같은 긴장을 만들어냈는가?,story1_2_8_0,story1_2_8_1
+story1_question_2_9,이후에 싸움이 날 법한 상황으로 보이는가?,story1_2_9_0,story1_2_9_1
+story1_question_2_10,"놀람이라는 감정은, 육체적 충격 때문인가 정신적 충격 때문인가?",story1_2_10_0,story1_2_10_1
+story1_question_2_11,주인공이 맞은 총알은 정면에서 날아온 것으로 보이는가?,story1_2_11_0,story1_2_11_1
+story1_question_3_0,적의 총구가 정확히 누구를 향하고 있었는가?,story1_3_0_0,story1_3_0_1
+story1_question_3_1,적이 총을 겨눈 표정에서 감정이 드러났는가?,story1_3_1_0,story1_3_1_1
+story1_question_3_2,적의 조준이 훈련된 자세로 보이는가?,story1_3_2_0,story1_3_2_1
+story1_question_3_3,적은 조용히 기회를 엿보는 느낌이었는가?,story1_3_3_0,story1_3_3_1
+story1_question_3_4,적의 조준은 즉흥적으로 보이는가?,story1_3_4_0,story1_3_4_1
+story1_question_3_5,총을 들기 전에 대화가 있었을 법한 분위기인가?,story1_3_5_0,story1_3_5_1
+story1_question_3_6,상대가 등장하자 바로 조준한 것인가?,story1_3_6_0,story1_3_6_1
+story1_question_3_7,조준 중인 캐릭터에게 감정의 동요가 있나?,story1_3_7_0,story1_3_7_1
+story1_question_3_8,이 장면이 충돌의 시작점처럼 보이나?,story1_3_8_0,story1_3_8_1
+story1_question_3_9,이 장면이 매복의 시작 혹은 끝으로 보이나?,story1_3_9_0,story1_3_9_1
+story1_question_3_10,인물의 주변 환경이 공격을 위한 배경처럼 느껴졌는가?,story1_3_10_0,story1_3_10_1
+story1_question_3_11,총을 겨눈 자가 말없이 공격하려는 인상인가?,story1_3_11_0,story1_3_11_1
+story1_question_4_0,이 장면 이전에 이미 총성이 있었던 흔적이 보이는가?,story1_4_0_0,story1_4_0_1
+story1_question_4_1,두 사람의 표정에서 피로감이나 상처는 감지되는가?,story1_4_1_0,story1_4_1_1
+story1_question_4_2,"총을 겨누는 자세가 방어적인가, 공격적인가?",story1_4_2_0,story1_4_2_1
+story1_question_4_3,주변에 다른 인물의 흔적이나 싸움의 흔적이 있는가?,story1_4_3_0,story1_4_3_1
+story1_question_4_4,두 사람이 서로를 알아보는 듯한 기색이 있는가?,story1_4_4_0,story1_4_4_1
+story1_question_4_5,이 장면 직전에 심리적 갈등이 있었던 듯한 인상이 드는가?,story1_4_5_0,story1_4_5_1
+story1_question_4_6,"서로가 동시에 겨눈 건가, 아니면 한쪽이 먼저였나?",story1_4_6_0,story1_4_6_1
+story1_question_4_7,총구를 겨누는 와중에도 대화가 오갔을 법한 분위기인가?,story1_4_7_0,story1_4_7_1
+story1_question_4_8,이 장면이 결말에 가까운 감정의 폭발처럼 느껴지는가?,story1_4_8_0,story1_4_8_1
+story1_question_4_9,누군가 먼저 총을 내릴 가능성이 있어 보이는가?,story1_4_9_0,story1_4_9_1
+story1_question_4_10,두 인물의 거리나 주변 환경이 충돌 직전의 분위기를 강화하고 있는가?,story1_4_10_0,story1_4_10_1
+story1_question_4_11,이 장면이 앞선 다른 장면과 감정적으로 연결되는 지점이 있는가?,story1_4_11_0,story1_4_11_1
