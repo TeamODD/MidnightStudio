@@ -15,8 +15,12 @@ public class ResultTMP_production : MonoBehaviour
 
     public ResultMangager Manager;
 
+    private AudioManager AudioPlayer;
+    public AudioClip[] Clips;
+
     public void Start()
     {
+        AudioPlayer = AudioManager.Instance;
         //StartShowResultObject();
     }
 
@@ -46,26 +50,31 @@ public class ResultTMP_production : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         Total[0].Scale("Smooth", 0.1f, new Vector3(0.95f, 0.95f, 1f), new Vector3(1f, 1f, 1f));
+        AudioPlayer.PlaySE(Clips[0]);
         yield return new WaitForSeconds(1f);
 
         Sequences[0].Move("Smooth", 0.2f, "x", -360f, -471f);
         Sequences[0].Alpha("Lerp", 0.2f, 0f, 1f);
+        AudioPlayer.PlaySE(Clips[1]);
         yield return new WaitForSeconds(0.5f);
 
         for (int Repeat = 0; Repeat < 9; Repeat++)
         {
             Sequences[Repeat + 1].Move("Smooth", 0.1f, "y", -185f, -170f);
             Sequences[Repeat + 1].Alpha("Lerp", 0.05f, 0f, 1f);
+            if (Repeat % 2 == 0) { AudioPlayer.PlaySE(Clips[2]); }
             yield return new WaitForSeconds(0.25f);
         }
         yield return new WaitForSeconds(0.5f);
 
         Sequences[10].Move("Smooth", 0.2f, "x", -610f, -721f);
         Sequences[10].Alpha("Lerp", 0.2f, 0f, 1f);
+        AudioPlayer.PlaySE(Clips[1]);
         yield return new WaitForSeconds(1f);
 
         Timer[0].Move("Smooth", 0.2f, "x", -360f, -471f);
         Timer[0].Alpha("Lerp", 0.2f, 0f, 1f);
+        AudioPlayer.PlaySE(Clips[1]);
         yield return new WaitForSeconds(0.5f);
 
         Timer[1].Move("Smooth", 0.1f, "y", -111f, 0f);
@@ -96,11 +105,13 @@ public class ResultTMP_production : MonoBehaviour
                 Total[3].Scale("Smooth", 0.1f, new Vector3(0.95f, 0.95f, 1f), new Vector3(1f, 1f, 1f));
                 break;
         }
+        AudioPlayer.PlaySE(Clips[0]);
         yield return new WaitForSeconds(1f);
 
         Total[4].gameObject.SetActive(true);
         Total[4].Move("Smooth", 0.2f, "y", -485f, -460f);
         Total[4].Alpha("Lerp", 0.2f, 0f, 1f);
+        AudioPlayer.PlaySE(Clips[2]);
     }
 
     public void SceneChange()

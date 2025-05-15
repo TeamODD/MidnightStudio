@@ -15,6 +15,7 @@ public class ResultMangager : MonoBehaviour
 
     public void SceneChange()
     {
+        Destroy(ResultData.Instance);
         SceneManager.LoadScene("Title");
     }
 }
