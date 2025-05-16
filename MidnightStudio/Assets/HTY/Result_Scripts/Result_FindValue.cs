@@ -29,8 +29,7 @@ public class Result_FindValue : MonoBehaviour
 
     public void RemainTimeChecking() {
         
-        if (timer < 90f) { RESULT = 0f; }
-        else if (timer >= 90f && timer < 300f) { RESULT = 3f; }
+        if (timer >= 0f && timer < 300f) { RESULT = 3f; }
         else if (timer >= 300f && timer < 360f) { RESULT = 2f; }
         else if (timer >= 360f && timer < 420f) { RESULT = 1f; }
         else if (timer >= 420f) { RESULT = 0f; }

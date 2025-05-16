@@ -6,6 +6,7 @@ public class EndingManager : MonoBehaviour
     public MoviePart_Manager MoviePartManager;
     public AudioManager AudioPlayer;
     public Epilog_Result EpilogResult;
+    public AudioClip Clip;
 
     private void Start()
     {
@@ -20,11 +21,13 @@ public class EndingManager : MonoBehaviour
         ResultData resultData_ = GameObject.Find("ResultData").GetComponent<ResultData>();
 
         MoviePartManager.Production_Start(resultData_.orderedSceneIdentifiers);
+
+        EpilogResult.MoviePlayer();
+        if (EpilogResult.Grade == "A") { AudioPlayer.PlayBGM(Clip); }
     }
 
     public void MovieEnd()
     {
-        EpilogResult.MoviePlayer();
 
         switch (EpilogResult.Grade)
         {

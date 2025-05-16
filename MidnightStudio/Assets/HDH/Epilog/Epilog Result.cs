@@ -17,8 +17,7 @@ public class Epilog_Result : MonoBehaviour
 
     private void Result_Cal(float Time, List<string> Sequence)
     {
-        if (Time < 90f) { Score = 0f; }
-        else if (Time >= 90f && Time < 300f) { Score = 3f; }
+        if (Time < 300f) { Score = 3f; }
         else if (Time >= 300f && Time < 360f) { Score = 2f; }
         else if (Time >= 360f && Time < 420f) { Score = 1f; }
         else if (Time >= 420f) { Score = 0f; }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using static UnityEngine.GraphicsBuffer;
 
@@ -24,7 +25,7 @@ public class Start_text : MonoBehaviour
     public Speaker_NextFlash speaker_nextFlash;
     public Sprite[] Image_index = new Sprite[] { };
 
-    private SpriteRenderer ImageDisplay;
+    public Image ImageDisplay;
     private Dictionary<string, string[]> dialogues = new Dictionary<string, string[]>();
     private Coroutine typingCoroutine;
 
@@ -93,7 +94,6 @@ public class Start_text : MonoBehaviour
         string act = dialogues[index][2];
         string imageIndex = dialogues[index][3];  // "0"등 외의 값 부르기(추가된 거)
 
-        
         TMP_Text target = null;
         Debug.Log(speaker.Contains("ink"));
         if (speaker == "ink")
@@ -117,7 +117,6 @@ public class Start_text : MonoBehaviour
                 LastSpeaker = "ink";
             }
             speaker_panel.text = "잉크 헤드";
-            ShowImageByIndex(imageIndex); // By image_index's value, change the image that HDH want. you know? GO 241's Line.
             target = startText;
             ApplyActImage("ink", act);
             synopsisColorManager.SetCharacterColor("just_ink");
@@ -161,7 +160,7 @@ public class Start_text : MonoBehaviour
             synopsisColorManager.SetCharacterColor("just_manager");
         }
         Debug.Log(index);
-        
+        ShowImageByIndex(imageIndex); // By image_index's value, change the image that HDH want. you know? GO 241's Line.
         TextBox.TextBox_Production_Start();
         typingCoroutine = StartCoroutine(TextTyping(target, line));
 
@@ -246,12 +245,21 @@ public class Start_text : MonoBehaviour
 
     private void ShowImageByIndex(string imageIndex) // Yeah this.
     {
-        if (!int.TryParse(imageIndex, out int index)) return; //imageIndex -> sting value change int value -> on int index ->
-
-        Sprite Sprite = Image_index[index];
-        if (ImageDisplay != null) //if same number? then do not try saem code. you nam sang?
+        Debug.Log(imageIndex);
+        if (imageIndex != "")
         {
-            ImageDisplay.sprite = Sprite; //Display the image.
+            ImageDisplay.gameObject.SetActive(true);
+            if (!int.TryParse(imageIndex, out int index)) return; //imageIndex -> sting value change int value -> on int index ->
+
+            Sprite Sprite = Image_index[index];
+            if (ImageDisplay != null) //if same number? then do not try saem code. you nam sang?
+            {
+                ImageDisplay.sprite = Sprite; //Display the image.
+            }
+        }
+        else
+        {
+            ImageDisplay.gameObject.SetActive(false);
         }
     }
 

@@ -1,11 +1,16 @@
 keys,speaker,act,dialogue
 story1_synopsis_c_0,manager,,이제 촬영 시작 전입니다..! 각본가님... 준비된 건가요?
-story1_synopsis_c_1,ink,ink_think,아... 그... 물론이지!
-story1_synopsis_c_2,client,clt_panic,어... 각본가님? 이거 괜찮은거 맞겠죠?
-story1_synopsis_c_3,ink,ink_haught,"지... 지금, 내 실력을 무시하는건가!"
-story1_synopsis_c_4,ink,ink_think,나는 50년 동안 꿈 영화의 각본을 작성해왔다네!
-story1_synopsis_c_5,ink,ink_haught,이 영화는 성공할꺼야! 당신의 주인이 기뻐할꺼라네!
-story1_synopsis_c_6,client,clt_panic,아... 알겠습니다...
-story1_synopsis_c_7,manager,,주인님 오시기 시작하십니다!
-story1_synopsis_c_8,manager,,꿈이란 것을 눈치 못 차리게 잘 연기해주세요!
-story1_synopsis_c_9,client,clt_panic,네...
+story1_synopsis_c_1,ink,ink_think,어! 음...! 어... 그것이 말이야...
+story1_synopsis_c_2,ink,ink_haught,그... 그렇지! 이 정도면 충분하네!
+story1_synopsis_c_3,client,clt_panic,어... 정말 괜찮은 거 맞겠죠...? 각본가님..?
+story1_synopsis_c_4,ink,ink_haught,무... 물론이지! 지금 내 각본을 의심하는 건가!
+story1_synopsis_c_5,ink,ink_think,난 50년 간 각본을 써왔네! 내 능력은 이미 그것으로 증명된 것이네!
+story1_synopsis_c_6,manager,,음... 각본가님...?
+story1_synopsis_c_7,ink,ink_think,음! 어... 무슨 일인가?
+story1_synopsis_c_8,manager,,이거... 못 사용하겠는데요?
+story1_synopsis_c_9,ink,ink_haught,그...! 그게 무슨소리인가...!
+story1_synopsis_c_10,manager,,이런 각본은 영화에서 사용하지 못한다고요!
+story1_synopsis_c_11,manager,,주인님이 곧 오시는데...! 
+story1_synopsis_c_12,ink,ink_think,어... 그건 미안하네...
+story1_synopsis_c_13,manager,,그냥 돌아가주세요... 제가 빠르게 해서 다시 전달할테니...
+story1_synopsis_c_14,ink,ink_think,아... 알겠네...

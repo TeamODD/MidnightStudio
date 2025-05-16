@@ -7972,6 +7972,7 @@ MonoBehaviour:
   MoviePartManager: {fileID: 663284285}
   AudioPlayer: {fileID: 0}
   EpilogResult: {fileID: 1602254421}
+  Clip: {fileID: 8300000, guid: 836a4dd5235795547a9d39e835b02aa6, type: 3}
 --- !u!114 &1602254421
 MonoBehaviour:
   m_ObjectHideFlags: 0

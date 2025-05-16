@@ -57,7 +57,7 @@ public class UI_Production : MonoBehaviour
     }
 
     public void Stretch(string Enlarging_Way, float Enlarging_Time, float Start_Area, float End_Area)
-    {
+    {   
         if (Stretch_Coroutine != null) { StopCoroutine(Stretch_Coroutine); }
         Stretch_Coroutine = Stretch_Sign(Enlarging_Way, Enlarging_Time, Start_Area, End_Area);
         StartCoroutine(Stretch_Coroutine);
@@ -131,11 +131,11 @@ public class UI_Production : MonoBehaviour
             while (ElapsedTime < Moving_Time)
             {
                 float Obj_Speed = ElapsedTime / Moving_Time;
-                if (Move_Way == "Lerp") //µî¼Óµµ
+                if (Move_Way == "Lerp") //ï¿½ï¿½Óµï¿½
                 {
                     Target_Obj_Rect.anchoredPosition = new Vector2(Mathf.Lerp(Start_Pos.x, End_Pos.x, Obj_Speed), Mathf.Lerp(Start_Pos.y, End_Pos.y, Obj_Speed));
                 }
-                else if (Move_Way == "Smooth") //°¨¼Ó
+                else if (Move_Way == "Smooth") //ï¿½ï¿½ï¿½ï¿½
                 {
                     Target_Obj_Rect.anchoredPosition = new Vector2(Mathf.SmoothStep(Start_Pos.x, End_Pos.x, Obj_Speed), Mathf.SmoothStep(Start_Pos.y, End_Pos.y, Obj_Speed));
                 }
