@@ -29,7 +29,7 @@ public class Result_FindValue : MonoBehaviour
 
     public void RemainTimeChecking() {
         
-        if (timer >= 0f && timer < 300f) { RESULT = 3f; }
+        if (timer >= 0f && timer < 300f) { RESULT = 2.5f; }
         else if (timer >= 300f && timer < 360f) { RESULT = 2f; }
         else if (timer >= 360f && timer < 420f) { RESULT = 1f; }
         else if (timer >= 420f) { RESULT = 0f; }
@@ -65,8 +65,8 @@ public class Result_FindValue : MonoBehaviour
     }
 
     public string CheckFinalResult() {
-        if (RESULT >= 8f) { return "A"; }
-        else if (RESULT >= 4f && RESULT < 8f) { return "B"; }
+        if (RESULT >= 7.5f) { return "A"; }
+        else if (RESULT >= 4f && RESULT < 7.5f) { return "B"; }
         else { return "C"; }
     }
 }
