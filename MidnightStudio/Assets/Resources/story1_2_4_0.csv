@@ -1,15 +1,15 @@
 keys,speaker,act,dialogue,information
 story1_2_4_0_0,ink,ink_serious,"주인공의 조준은 공격처럼 보이는가, 아님 방어처럼 보이는가?",
-story1_2_4_0_1,client,clt_think,음... 두 가지 다라고 보는 게 맞을 것 같아요.,
+story1_2_4_0_1,client,clt_think,음... 두 가지라고 보는 게 맞을 것 같아요.,
 story1_2_4_0_2,client,clt_idle_1,이미 어깨에 총을 맞은 뒤처럼 보이잖아요?,
 story1_2_4_0_3,client,clt_think,피격당하고도 그대로 물러서지 않고...,
 story1_2_4_0_4,client,clt_idle_1,곧바로 반사적으로 한 발을 쏜 거 같아요.,
 story1_2_4_0_5,ink,ink_haught,"그러니까, 맞은 뒤에 반격을 했다는 것인가?",
 story1_2_4_0_6,client,clt_innocent,그런 느낌이죠.,
-story1_2_4_0_7,client,clt_idle_1,마치 예상하지 못했지만 본능적으로 총을 꺼내든거죠.,
+story1_2_4_0_7,client,clt_idle_1,마치 예상하지 못했지만 본능적으로 총을 꺼내든 거죠.,
 story1_2_4_0_8,ink,ink_haught,전형적인 선제공격은 아닌 것 같고...,
 story1_2_4_0_9,ink,ink_serious,그렇다고 수세에 몰린 건 또 아닌 것처럼 보이니...,
-story1_2_4_0_10,ink,ink_idle,꽤 단련된 반사로 보이는 군.,
+story1_2_4_0_10,ink,ink_idle,꽤 단련된 반사로 보이는군.,
 story1_2_4_0_11,client,clt_idle_1,"방어처럼 보이지만, 그 한 발엔 여기서 끝낼 거라는 의지도 보이네요.",
 story1_2_4_0_12,ink,ink_panic,"살기 반, 본능 반이라는 거군.",
 story1_2_4_0_13,client,clt_innocent,저 조준이 단순한 방어 태세 이상이라는 거죠.,방어 태세 이상의 조준

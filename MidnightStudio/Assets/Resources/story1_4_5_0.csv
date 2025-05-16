@@ -2,13 +2,13 @@ keys,speaker,act,dialogue,information
 story1_4_5_0_0,ink,ink_serious,이 장면 직전에 심리적 갈등이 있었던 듯한 인상이 드나?,
 story1_4_5_0_1,client,clt_idle_1,확실하게 느껴지네요.,
 story1_4_5_0_2,client,clt_innocent,일단 두 사람 다 총구를 들이밀었잖아요.,
-story1_4_5_0_3,ink,ink_anger,조금 더 자세한 이유를 물어보고 있는걸세..!,
+story1_4_5_0_3,ink,ink_anger,조금 더 자세한 이유를 물어보고 있는 거네..!,
 story1_4_5_0_4,client,clt_panic,그게 단순한 우발은 아니란 뜻이죠.,
-story1_4_5_0_5,client,clt_think,"적어도 말 몇 마디 정도는 오갔거나, 말 없이도 충분히 긴장이 생겼을 거에요.",말 몇 마디 이후
-story1_4_5_0_6,ink,ink_serious,그 전부터 이미 갈등이 쌓여 있었다는 말이군.,
+story1_4_5_0_5,client,clt_think,"적어도 말 몇 마디 정도는 오갔거나, 말없이도 충분히 긴장이 생겼을 거예요.",말 몇 마디 이후
+story1_4_5_0_6,ink,ink_serious,그전부터 이미 갈등이 쌓여 있었다는 말이군.,
 story1_4_5_0_7,client,clt_innocent,"총을 겨눈다는 건, 어떤 심리적 한계를 넘었다는 신호니까요.",
 story1_4_5_0_8,ink,ink_idle,"확실히 아무리 상황이 급박해도, 이유 없이 그렇게까지는 안 가네.",
-story1_4_5_0_9,ink,ink_haught,특히 서로 마주보며 조준한 상태라면...,
+story1_4_5_0_9,ink,ink_haught,특히 서로 마주 보며 조준한 상태라면...,
 story1_4_5_0_10,ink,ink_haught,누가 먼저였든 간에...,
 story1_4_5_0_11,ink,ink_serious,한동안 감정의 줄다리기가 있었던 거겠지.,
 story1_4_5_0_12,ink,ink_idle,"즉, 말로 푸는 길은 이미 사라졌다고 판단한 뒤의 행동이라는 해석도 가능하겠군.",

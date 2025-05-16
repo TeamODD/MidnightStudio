@@ -1,6 +1,6 @@
 keys,speaker,act,dialogue,information
 story1_1_1_0_0,ink,ink_serious,자네는 저 실루엣이 새로운 적으로 보이나?,
-story1_1_1_0_1,client,clt_laugh,아 그거 저에요.,실루엣은 의뢰인?
+story1_1_1_0_1,client,clt_laugh,아 그거 저예요.,실루엣은 의뢰인?
 story1_1_1_0_2,ink,ink_panic,아 자네인가?,
 story1_1_1_0_3,client,clt_idle_1,적으로 등장하도록 되어있잖아요.,
 story1_1_1_0_4,ink,ink_anger,그러면 이 장면의 순서를 기억해야 할 것 아닌가...!,
@@ -9,7 +9,7 @@ story1_1_1_0_6,client,clt_innocent,까먹었네요...,
 story1_1_1_0_7,ink,ink_anger,......,
 story1_1_1_0_8,ink,ink_serious,후... 그 부분은 넘어가도록 하지.,
 story1_1_1_0_9,ink,ink_haught,감각적인 부분으로는 어떻게 보이나?,
-story1_1_1_0_10,client,clt_idle_1,일단 분위기가 묘해요.,묘한 자세의 실루엣
+story1_1_1_0_10,client,clt_idle_1,일단 분위기가 묘해요.,묘한 분위기
 story1_1_1_0_11,client,clt_think,"저 벽에 기대선 자세, 여유롭긴 한데...",
 story1_1_1_0_12,client,clt_idle_1,그게 오히려 위협적으로 느껴지지 않나요?,
 story1_1_1_0_13,ink,ink_idle,주인공이 그제야 눈치챘다는 것도 이상하지.,

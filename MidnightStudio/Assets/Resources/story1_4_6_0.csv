@@ -1,11 +1,11 @@
 keys,speaker,act,dialogue,information
 story1_4_6_0_0,ink,ink_serious,"서로가 동시에 겨눈 것으로 보이나, 아니면 한쪽이 먼저 겨눈 것으로 보이나?",
-story1_4_6_0_1,client,clt_think,흠... 딱 봐선 거의 동시에인 것처럼 보이네요..,
+story1_4_6_0_1,client,clt_think,흠... 딱 봐선 거의 동시에 인 것처럼 보이네요...,
 story1_4_6_0_2,client,clt_idle_1,근데 분위기라는 것이 조금 걸리는 느낌이네요.,
 story1_4_6_0_3,client,clt_think,"어딘가, 아주 살짝이지만...",
 story1_4_6_0_4,client,clt_innocent,먼저 겨눈 쪽이 있다고 느껴져요.,먼저 겨눈 쪽이 존재
 story1_4_6_0_5,ink,ink_panic,"뭐랄까, 선을 먼저 넘은 쪽이 있었다는 뜻인가?",
-story1_4_6_0_6,client,clt_idle_1,"네. 정확히는, 그런 기세요. ",
+story1_4_6_0_6,client,clt_idle_1,"네. 정확히는, 그런 기세요.",
 story1_4_6_0_7,client,clt_think,상대를 기다린 게 아니라...,
 story1_4_6_0_8,client,clt_laugh,먼저 치겠다는 마음이 짧게나마 앞섰던 쪽이 있는 것 같아요.,
 story1_4_6_0_9,client,clt_innocent,눈치 빠른 쪽이라면 그 타이밍을 놓치지 않았겠죠.,

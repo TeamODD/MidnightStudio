@@ -2,11 +2,11 @@ keys,speaker,act,dialogue,information
 story1_1_6_0_0,ink,ink_serious,실루엣은 무기를 쥐고 있었는가?,
 story1_1_6_0_1,client,clt_idle_1,직접적으로 보이지는 않네요.,
 story1_1_6_0_2,client,clt_think,보세요. 팔짱을 낀 채로 벽에 기대고 있잖아요?,
-story1_1_6_0_3,client,clt_think,"근데, 뭔가 그뿐만이라기엔 기묘하네요...",
+story1_1_6_0_3,client,clt_think,"근데, 뭔가 그뿐만이라기 엔 기묘하네요...",
 story1_1_6_0_4,ink,ink_haught,그럼 무장을 안 했을 수도 있다는 건가?,
 story1_1_6_0_5,client,clt_innocent,"글쎄요, 딱히 무장하지 않은 사람의 분위기는 아니네요.",
 story1_1_6_0_6,client,clt_think,팔짱 사이에 뭔가를 숨기고 있을 수도 있고...,
-story1_1_6_0_7,client,clt_idle_1,"뭐, 이미 조준하고 있을 수도 있죠.",
+story1_1_6_0_7,client,clt_idle_1,"뭐, 이미 준비하고 있을 수도 있죠.",
 story1_1_6_0_8,ink,ink_haught,"저런 타입들, 대놓고 무기를 드러내진 않지만...",
 story1_1_6_0_9,ink,ink_serious,항상 무장을 하고 있는 법이니까 말이지.,항상 무장을 하고 있는 법
 story1_1_6_0_10,ink,ink_idle,그걸 주인공도 눈치챈 것으로 보이나?,
