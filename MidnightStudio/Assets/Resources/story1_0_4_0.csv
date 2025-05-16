@@ -1,11 +1,11 @@
 keys,speaker,act,dialogue,information
-story1_0_4_0_0,ink,ink_serious,주인공에거 망설임은 전혀 없어 보이지 않는군.,
+story1_0_4_0_0,ink,ink_serious,주인공에 거 망설임은 전혀 없어 보이지 않는군.,
 story1_0_4_0_1,ink,ink_panic,음... 자네 눈에도 그렇나?,
 story1_0_4_0_2,client,clt_idle_1,저에게도 망설임이라곤 한 조각도 보이지 않아요.,
 story1_0_4_0_3,client,clt_think,"자세며 눈빛, 그리고 방아쇠 위의 손가락을 보면...",
 story1_0_4_0_4,client,clt_idle_1,이미 마음은 정해진 상태인 것 같아요.,
 story1_0_4_0_5,ink,ink_haught,"격한 감정은 없는데, 그렇다고 감정을 억누르는 것도 아니야.",
-story1_0_4_0_6,ink,ink_serious,그저 조용히... 끝내겠다는 각오라고 보는게 좋겠군.,
+story1_0_4_0_6,ink,ink_serious,그저 조용히... 끝내겠다는 각오라고 보는 게 좋겠군.,
 story1_0_4_0_7,client,clt_think,쏠 타이밍을 재는 게 아니라...,
 story1_0_4_0_8,client,clt_idle_1,확실히 맞추기 위한 호흡을 조절하는 것처럼 보여요.,
 story1_0_4_0_9,client,clt_think,이건 사격이 아니라...,

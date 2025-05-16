@@ -1,13 +1,13 @@
 keys,speaker,act,dialogue,information
 story1_0_5_0_0,ink,ink_serious,주변 환경이 은밀한 접근을 가능하게 만든 듯한 구조처럼 보이는가?,
 story1_0_5_0_1,client,clt_think,"글쎄요, 그 부분은 조금 미묘해요...",
-story1_0_5_0_2,client,clt_idle_1,"복도형 구조라 시야가 막히지도 않고, 음지라고 할 것도 없어보여요.",
+story1_0_5_0_2,client,clt_idle_1,"복도형 구조라 시야가 막히지도 않고, 음지라고 할 것도 없어 보여요.",
 story1_0_5_0_3,client,clt_idle_1,어디 숨을 수 있는 장소도 딱히 보이지 않고요.,
-story1_0_5_0_4,client,clt_innocent,그러니까... 구조 자체가 은밀한 접근을 돕는 형태는 아닌거죠.,
+story1_0_5_0_4,client,clt_innocent,그러니까... 구조 자체가 은밀한 접근을 돕는 형태는 아닌 거죠.,
 story1_0_5_0_5,ink,ink_panic,그렇다면 접근 방식 자체가 남다른 건가...,
 story1_0_5_0_6,client,clt_think,"예, 오히려 주인공이 이동한 속도, 타이밍...",뛰어난 피지컬
 story1_0_5_0_7,client,clt_innocent,그 결정적인 순간이 주효했다고 보는 게 맞을 것 같아요.,
 story1_0_5_0_8,client,clt_idle_1,"환경의 이점보단, 빠른 속공이 모든 걸 결정지은 느낌이죠.",
-story1_0_5_0_9,client,clt_laugh,"아주 짧은 순간에 거리를 좁히고, 허점을 찌른 느낌?.",
+story1_0_5_0_9,client,clt_laugh,"아주 짧은 순간에 거리를 좁히고, 허점을 찌른 느낌?",
 story1_0_5_0_10,ink,ink_haught,"됐어, 이건 여기까지.",
 story1_0_5_0_11,ink,ink_idle,그렇다면...,

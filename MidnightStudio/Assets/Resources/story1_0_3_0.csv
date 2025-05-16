@@ -1,15 +1,15 @@
 keys,speaker,act,dialogue,information
 story1_0_3_0_0,ink,ink_serious,주인공은 저 조준으로 상대를 단순히 제압하려던 것 같나?,
-story1_0_3_0_1,ink,ink_serious,"아니면 단순히, 사살을 위함이였던 것 같나?",
+story1_0_3_0_1,ink,ink_serious,"아니면 단순히, 사살을 위함이었던 것 같나?",
 story1_0_3_0_2,ink,ink_idle,자네 생각은 어떤가?,
 story1_0_3_0_3,client,clt_panic,어... 일단은 말이죠...,
 story1_0_3_0_4,client,clt_think,제압하려는 사람이 저렇게 방아쇠 위에 손가락을 얹진 않죠.,
 story1_0_3_0_5,client,clt_innocent,망설임이 없었다고나 할까?,
 story1_0_3_0_6,client,clt_idle_1,그건 경고가 아니라 결단의 손가락이에요.,
-story1_0_3_0_7,ink,ink_haught,그건 확실해 보이는 군...,
+story1_0_3_0_7,ink,ink_haught,그건 확실해 보이는군...,
 story1_0_3_0_8,ink,ink_idle,"자세도 낮췄고, 사각을 노린 듯한 움직임이지.",
 story1_0_3_0_9,ink,ink_idle,살의를 담지 않고선 나올 수 없는 동선이야.,살의
-story1_0_3_0_10,client,clt_think,그렇죠. 제압이 목적이었다면 더 눈에 띄는 방식도 있었을 거에요.,
+story1_0_3_0_10,client,clt_think,그렇죠. 제압이 목적이었다면 더 눈에 띄는 방식도 있었을 거예요.,
 story1_0_3_0_11,client,clt_panic,하지만 저건...,
 story1_0_3_0_12,client,clt_idle_1,명확하게 끝을 내겠다는 행동처럼 보이네요.,
 story1_0_3_0_13,ink,ink_idle,"그럼, 이건 우연이 아니라...",
