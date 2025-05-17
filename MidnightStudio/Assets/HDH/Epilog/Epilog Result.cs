@@ -17,12 +17,17 @@ public class Epilog_Result : MonoBehaviour
 
     private void Result_Cal(float Time, List<string> Sequence)
     {
-        if (Time < 300f) { Score = 2.5f; }
-        else if (Time >= 300f && Time < 360f) { Score = 2f; }
-        else if (Time >= 360f && Time < 420f) { Score = 1f; }
-        else if (Time >= 420f) { Score = 0f; }
+        if (Time >= 300f && Time < 360f) { Score = 2.5f; }
+        else if (Time >= 360f && Time < 420f) { Score = 2f; }
+        else if (Time >= 420f) { Score = 1f; }
 
-        for (int i = 0; i < 5; i++) { if (Sequence[i] == Real_Sequence[i]) { Score += 1f; } }
+        for (int i = 0; i < Sequence.Count; i++)
+        {
+            if (Sequence[i] == Real_Sequence[i])
+            {
+                Score += 1f;
+            }
+        }
 
         if (Score >= 7.5f) { Grade = "A"; }
         else if (Score > 4f && Score < 7.5f) { Grade = "B"; }
