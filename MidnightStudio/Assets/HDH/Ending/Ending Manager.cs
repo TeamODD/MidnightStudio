@@ -28,7 +28,7 @@ public class EndingManager : MonoBehaviour
 
     public void MovieEnd()
     {
-
+        Debug.Log(EpilogResult.Grade);
         switch (EpilogResult.Grade)
         {
             case "A":

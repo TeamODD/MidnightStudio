@@ -90,6 +90,7 @@ public class End_text : MonoBehaviour
         }
 
         Epilog_Result.MoviePlayer();
+        Debug.Log(Epilog_Result.Grade);
 
         switch (Epilog_Result.Grade)
         {

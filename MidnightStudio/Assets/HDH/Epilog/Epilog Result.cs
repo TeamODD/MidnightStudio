@@ -4,7 +4,7 @@ using UnityEngine;
 public class Epilog_Result : MonoBehaviour
 {
     [SerializeField]
-    private float Score = 0f;
+    
     public string Grade = null;
     private List<string> Real_Sequence = new List<string> {"1", "3", "2", "4", "0"};
     
@@ -17,7 +17,8 @@ public class Epilog_Result : MonoBehaviour
 
     private void Result_Cal(float Time, List<string> Sequence)
     {
-        if (Time >= 300f && Time < 360f) { Score = 2.5f; }
+        float Score = 0f;
+        if (Time < 360f) { Score = 2.5f; }
         else if (Time >= 360f && Time < 420f) { Score = 2f; }
         else if (Time >= 420f) { Score = 1f; }
 
